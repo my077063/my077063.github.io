@@ -1,2 +1,4 @@
 # Homepage
-This is my personal website: cen-jun.com. Go live on August 29, 2021.
+
+This is my personal website: wangmingyu.com. Go live on January 29, 2026.
+
