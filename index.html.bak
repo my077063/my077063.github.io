@@ -433,7 +433,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <div class="pub" data-selected="true" style="margin-bottom: 30px; display: flex; align-items: flex-start; gap: 25px;">
       <div class="pub-left" style="width: 32%; flex-shrink: 0;">
-        <img class="intro-img frame" src="images/Paper_2026_EFA.png" style="width: 100%; height: auto; box-shadow: 2px 2px 6px rgba(0,0,0,0.15); border-radius: 4px; display: block;">
+        <img class="intro-img frame" src="images/Paper7.png" style="width: 100%; height: auto; box-shadow: 2px 2px 6px rgba(0,0,0,0.15); border-radius: 4px; display: block;">
       </div>
       <div class="pub-right" style="flex-grow: 1; display: flex; flex-direction: column;">
         <div class="title" style="margin-bottom: 12px; line-height: 1.5; font-size: 18px; font-weight: 600;">
@@ -467,7 +467,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="pub" data-selected="true" style="margin-bottom: 30px; display: flex; align-items: flex-start; gap: 25px;">
       <div class="pub-left" style="width: 32%; flex-shrink: 0;">
-        <img class="intro-img frame" src="images/Paper_2025_SETA.png" style="width: 100%; height: auto; box-shadow: 2px 2px 6px rgba(0,0,0,0.15); border-radius: 4px; display: block;">
+        <img class="intro-img frame" src="images/Paper6.png" style="width: 100%; height: auto; box-shadow: 2px 2px 6px rgba(0,0,0,0.15); border-radius: 4px; display: block;">
       </div>
       <div class="pub-right" style="flex-grow: 1; display: flex; flex-direction: column;">
         <div class="title" style="margin-bottom: 12px; line-height: 1.5; font-size: 18px; font-weight: 600;">
@@ -501,7 +501,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="pub" data-selected="true" style="margin-bottom: 30px; display: flex; align-items: flex-start; gap: 25px;">
       <div class="pub-left" style="width: 32%; flex-shrink: 0;">
-        <img class="intro-img frame" src="images/Paper_2025_EFA.png" style="width: 100%; height: auto; box-shadow: 2px 2px 6px rgba(0,0,0,0.15); border-radius: 4px; display: block;">
+        <img class="intro-img frame" src="images/Paper5.png" style="width: 100%; height: auto; box-shadow: 2px 2px 6px rgba(0,0,0,0.15); border-radius: 4px; display: block;">
       </div>
       <div class="pub-right" style="flex-grow: 1; display: flex; flex-direction: column;">
         <div class="title" style="margin-bottom: 12px; line-height: 1.5; font-size: 18px; font-weight: 600;">
@@ -536,7 +536,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="pub" data-selected="true" style="margin-bottom: 30px; display: flex; align-items: flex-start; gap: 25px;">
       <div class="pub-left" style="width: 32%; flex-shrink: 0;">
-        <img class="intro-img frame" src="images/Paper_2024_Thesis.png" style="width: 100%; height: auto; box-shadow: 2px 2px 6px rgba(0,0,0,0.15); border-radius: 4px; display: block;">
+        <img class="intro-img frame" src="images/Paper4.png" style="width: 100%; height: auto; box-shadow: 2px 2px 6px rgba(0,0,0,0.15); border-radius: 4px; display: block;">
       </div>
       <div class="pub-right" style="flex-grow: 1; display: flex; flex-direction: column;">
         <div class="title" style="margin-bottom: 12px; line-height: 1.5; font-size: 18px; font-weight: 600;">
@@ -563,7 +563,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="pub" data-selected="true" style="margin-bottom: 30px; display: flex; align-items: flex-start; gap: 25px;">
       <div class="pub-left" style="width: 32%; flex-shrink: 0;">
-        <img class="intro-img frame" src="images/Paper_2024_EFA.png" style="width: 100%; height: auto; box-shadow: 2px 2px 6px rgba(0,0,0,0.15); border-radius: 4px; display: block;">
+        <img class="intro-img frame" src="images/Paper3.png" style="width: 100%; height: auto; box-shadow: 2px 2px 6px rgba(0,0,0,0.15); border-radius: 4px; display: block;">
       </div>
       <div class="pub-right" style="flex-grow: 1; display: flex; flex-direction: column;">
         <div class="title" style="margin-bottom: 12px; line-height: 1.5; font-size: 18px; font-weight: 600;">
@@ -597,7 +597,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="pub" data-selected="true" style="margin-bottom: 30px; display: flex; align-items: flex-start; gap: 25px;">
       <div class="pub-left" style="width: 32%; flex-shrink: 0;">
-        <img class="intro-img frame" src="images/Paper_2024_Measurement.png" style="width: 100%; height: auto; box-shadow: 2px 2px 6px rgba(0,0,0,0.15); border-radius: 4px; display: block;">
+        <img class="intro-img frame" src="images/Paper2.png" style="width: 100%; height: auto; box-shadow: 2px 2px 6px rgba(0,0,0,0.15); border-radius: 4px; display: block;">
       </div>
       <div class="pub-right" style="flex-grow: 1; display: flex; flex-direction: column;">
         <div class="title" style="margin-bottom: 12px; line-height: 1.5; font-size: 18px; font-weight: 600;">
@@ -631,7 +631,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="pub" data-selected="true" style="margin-bottom: 30px; display: flex; align-items: flex-start; gap: 25px;">
       <div class="pub-left" style="width: 32%; flex-shrink: 0;">
-        <img class="intro-img frame" src="images/Paper_2024_CBM.png" style="width: 100%; height: auto; box-shadow: 2px 2px 6px rgba(0,0,0,0.15); border-radius: 4px; display: block;">
+        <img class="intro-img frame" src="images/Paper1.png" style="width: 100%; height: auto; box-shadow: 2px 2px 6px rgba(0,0,0,0.15); border-radius: 4px; display: block;">
       </div>
       <div class="pub-right" style="flex-grow: 1; display: flex; flex-direction: column;">
         <div class="title" style="margin-bottom: 12px; line-height: 1.5; font-size: 18px; font-weight: 600;">
