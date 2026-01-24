@@ -133,6 +133,40 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
 
 	</div>
+        <style>
+				  .social-media {
+				    display: flex;
+				    justify-content: center;
+				    gap: 15px;
+				  }
+
+				  .social-media a.icon-button {
+				    display: inline-flex;
+				    align-items: center;
+				    justify-content: center;
+				    width: 45px;
+				    height: 45px;
+				    border-radius: 50%;
+				    text-decoration: none;
+				    border: none;
+				    background-color: #ffffff; /* 默认白色 */
+				    color: #333333;                /* 默认黑色 */
+				    transition: all 0.3s ease;
+				  }
+
+				  .social-media a.icon-button:hover {
+				    background-color: #000000;     /* 悬停黑底 */
+				    color: #ffffff;                /* 悬停白字 */
+				    transform: scale(1.1);
+				  }
+
+				  /* 统一控制图标大小 */
+				  .social-media a.icon-button i {
+				    font-size: 1.3rem; /* 调整这个数字可以同时改变所有图标大小 */
+				    line-height: 1;
+				  }
+				</style>
+        
         <div class="social-media">
   
 				  <a href="https://scholar.google.com/citations?user=hmu-ly4AAAAJ&hl=zh-CN" target="_blank" class="icon-button">
