@@ -115,78 +115,90 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </header>
 
-  <div id="profile-cover" class="cover shallow-bg img-responsive"> 
-    <div id="profile-namecard" class="profile-wrapper wrapper-light">
-      <div id="my-pic" class="profile-col profile-col-1">
-        <img id="profile-avatar" src="images/myself.jpg" alt="Me" class="circle-img border-dark"-/>
-      </div>
-      <div id="my-contact" class="profile-col profile-col-2">
-        <div id="my-name" class="text-grey-dark">
-          Mingyu WANG<br>
-        </div>
-        <div id="my-title" class="text-grey">
-          School of Civil Engineering<br>
-          Southeast University
-        </div>
-        <div id="my-email" class="text-grey-light">
-          my077063@163.com
-        </div>
+  <div id="profile-cover" class="cover shallow-bg img-responsive">
+	  <div id="profile-namecard" class="profile-wrapper wrapper-light">
+	    
+	    <div id="my-pic" class="profile-col profile-col-1">
+	      <img id="profile-avatar" src="images/myself.jpg" alt="Me" class="circle-img border-dark"/>
+	    </div>
+	    
+	    <div id="my-contact" class="profile-col profile-col-2">
+	      
+	      <div id="my-name" class="text-grey-dark">
+	        Mingyu WANG<br>
+	      </div>
+	      
+	      <div id="my-title" class="text-grey">
+	        School of Civil Engineering<br>
+	        Southeast University
+	      </div>
+	      
+	      <div id="my-email" class="text-grey-light">
+	        my077063@163.com
+	      </div>
 
+	      <style>
+	        /* 1. 容器样式：改名为 my-social-box 防止冲突 */
+	        .my-social-box {
+	          display: flex;
+	          align-items: center;
+	          justify-content: flex-start; /* 左对齐，和上方文字保持一致 */
+	          gap: 12px;                   /* 按钮间距 */
+	          margin-top: 15px;            /* 和上面邮箱拉开距离 */
+	        }
+
+	        /* 2. 按钮样式 */
+	        .my-social-box a.icon-btn {
+	          display: inline-flex;
+	          align-items: center;
+	          justify-content: center;
+	          width: 38px;             /* 稍微调小一点，显得精致 */
+	          height: 38px;
+	          border-radius: 50%;
+	          text-decoration: none;
+	          border: 1px solid #eeeeee; /* 加个超浅边框，防止在白底上看不见 */
+	          
+	          background-color: #ffffff; /* 默认白底 */
+	          color: #333333;            /* 默认黑图标 */
+	          
+	          transition: all 0.3s ease;
+	          box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* 加点微弱阴影增加立体感 */
+	        }
+
+	        /* 3. 悬停样式 */
+	        .my-social-box a.icon-btn:hover {
+	          background-color: #000000; /* 黑底 */
+	          color: #ffffff;            /* 白字 */
+	          border-color: #000000;
+	          transform: translateY(-2px);
+	        }
+
+	        /* 4. 图标大小 */
+	        .my-social-box a.icon-btn i {
+	          font-size: 1.1rem; 
+	          line-height: 1;
+	        }
+	      </style>
+
+	      <div class="my-social-box">
+	        <a href="https://scholar.google.com/citations?user=hmu-ly4AAAAJ&hl=zh-CN" target="_blank" class="icon-btn" aria-label="Google Scholar">
+	          <i class="ai ai-google-scholar-square"></i>
+	        </a>
+
+	        <a href="https://github.com/my077063" target="_blank" class="icon-btn" aria-label="GitHub">
+	          <i class="fa-brands fa-github"></i>
+	        </a>
+	        
+	        <a href="https://www.douyin.com/user/MS4wLjABAAAAWT0EEgepjPRq6Iz6xavShWKRQB7PJE5-vLUuqGQUTL8?from_tab_name=main" target="_blank" class="icon-btn" aria-label="TikTok">
+	          <i class="fa-brands fa-tiktok"></i>
+	        </a>
+
+	        <a href="mailto:my077063@163.com" target="_blank" class="icon-btn" aria-label="Email">
+	          <i class="fa-solid fa-envelope"></i>
+	        </a>
+	      </div>
+	      </div> </div>
 	</div>
-        <style>
-				  .social-media {
-				    display: flex;
-				    justify-content: center;
-				    gap: 15px;
-				  }
-
-				  .social-media a.icon-button {
-				    display: inline-flex;
-				    align-items: center;
-				    justify-content: center;
-				    width: 45px;
-				    height: 45px;
-				    border-radius: 50%;
-				    text-decoration: none;
-				    border: none;
-				    background-color: #ffffff; /* 默认白色 */
-				    color: #333333;                /* 默认黑色 */
-				    transition: all 0.3s ease;
-				  }
-
-				  .social-media a.icon-button:hover {
-				    background-color: #000000;     /* 悬停黑底 */
-				    color: #ffffff;                /* 悬停白字 */
-				    transform: scale(1.1);
-				  }
-
-				  /* 统一控制图标大小 */
-				  .social-media a.icon-button i {
-				    font-size: 1.3rem; /* 调整这个数字可以同时改变所有图标大小 */
-				    line-height: 1;
-				  }
-				</style>
-        
-        <div class="social-media">
-  
-				  <a href="https://scholar.google.com/citations?user=hmu-ly4AAAAJ&hl=zh-CN" target="_blank" class="icon-button">
-				    <i class="ai ai-google-scholar-square"></i>
-				  </a>
-
-				  <a href="https://github.com/my077063" target="_blank" class="icon-button">
-				    <i class="fa-brands fa-github"></i>
-				  </a>
-				  
-				  <a href="https://www.douyin.com/user/MS4wLjABAAAAWT0EEgepjPRq6Iz6xavShWKRQB7PJE5-vLUuqGQUTL8?from_tab_name=main" target="_blank" class="icon-button">
-				    <i class="fa-brands fa-tiktok"></i>
-				  </a>
-
-				  <a href="mailto:my077063@163.com" target="_blank" class="icon-button">
-				    <i class="fa-solid fa-envelope"></i>
-				  </a>
-				  
-				</div>
-      </div>
 
       <!-- <div id="my-desc" class="profile-col profile-col-2 hide">
         <div id="my-desc-title">
