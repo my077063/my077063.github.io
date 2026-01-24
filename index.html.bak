@@ -1163,21 +1163,66 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </div>
 
-<div class="wrapper">
-  <div id="awards" class="bio">
-    <h1 class="md-heading text-left">
-      <i class="fa fa-tasks" aria-hidden="true"></i>
-      Selected Honors & Awards
-    </h1>
-    <ul>
-  	<li> <a href="images/RI.jpeg" target="_blank">Outstanding Research Intern, Alibaba Group, 2023.</a> (15 candidates per year)</li>
-	<li> Overseas Research Award, HKUST, 2023.</li>
-	<li> Postgraduate Studentship, HKUST, 2020-2024.</li>
-	<li> School of Engineering Excellent Student Scholarship, HKUST, 2019-2020.</li>
-	<li> School of Engineering Entrance Scholarship, HKUST, 2019-2020.</li>
-    </ul>
-  </div>
-</div>
+<div style="width: 100%; margin-top: 40px; margin-bottom: 40px;">
+      
+      <h1 class="md-heading text-left">
+        <i class="fa fa-trophy" aria-hidden="true"></i>
+        Honors & Awards
+      </h1>
+      
+      <ul style="list-style-type: disc; padding-left: 20px; margin-top: 15px;">
+        
+        <li style="margin-bottom: 12px;">
+          <b>SEU Innovation Capability Enhancement Plan for Doctoral Students</b>
+          <span style="float: right; color: #666; font-size: 14px;">2026</span>
+          <br>
+          <span style="color: #666; font-size: 14px;">Grant: CNY 48,000</span>
+        </li>
+
+        <li style="margin-bottom: 12px;">
+          <b>Third Prize, Traffic Infrastructure Structural Monitoring Technology Innovation Competition</b>
+          <span style="float: right; color: #666; font-size: 14px;">2025</span>
+          <br>
+          <span style="color: #666; font-size: 14px;">China Highway and Transportation Society</span>
+        </li>
+
+        <li style="margin-bottom: 12px;">
+          <b>Outstanding Graduate</b>
+          <span style="float: right; color: #666; font-size: 14px;">2025</span>
+          <br>
+          <span style="color: #666; font-size: 14px;">Shanghai Institute of Technology</span>
+        </li>
+
+        <li style="margin-bottom: 12px;">
+          <b>National Scholarship for Postgraduates</b>
+          <span style="float: right; color: #666; font-size: 14px;">2024</span>
+          <br>
+          <span style="color: #666; font-size: 14px;">Grant: CNY 10,000</span>
+        </li>
+
+        <li style="margin-bottom: 12px;">
+          <b>First-Class Academic Scholarship</b>
+          <span style="float: right; color: #666; font-size: 14px;">2024</span>
+          <br>
+          <span style="color: #666; font-size: 14px;">Shanghai Institute of Technology (Grant: CNY 10,000)</span>
+        </li>
+
+        <li style="margin-bottom: 12px;">
+          <b>Academic Scholarship</b>
+          <span style="float: right; color: #666; font-size: 14px;">2023</span>
+          <br>
+          <span style="color: #666; font-size: 14px;">Shanghai Institute of Technology (Grant: CNY 6,000)</span>
+        </li>
+
+        <li style="margin-bottom: 12px;">
+          <b>Academic Scholarship</b>
+          <span style="float: right; color: #666; font-size: 14px;">2022</span>
+          <br>
+          <span style="color: #666; font-size: 14px;">Shanghai Institute of Technology (Grant: CNY 6,000)</span>
+        </li>
+
+      </ul>
+    </div>
 
 <style>
   .reviewer-section {
