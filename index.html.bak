@@ -152,8 +152,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	          display: inline-flex;
 	          align-items: center;
 	          justify-content: center;
-	          width: 60px;             /* 稍微调小一点，显得精致 */
-	          height: 60px;
+	          width: 50px;             /* 稍微调小一点，显得精致 */
+	          height: 50px;
 	          border-radius: 50%;
 	          text-decoration: none;
 	          
