@@ -152,11 +152,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	          display: inline-flex;
 	          align-items: center;
 	          justify-content: center;
-	          width: 50px;             /* 稍微调小一点，显得精致 */
-	          height: 50px;
+	          width: 70px;             /* 稍微调小一点，显得精致 */
+	          height: 70px;
 	          border-radius: 50%;
 	          text-decoration: none;
-	          border: 1px solid #eeeeee; /* 加个超浅边框，防止在白底上看不见 */
 	          
 	          background-color: #ffffff; /* 默认白底 */
 	          color: #333333;            /* 默认黑图标 */
