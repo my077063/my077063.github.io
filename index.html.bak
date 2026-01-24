@@ -260,7 +260,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		    <strong>Research Interests</strong>
 			</h3>
       <ul>
-        <li><b>Structural Health Monitoring</b></li>
+        <li><b>Structural Health Monitoring (SHM)</b></li>
         <span style="color: #666; font-size: 14px;">Focusing on high-speed railway bridges and infrastructure safety.</span>
         
         <li style="margin-top: 10px;"><b>Neural Operators</b></li>
@@ -335,10 +335,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           Sep, 2025 - Present
         </div>
         <div class="timeline-title">
-          Doctoral Researcher @ <a href="https://www.seu.edu.cn/english/" target="_blank">Southeast University</a>
+          Doctoral Researcher<br>
+          @ <a href="https://www.seu.edu.cn/english/" target="_blank">Southeast University</a>
         </div>
         <div class="timeline-desc">
-          Focusing on Structural Health Monitoring and Neural Operators.
+          Investigating the application of Neural Operators in civil infrastructure and developing advanced Digital Twin frameworks.
         </div>
       </div>
 
@@ -348,10 +349,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           Sep, 2022 - Mar, 2025
         </div>
         <div class="timeline-title">
-          Master Researcher @ <a href="https://english.sit.edu.cn/" target="_blank">Shanghai Institute of Technology</a>
+          Master Researcher<br>
+          @ <a href="https://english.sit.edu.cn/" target="_blank">Shanghai Institute of Technology</a>
         </div>
         <div class="timeline-desc">
-           Specializing in Resources and Environment.
+           Researched Structural Health Monitoring (SHM) and condition assessment methods for high-speed railway track structures.
         </div>
       </div>
   
@@ -361,7 +363,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           Mar, 2018 - Mar, 2021
         </div>
         <div class="timeline-title">
-          Assistant Engineer / Site Manager @ <a href="https://www.cdceg.com.cn/" target="_blank">Chengdu Construction Engineering Group</a>
+          Assistant Engineer<br>
+          @ <a href="https://www.cdceg.com.cn/" target="_blank">Chengdu Construction Engineering Group</a>
         </div>
         <div class="timeline-desc">
           <div class="timeline-host">
