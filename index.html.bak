@@ -440,23 +440,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           <span style="display: inline-block; vertical-align: middle; margin-left: 8px;">
             <span style="background-color: #e7f6df; color: #2e7d32; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #c8e6c9; white-space: nowrap;">JCR Q1</span>
-            <span style="background-color: #e3f2fd; color: #1565c0; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #bbdefb; white-space: nowrap;">CAS Top</span>
-            <span style="background-color: #fff3e0; color: #ef6c00; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #ffe0b2; white-space: nowrap;">IF: 7.4</span>
+            <span style="background-color: #e3f2fd; color: #1565c0; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #bbdefb; white-space: nowrap;">Top</span>
+            <span style="background-color: #fff3e0; color: #ef6c00; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #ffe0b2; white-space: nowrap;">IF: 8.0</span>
           </span>
         </div>
 
         <div class="authors" style="display: block; margin-bottom: 8px; font-size: 16px; line-height: 1.4; color: #444;">
-            Peigang Li, 
+            Peigang Li*, 
             <b style="color: #4A90E2; font-weight: 700;">Mingyu Wang*</b>, 
             Tianyu Yu, Ning Feng, Caihao Lan, Kang Yang, Shanshan Li, Hongzhi Zhang
         </div>
 
         <div class="publish" style="display: block; margin-bottom: 6px; color: #555; font-size: 14px; line-height: 1.4; clear: both;">
           <i style="font-weight: bold; font-style: italic; color: #000;">Construction and Building Materials</i>, 
-          Vol. 411, Article 134xxx, 2024
+          Vol. 418, Article 135169, 2024
         </div>
 
-        <div style="display: block; font-size: 13px; color: #777; margin-top: 4px;">
+        <div style="display: block; font-size: 14px; color: #777; margin-top: 4px;">
           <span style="font-weight: bold; color: #555;">DOI:</span> 
           <a href="https://doi.org/10.1016/j.conbuildmat.2024.134379" target="_blank" style="color: #666; text-decoration: underline; font-family: Consolas, monospace;">
             https://doi.org/10.1016/j.conbuildmat.2024.134379
