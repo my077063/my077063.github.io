@@ -133,57 +133,83 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 	</div>
         <style>
-          .icon-button.douyin {
-            background-color: transparent; /* 默认背景透明/白色 */
-            color: #000000;                /* 默认图标黑色 */
-            border: none !important;       /* 【关键】绝对不要边框 */
-            transition: all 0.3s ease;     /* 添加平滑过渡动画 */
-            display: inline-flex;          /* 保证对齐 */
-            align-items: center;
-            justify-content: center;
-          }
-          
-          /* 悬停状态：背景变黑，图标变白 */
-          .icon-button.douyin:hover {
-            background-color: #000000;
-            color: #ffffff;
-            transform: scale(1.1); /* 保持一致的放大效果 */
-          }
+				  /* 1. 强制统一所有按钮的容器样式 */
+				  .social-media {
+				    display: flex;
+				    align-items: center;
+				    justify-content: center; /* 确保整体居中 */
+				    gap: 15px; /* 按钮之间的间距 */
+				  }
 
-          /* 确保 SVG 颜色永远跟随文字颜色 (currentColor) */
-          .icon-button.douyin svg {
-            fill: currentColor;
-            transition: fill 0.3s ease;
-          }
-        </style>
+				  /* 2. 强制统一每一个按钮 (a标签) 的基础属性 */
+				  .social-media a.icon-button {
+				    /* 布局与尺寸 - 确保每个点击区域完全一样大 */
+				    display: inline-flex !important;
+				    align-items: center;
+				    justify-content: center;
+				    width: 45px !important;  /* 强制统一宽度 */
+				    height: 45px !important; /* 强制统一高度 */
+				    border-radius: 50%;      /* 统一为圆形 (如果是方形风格可改为 4px) */
+				    text-decoration: none !important;
+				    margin: 0 !important;    /* 间距由父级 gap 控制 */
+				    border: none !important; /* 【核心】绝对无边框 */
+				    
+				    /* 颜色与背景 - 默认状态 */
+				    background-color: transparent !important;
+				    color: #333333 !important; /* 统一默认图标颜色为深黑 */
+				    
+				    /* 动画与过渡 - 统一节奏 */
+				    transition: all 0.3s ease-in-out !important;
+				    transform: scale(1); /* 初始比例 */
+				  }
 
-        <div class="social-media">
-          
-          <a href="https://scholar.google.com/citations?user=hmu-ly4AAAAJ&hl=zh-CN" target="_blank" class="icon-button linkedin">
-            <i class="ai ai-google-scholar-square icon-linkedin"></i>
-            <span></span>
-          </a>
+				  /* 3. 强制统一每一个按钮的 悬停 (Hover) 状态 */
+				  .social-media a.icon-button:hover {
+				    background-color: #000000 !important; /* 悬停背景变黑 */
+				    color: #ffffff !important;            /* 悬停图标变白 */
+				    transform: scale(1.1);                /* 统一放大比例 */
+				    cursor: pointer;
+				  }
 
-          <a href="https://github.com/my077063" target="_blank" class="icon-button github">
-            <i class="fa fa-github icon-github"></i>
-            <span></span>
-          </a>
+				  /* 4. 强制统一图标 (i标签 和 svg) 的尺寸和行为 */
+				  .social-media a.icon-button i {
+				    font-size: 1.3rem !important; /* 统一字体图标大小 */
+				    display: flex;
+				    align-items: center;
+				    justify-content: center;
+				    line-height: 1 !important;
+				  }
 
-          <a href="https://www.douyin.com/user/MS4wLjABAAAAWT0EEgepjPRq6Iz6xavShWKRQB7PJE5-vLUuqGQUTL8?from_tab_name=main" target="_blank" class="icon-button douyin">
-            <i style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;">
-              <svg viewBox="0 0 448 512" style="width: 0.85em; height: 0.85em; fill: currentColor;" xmlns="http://www.w3.org/2000/svg">
-                <path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"/>
-              </svg>
-            </i>
-            <span></span>
-          </a>
+				  /* 专门针对 SVG (抖音) 的适配，让它表现得和字体图标一模一样 */
+				  .social-media a.icon-button svg {
+				    width: 1.3rem !important;  /* 必须与上面的 font-size 一致 */
+				    height: 1.3rem !important;
+				    fill: currentColor !important; /* 颜色跟随文字颜色变化 */
+				    transition: fill 0.3s ease-in-out;
+				  }
+				</style>
 
-          <a href="mailto:my077063@163.com" target="_blank" class="icon-button linkedin">
-            <i class="fa fa-envelope icon-linkedin"></i>
-            <span></span>
-          </a>
-          
-        </div>
+				<div class="social-media">
+				  
+				  <a href="https://scholar.google.com/citations?user=hmu-ly4AAAAJ&hl=zh-CN" target="_blank" class="icon-button">
+				    <i class="ai ai-google-scholar-square"></i>
+				  </a>
+
+				  <a href="https://github.com/my077063" target="_blank" class="icon-button">
+				    <i class="fa fa-github"></i>
+				  </a>
+
+				  <a href="https://www.douyin.com/user/MS4wLjABAAAAWT0EEgepjPRq6Iz6xavShWKRQB7PJE5-vLUuqGQUTL8?from_tab_name=main" target="_blank" class="icon-button">
+				    <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+				      <path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"/>
+				    </svg>
+				  </a>
+
+				  <a href="mailto:my077063@163.com" target="_blank" class="icon-button">
+				    <i class="fa fa-envelope"></i>
+				  </a>
+				  
+				</div>
       </div>
 
       <!-- <div id="my-desc" class="profile-col profile-col-2 hide">
