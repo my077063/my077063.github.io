@@ -374,29 +374,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       
       <div class="timeline-item">
         <div class="timeline-date">
-          <img class="social-icon" src="images/SEU_logo.png" style="width:auto; height:24px; vertical-align:middle; margin-right:5px;"/>
+          <img class="social-icon" src="images/GZ_logo.png" style="width:auto; height:24px; vertical-align:middle; margin-right:5px;"/>
           Sep, 2025 - Present
         </div>
         <div class="timeline-title">
-          Doctoral Researcher<br>
-          @ <a href="https://www.seu.edu.cn/english/" target="_blank">Southeast University</a>
+          Key Researcher<br>
+          @ <a href="https://civil.seu.edu.cn/berc/" target="_blank">National Key Laboratory of Safety, Durability and Healthy Operation of Long Span Bridges</a>
         </div>
         <div class="timeline-desc">
-          Investigating the application of Neural Operators in civil infrastructure and developing advanced Digital Twin frameworks.
+          Investigating the damage evolution mechanisms and resilience assessment of vehicle-track-bridge (VTB) systems under extreme service environments.
         </div>
       </div>
 
       <div class="timeline-item">
         <div class="timeline-date">
-          <img class="social-icon" src="images/SIT_logo.jpg" style="width:auto; height:24px; vertical-align:middle; margin-right:5px;"/>
-          Sep, 2022 - Mar, 2025
+          <img class="social-icon" src="images/HYY_logo.png" style="width:auto; height:24px; vertical-align:middle; margin-right:5px;"/>
+          Feb, 2025 - Present
         </div>
         <div class="timeline-title">
-          Master Researcher<br>
-          @ <a href="https://english.sit.edu.cn/" target="_blank">Shanghai Institute of Technology</a>
+          Researcher<br>
+          @ <a href="https://www.aoiseu.ac.cn/" target="_blank">Advanced Ocean Institute of Southeast University Nantong</a>
         </div>
         <div class="timeline-desc">
-           Researched Structural Health Monitoring (SHM) and condition assessment methods for high-speed railway track structures.
+           Specializing in multi-physics coupling simulation and durability analysis for civil engineering structures.
         </div>
       </div>
   
