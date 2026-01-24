@@ -274,7 +274,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </ul>
     </div>
 
-    <div id="education" class="timeline-brief">
+    <div id="education" class="timeline-brief" style="clear: both; margin-top: 20px;">
     
     <h1 class="md-heading text-left">
       <i class="fa fa-graduation-cap" aria-hidden="true"></i>
@@ -289,7 +289,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           Sep, 2025 - Present
         </div>
         <div class="timeline-title">
-          Doctoral Student (Eng.D.)<br>
+          Doctoral Student<br>
           @ <a href="https://www.seu.edu.cn/english/" target="_blank">Southeast University</a>
         </div>
         <div class="timeline-desc">
