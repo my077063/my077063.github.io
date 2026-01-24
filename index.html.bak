@@ -431,39 +431,55 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-  <div class="pub-list">
-        
-        <div class="pub">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/Paper1.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              A monitoring method of rail fastener reaction force based on iron pad strain
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                Peigang Li*, <b>Mingyu Wang*</b>, Tianyu Yu, Ning Feng, Caihao Lan, Kang Yang, Shanshan Li, Hongzhi Zhang
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">Construction and Building Materials 2024</span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://www.sciencedirect.com/science/article/pii/S0950061824003106" target="_blank">Paper</a>]
-            </div>
-          </div>
-        </div>
-        
-        
-    
+  <div class="pub" data-selected="true">
+      
+      <div class="pub-left">
+        <img class="intro-img frame" src="images/Paper1.png" style="width: 100%; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);">
+      </div>
 
-	    
-	      
+      <div class="pub-right">
+        
+        <div class="title" style="font-size: 18px; font-weight: 600; margin-bottom: 5px;">
+          <a href="https://www.sciencedirect.com/science/article/pii/S0950061824003106" target="_blank" style="text-decoration: none; color: #333;">
+            A monitoring method of rail fastener reaction force based on iron pad strain
+          </a>
+        </div>
+
+        <div class="authors" style="margin-bottom: 5px; color: #444;">
+          <font style="font-size: 11pt;">
+            Peigang Li, 
+            <b>Mingyu Wang*</b>, 
+            Tianyu Yu, Ning Feng, Caihao Lan, Kang Yang, Shanshan Li, Hongzhi Zhang
+          </font>
+        </div>
+
+        <div class="publish" style="margin-bottom: 8px; color: #555; font-style: italic;">
+          <a href="https://www.sciencedirect.com/journal/construction-and-building-materials" target="_blank" style="color: #0066cc; font-weight: bold; text-decoration: none;">
+            Construction and Building Materials
+          </a>, 
+          Vol. 411, Article 134xxx, 
+          <span class="place">2024</span>
+        </div>
+
+        <div class="metrics" style="margin-bottom: 8px;">
+          <span style="background-color: #e7f6df; color: #2e7d32; padding: 2px 6px; border-radius: 4px; font-size: 12px; font-weight: bold; margin-right: 5px; border: 1px solid #c8e6c9;">
+            JCR Q1
+          </span>
+          <span style="background-color: #e3f2fd; color: #1565c0; padding: 2px 6px; border-radius: 4px; font-size: 12px; font-weight: bold; margin-right: 5px; border: 1px solid #bbdefb;">
+            CAS Top
+          </span>
+          <span style="background-color: #fff3e0; color: #ef6c00; padding: 2px 6px; border-radius: 4px; font-size: 12px; font-weight: bold; border: 1px solid #ffe0b2;">
+            IF: 7.4
+          </span>
+        </div>
+
+        <div class="tags">
+          [<a class="tag" href="https://www.sciencedirect.com/science/article/pii/S0950061824003106" target="_blank" style="color: #d9534f;">Paper</a>]
+          [<a class="tag" href="https://doi.org/10.1016/j.conbuildmat.2024.xxxxx" target="_blank" style="color: #444;">DOI</a>]
+        </div>
+
       </div>
     </div>
-
-    
 
   </div>
 </div>
