@@ -152,8 +152,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	          display: inline-flex;
 	          align-items: center;
 	          justify-content: center;
-	          width: 70px;             /* 稍微调小一点，显得精致 */
-	          height: 70px;
+	          width: 60px;             /* 稍微调小一点，显得精致 */
+	          height: 60px;
 	          border-radius: 50%;
 	          text-decoration: none;
 	          
@@ -174,7 +174,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 	        /* 4. 图标大小 */
 	        .my-social-box a.icon-btn i {
-	          font-size: 1.5rem; 
+	          font-size: 1.65rem; 
 	          line-height: 1;
 	        }
 	      </style>
