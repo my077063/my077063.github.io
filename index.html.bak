@@ -1163,14 +1163,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </div>
 
-<div id="honors" style="width: 100%; margin-top: 40px; margin-bottom: 40px; clear: both; overflow: hidden;">
+<div id="honors" class="timeline-brief" style="width: 100%; margin-top: 40px; margin-bottom: 40px; clear: both;">
       
       <h1 class="md-heading text-left">
         <i class="fa fa-trophy" aria-hidden="true"></i>
         Honors & Awards
       </h1>
       
-      <ul style="list-style-type: disc; padding-left: 20px; margin-top: 15px;">
+      <ul style="list-style-type: disc; padding-left: 20px; margin-top: 15px; font-size: 16px; line-height: 1.6;">
         
         <li style="margin-bottom: 12px;">
           <b>SEU Innovation Capability Enhancement Plan for Doctoral Students</b>
