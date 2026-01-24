@@ -1271,7 +1271,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }
 </style>
 
-<div id="service" class="timeline-brief" style="width: 100%; margin-top: 40px; margin-bottom: 40px; clear: both;">
+<div class="wrapper">
+  <div id="service" class="timeline-brief" style="width: 100%; margin-top: 40px; margin-bottom: 40px; clear: both;">
       
       <h1 class="md-heading text-left">
         <i class="fa fa-users" aria-hidden="true"></i>
@@ -1280,25 +1281,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       
       <div style="display: flex; justify-content: space-between; flex-wrap: wrap; margin-top: 20px;">
         
-        <div style="width: 48%; min-width: 300px;">
-          <h3 style="font-size: 18px; font-weight: bold; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; margin-bottom: 15px;">
+        <div style="width: 48%; min-width: 300px; margin-bottom: 20px;">
+          <h3 style="font-size: 18px; font-weight: bold; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; margin-bottom: 15px; color: #333;">
             <i class="fa fa-id-card-o" aria-hidden="true" style="margin-right: 8px; color: #555;"></i>Professional Memberships
           </h3>
           <ul style="list-style-type: disc; padding-left: 20px; font-size: 16px; line-height: 1.8; color: #444;">
             
-            <li>
+            <li style="margin-bottom: 5px;">
               <b>Student Member</b>, American Society of Civil Engineers (ASCE)
             </li>
             
-            <li>
+            <li style="margin-bottom: 5px;">
               <b>Member</b>, American Concrete Institute (ACI)
             </li>
 
-            <li>
+            <li style="margin-bottom: 5px;">
               <b>Member</b>, China Civil Engineering Society (CCES)
             </li>
 
-            <li>
+            <li style="margin-bottom: 5px;">
               <b>Student Member</b>, The Chinese Optical Society (COS)
             </li>
 
@@ -1306,21 +1307,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
 
         <div style="width: 48%; min-width: 300px;">
-          <h3 style="font-size: 18px; font-weight: bold; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; margin-bottom: 15px;">
+          <h3 style="font-size: 18px; font-weight: bold; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; margin-bottom: 15px; color: #333;">
             <i class="fa fa-pencil-square-o" aria-hidden="true" style="margin-right: 8px; color: #555;"></i>Journal Reviewer
           </h3>
           <ul style="list-style-type: circle; padding-left: 20px; font-size: 16px; line-height: 1.8; color: #444;">
             
-            <li>Reviewer for <b>Construction and Building Materials</b></li>
-            <li>Reviewer for <b>Engineering Failure Analysis</b></li>
-            <li>Reviewer for <b>Measurement</b></li>
-            <li>Reviewer for <b>Sustainable Energy Technologies and Assessments</b></li>
+            <li style="margin-bottom: 5px;">Reviewer for <b>Construction and Building Materials</b></li>
+            <li style="margin-bottom: 5px;">Reviewer for <b>Engineering Failure Analysis</b></li>
+            <li style="margin-bottom: 5px;">Reviewer for <b>Measurement</b></li>
+            <li style="margin-bottom: 5px;">Reviewer for <b>Sustainable Energy Technologies and Assessments</b></li>
             
           </ul>
         </div>
 
       </div>
     </div>
+  </div>
+</div>
 
 
 
