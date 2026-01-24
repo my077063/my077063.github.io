@@ -133,22 +133,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 	</div>
         <style>
-          /* 1. 默认状态：强制背景白，强制图标黑 */
-          .icon-button.douyin {
+          /* 1. 默认状态 (没指上去)：白底、黑边、黑图标 */
+          a.douyin-force {
             background-color: #ffffff !important; 
+            border: 1px solid #333333 !important; /* 加个黑边框，不然白底上看不见按钮 */
             color: #000000 !important;
-            border: 1px solid #eee; /* 加个浅边框，防止白底上完全看不见按钮轮廓 */
           }
-          
-          /* 2. 鼠标悬停状态：强制背景黑，强制图标白 */
-          .icon-button.douyin:hover {
-            background-color: #000000 !important;
-            color: #ffffff !important;
+          /* 强制 SVG 变成黑色 */
+          a.douyin-force svg path {
+            fill: #000000 !important; 
           }
 
-          /* 3. 确保 SVG 颜色跟随字体颜色 */
-          .icon-button.douyin svg {
-            fill: currentColor !important;
+          /* 2. 悬停状态 (指上去)：黑底、白图标 */
+          a.douyin-force:hover {
+            background-color: #000000 !important;
+            border-color: #000000 !important;
+            color: #ffffff !important;
+          }
+          /* 强制 SVG 变成白色 */
+          a.douyin-force:hover svg path {
+            fill: #ffffff !important;
           }
         </style>
 
@@ -164,7 +168,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <span></span>
           </a>
 
-          <a href="https://www.douyin.com/user/MS4wLjABAAAAWT0EEgepjPRq6Iz6xavShWKRQB7PJE5-vLUuqGQUTL8?from_tab_name=main" target="_blank" class="icon-button douyin">
+          <a href="https://www.douyin.com/user/MS4wLjABAAAAWT0EEgepjPRq6Iz6xavShWKRQB7PJE5-vLUuqGQUTL8?from_tab_name=main" target="_blank" class="icon-button douyin-force">
             <i style="display: flex; align-items: center; justify-content: center;">
               <svg viewBox="0 0 448 512" style="width: 1em; height: 1em;" xmlns="http://www.w3.org/2000/svg">
                 <path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"/>
