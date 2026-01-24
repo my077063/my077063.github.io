@@ -382,7 +382,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           Sep, 2025 - Present
         </div>
         <div class="timeline-title">
-          Key Researcher<br>
+          Researcher<br>
           @ <a href="https://civil.seu.edu.cn/berc/" target="_blank">National Key Laboratory of Safety, Durability and Healthy Operation of Long Span Bridges</a>
         </div>
         <div class="timeline-desc">
@@ -440,7 +440,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="pub-right" style="flex-grow: 1; display: flex; flex-direction: column;">
         
         <div class="title" style="margin-bottom: 12px; line-height: 1.5; font-size: 18px; font-weight: 600;">
-          <a href="https://www.sciencedirect.com/science/article/pii/S0950061824003106" target="_blank" style="text-decoration: none; color: #333; vertical-align: middle;">
+          <a class="hover-underline" href="https://www.sciencedirect.com/science/article/pii/S0950061824003106" target="_blank" style="color: #333; vertical-align: middle;">
             A monitoring method of rail fastener reaction force based on iron pad strain
           </a>
           
@@ -460,16 +460,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
 
         <div style="margin-bottom: 8px; font-size: 14px; color: #000;">
-          <a href="https://www.sciencedirect.com/journal/construction-and-building-materials" target="_blank" style="font-weight: bold; font-style: italic; color: #000; text-decoration: none;">Construction and Building Materials</a>, 
-          
+          <a class="hover-underline" href="https://www.sciencedirect.com/journal/construction-and-building-materials" target="_blank" style="font-weight: bold; font-style: italic; color: #000;">Construction and Building Materials</a>, 
           <span style="font-weight: bold; color: #A52A2A; margin-left: 3px;">2024</span>, 
-          
           Vol. 418, Article 135169
         </div>
 
         <div style="font-size: 14px; color: #555;">
           <span style="font-weight: bold; color: #333; margin-right: 5px;">DOI:</span> 
-          <a href="https://doi.org/10.1016/j.conbuildmat.2024.135169" target="_blank" style="color: #666; text-decoration: none; font-family: Consolas, monospace;">
+          <a class="hover-underline" href="https://doi.org/10.1016/j.conbuildmat.2024.135169" target="_blank" style="color: #666; font-family: Consolas, monospace;">
             https://doi.org/10.1016/j.conbuildmat.2024.135169
           </a>
         </div>
