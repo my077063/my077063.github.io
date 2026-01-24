@@ -134,30 +134,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	</div>
         <div class="social-media">
           <a href="https://scholar.google.com/citations?user=hmu-ly4AAAAJ&hl=zh-CN" target="_blank" class="icon-button linkedin">
-          <i class="ai ai-google-scholar-square icon-linkedin"></i>
+            <i class="ai ai-google-scholar-square icon-linkedin"></i>
             <span></span>
           </a>
 
-          <a href="https://github.com/Jun-CEN" target="_blank" class="icon-button github">
+          <a href="https://github.com/my077063" target="_blank" class="icon-button github">
             <i class="fa fa-github icon-github"></i>
             <span></span>
           </a>
 
-          <a href="https://www.linkedin.com/in/jun-cen-45b995219/" target="_blank" class="icon-button linkedin">
-            <i class="fa fa-linkedin icon-linkedin"></i>
-            <span></span>
-          </a>
-         
-          <!-- <a href="work/Resume_Jun_CEN.pdf" target="_blank" class="icon-button github">
-            <i class="ai ai-cv icon-github"></i>
-            <span></span>
-          </a> -->
-          <a href="https://www.xiaohongshu.com/user/profile/616ae887000000000201f2fa" class="icon-button xiaohongshu" aria-label="小红书" target="_blank" rel="noopener noreferrer">
-            <i> <img src="https://cdn.simpleicons.org/xiaohongshu/FF2D55" alt="" width="45" height="45" style="vertical-align:middle;"> </i>
+          <a href="https://www.douyin.com/user/MS4wLjABAAAAWT0EEgepjPRq6Iz6xavShWKRQB7PJE5-vLUuqGQUTL8?from_tab_name=main" class="icon-button douyin" aria-label="抖音" target="_blank" rel="noopener noreferrer">
+            <i> <img src="https://cdn.simpleicons.org/tiktok/000000" alt="Douyin" width="45" height="45" style="vertical-align:middle;"> </i>
             <span></span>
           </a>
 
-          <a href="mailto:jcenaa@connect.ust.hk" target="_blank" class="icon-button linkedin">
+          <a href="mailto:my077063@163.com" target="_blank" class="icon-button linkedin">
             <i class="fa fa-envelope icon-linkedin"></i>
             <span></span>
           </a>
