@@ -24,49 +24,88 @@
 
   <script src="js/jquery-2.1.3.min.js"> </script>
 
-  <style>
-    /* 为所有列表项设置样式 */
-    li.indented {
-        position: relative;
-        padding-left: 90px;
-    }
+	<style>
+	    /* 2. 修改：全局字体改为更高级的 Lato */
+	    body {
+	        font-family: 'Lato', 'Helvetica Neue', Helvetica, sans-serif;
+	        padding-top: 70px; /* 防止内容被导航栏挡住 */
+	    }
 
-    li.indented::before {
-        content: attr(data-date);
-        position: absolute;
-        left: 0;
-        top: 0;
-        white-space: nowrap;
-    }
-    
-    /* --- 固定导航栏与高亮样式 --- */
-    .site-header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 9999;
-        background-color: rgba(255, 255, 255, 0.98);
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
+	    /* 3. 新增：头像阴影与悬停效果 */
+	    #profile-avatar {
+	        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* 柔和的阴影 */
+	        transition: transform 0.3s ease; /* 动画过渡 */
+	    }
+	    #profile-avatar:hover {
+	        transform: scale(1.05); /* 鼠标放上去轻微放大 */
+	    }
 
-    /* 防止内容被导航栏挡住 */
-    body {
-        padding-top: 70px;
-    }
+	    /* 下面是你原有的样式，保持不变 */
+	    li.indented {
+	        position: relative;
+	        padding-left: 90px;
+	    }
 
-    /* 平滑滚动效果 */
-    html {
-        scroll-behavior: smooth;
-    }
+	    li.indented::before {
+	        content: attr(data-date);
+	        position: absolute;
+	        left: 0;
+	        top: 0;
+	        white-space: nowrap;
+	    }
+	    
+	    .site-header {
+	        position: fixed;
+	        top: 0;
+	        left: 0;
+	        width: 100%;
+	        z-index: 9999;
+	        background-color: rgba(255, 255, 255, 0.98);
+	        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+	    }
 
-    /* 专门用于修复导航栏遮挡的偏移类 */
-    .anchor-offset {
-        padding-top: 85px; 
-        margin-top: -65px; 
-        display: block; 
-    }
-  </style>
+	    html {
+	        scroll-behavior: smooth;
+	    }
+
+	    .anchor-offset {
+	        padding-top: 85px; 
+	        margin-top: -65px; 
+	        display: block; 
+	    }
+	    
+	    /* Social Box 样式 */
+	    .my-social-box {
+	      display: flex;
+	      align-items: center;
+	      justify-content: flex-start; 
+	      gap: 12px;
+	      margin-top: 15px;
+	    }
+	    .my-social-box a.icon-btn {
+	      display: inline-flex;
+	      align-items: center;
+	      justify-content: center;
+	      width: 50px;
+	      height: 50px;
+	      border-radius: 50%;
+	      text-decoration: none;
+	      background-color: #ffffff; 
+	      color: #333333;
+	      transition: all 0.3s ease;
+	      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+	    }
+	    .my-social-box a.icon-btn:hover {
+	      background-color: #000000;
+	      color: #ffffff;
+	      border-color: #000000;
+	      transform: translateY(-2px);
+	    }
+	    .my-social-box a.icon-btn i {
+	      font-size: 1.65rem; 
+	      line-height: 1;
+	    }
+	  </style>
   
 </head>
 
@@ -470,9 +509,9 @@
       </div>
       <div class="pub-right" style="flex-grow: 1; display: flex; flex-direction: column;">
         <div class="title" style="margin-bottom: 12px; line-height: 1.5; font-size: 18px; font-weight: 600;">
-          <span class="hover-underline" style="color: #333; vertical-align: middle; cursor: default;">
+          <a class="hover-underline" href="https://kns.cnki.net/kcms2/article/abstract?v=-w8R4t09JVWGb7ErEP4KODJsesY6zCfz_qHUIgzipI_WVWAUuJWbfdPQJa7kKjPbYGQzl6Or02lMRyK3lwrW-ePvb1vqQROdCj_7wAeWgU3B0qjtuY8Fo06yOyfJt3_BL8o93A8K-u1rru-lbOON01_yb3zuYKlPk2xtjx6e0W4zyK0k4m5Fwjglyd-uXuXE&uniplatform=NZKPT&language=CHS" target="_blank" style="color: #333; vertical-align: middle;">
             Research on the Monitoring and Evaluation Method of Ballastless Track Service Condition Based on Iron Pad Dynamic Strain
-          </span>
+          </a>
           <span style="display: inline-block; vertical-align: middle; margin-left: 8px;">
             <span style="background-color: #e0f7fa; color: #006064; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #b2ebf2; margin-right: 3px;">Master's Thesis</span>
           </span>
@@ -485,8 +524,10 @@
           <span style="font-weight: bold; color: #A52A2A; margin-left: 3px;">2024</span>
         </div>
         <div style="font-size: 14px; color: #555;">
-          <span style="font-weight: bold; color: #333; margin-right: 5px;">Date:</span> 
-          <span style="font-family: Consolas, monospace; color: #666;">December 15, 2024</span>
+          <span style="font-weight: bold; color: #333; margin-right: 5px;">DOI:</span> 
+          <a class="hover-underline" href="https://kns.cnki.net/kcms2/article/abstract?v=-w8R4t09JVWGb7ErEP4KODJsesY6zCfz_qHUIgzipI_WVWAUuJWbfdPQJa7kKjPbYGQzl6Or02lMRyK3lwrW-ePvb1vqQROdCj_7wAeWgU3B0qjtuY8Fo06yOyfJt3_BL8o93A8K-u1rru-lbOON01_yb3zuYKlPk2xtjx6e0W4zyK0k4m5Fwjglyd-uXuXE&uniplatform=NZKPT&language=CHS" target="_blank" style="color: #666; font-family: Consolas, monospace;">
+            https://10.27801/d.cnki.gshyy.2024.000002
+          </a>
         </div>
       </div>
     </div>
