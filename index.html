@@ -95,10 +95,16 @@
     }
 
     /* 3. 导航栏被选中时的样式（蓝色、加粗） */
-    .site-nav .page-link.active-nav {
+    /* 核心修改：同时强制修改 b 标签的颜色，否则会被黑色覆盖 */
+    .site-nav .page-link.active-nav,
+    .site-nav .page-link.active-nav b {
         color: #4A90E2 !important; /* 强制变成蓝色 */
         font-weight: bold;
-        border-bottom: 2px solid #4A90E2;
+    }
+    
+    /* 单独给链接加下划线，不需要加给 b 标签 */
+    .site-nav .page-link.active-nav {
+         border-bottom: 2px solid #4A90E2;
     }
 
     /* 4. 平滑滚动效果 */
