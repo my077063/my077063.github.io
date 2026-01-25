@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<html>
-
-<head>
+<html id="page-top"> <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
@@ -36,7 +34,7 @@
         font-size: 16px;
         line-height: 1.6;
         color: #333;
-        padding-top: 70px;
+        padding-top: 60px; /* 稍微减小顶部留白，适配新导航条 */
     }
 
     h1, h2, h3, h4, h5, h6 {
@@ -54,7 +52,6 @@
         text-decoration: underline;
     }
 
-    /* Standard Section Heading Style */
     .md-heading {
         font-size: 26px;
         font-weight: 700;
@@ -69,7 +66,6 @@
         text-align: center;
     }
 
-    /* Sub-heading Style */
     .sub-heading {
         font-size: 18px; 
         font-weight: bold; 
@@ -84,7 +80,6 @@
         color: #555;
     }
 
-    /* Standard List Styling */
     .std-list {
         list-style-type: disc; 
         padding-left: 20px; 
@@ -96,26 +91,23 @@
         margin-bottom: 12px;
     }
     
-    /* Secondary/Meta Text */
     .text-meta {
         color: #666;
         font-size: 14px;
     }
 
-    /* Anchor Offset for Fixed Header */
     .anchor-offset {
         padding-top: 85px; 
         margin-top: -65px; 
         display: block; 
     }
 
-    /* Smooth Scroll */
     html {
         scroll-behavior: smooth;
     }
 
     /* =========================================
-       2. Header & Navigation
+       2. Header & Navigation (Desktop Default)
        ========================================= */
     .site-header {
         position: fixed;
@@ -124,10 +116,20 @@
         width: 100%;
         z-index: 9999;
         background-color: rgba(255, 255, 255, 0.98);
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        height: 70px; 
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        height: 60px; /* 稍微改矮一点，更精致 */
         display: flex;
         align-items: center;
+    }
+    
+    /* 桌面端仍然保留原来的 wrapper 布局，
+       移动端我们将彻底覆盖它 */
+    .desktop-nav {
+        display: block;
+        width: 100%;
+    }
+    .mobile-scroll-nav {
+        display: none; /* 桌面端隐藏 */
     }
 
     /* =========================================
@@ -167,7 +169,6 @@
         transform: scale(1.05);
     }
 
-    /* Social Icons */
     .my-social-box {
       display: flex;
       align-items: center;
@@ -201,7 +202,7 @@
     }
 
     /* =========================================
-       4. Publication Badges (Desktop Default)
+       4. Publication Badges
        ========================================= */
     .badge-item {
         display: inline-block;
@@ -222,7 +223,6 @@
         color: #8B0000; 
         margin-bottom: 4px;
     }
-    
     .timeline-title a {
         color: #4A90E2 !important; 
         font-weight: 700;
@@ -231,21 +231,18 @@
         color: #2a6fb8 !important;
         text-decoration: underline;
     }
-
     .timeline-date {
         font-size: 14px;
         font-weight: 600;
         color: #000000; 
         margin-bottom: 5px;
     }
-
     .timeline-desc {
         font-size: 15px;
         color: #555;
         margin-top: 5px;
         line-height: 1.6;
     }
-    
     .social-icon {
         width: auto; 
         height: 22px; 
@@ -258,7 +255,6 @@
        ========================================================================== */
     @media (max-width: 768px) {
         
-        /* 1. Global Reset */
         html, body {
             width: 100%;
             overflow-x: hidden !important;
@@ -266,21 +262,86 @@
             -webkit-text-size-adjust: 100%;
         }
 
-        /* 2. Typography */
-        p, li, span, div {
-            line-height: 1.6 !important;
+        /* ------------------------------------------------------------
+           🔴 修复2: 顶部导航栏重构 (Horizontal Scroll Nav)
+           ------------------------------------------------------------ */
+        .site-header {
+            padding: 0; /* 移除 padding，利用 flex 布局 */
+            overflow-x: auto; /* 允许横向滚动 */
+            white-space: nowrap; /* 强制不换行 */
+            -webkit-overflow-scrolling: touch; /* iOS 平滑滚动 */
+            /* 隐藏滚动条 */
+            scrollbar-width: none; /* Firefox */
+        }
+        .site-header::-webkit-scrollbar {
+            display: none; /* Chrome/Safari */
         }
 
-        /* 3. Header Adjustment */
-        .site-header {
-            padding: 0 10px;
+        /* 隐藏原来的桌面导航 wrapper */
+        .desktop-nav {
+            display: none !important;
         }
+
+        /* 显示移动端滚动导航 */
+        .mobile-scroll-nav {
+            display: flex !important;
+            align-items: center;
+            height: 100%;
+            padding: 0 10px; /* 左右稍微留白 */
+            box-sizing: border-box;
+        }
+
+        .mobile-scroll-nav a {
+            display: inline-block;
+            padding: 0 14px; /* 按钮之间的间距 */
+            font-size: 15px;
+            font-weight: 700;
+            color: #555;
+            text-decoration: none;
+            flex-shrink: 0; /* 防止文字被压缩 */
+            height: 60px;
+            line-height: 60px; /* 垂直居中 */
+            position: relative;
+        }
+
+        /* "Top" 按钮特殊样式（可选：加粗或换个颜色） */
+        .mobile-scroll-nav a.nav-top {
+            color: #4A90E2; 
+            margin-right: 5px;
+            border-bottom: 2px solid transparent;
+        }
+
+        /* 激活/点击态简单反馈 */
+        .mobile-scroll-nav a:active {
+            color: #000;
+            background-color: rgba(0,0,0,0.03);
+        }
+
+
+        /* ------------------------------------------------------------
+           🔴 修复1: 时间轴间距微调 (Timeline Spacing)
+           ------------------------------------------------------------ */
+        .timeline-item {
+            margin-bottom: 35px !important; 
+            padding-bottom: 5px;
+            border-bottom: 1px dashed #f5f5f5;
+            
+            /* 关键修改：增加左内边距，让内容离左边的黑色轴线/图标远一点 */
+            /* 假设原代码中时间轴线是由父级或其他元素控制的，
+               这里增加 padding-left 会直接把文字往右推 */
+            padding-left: 10px !important; 
+            
+            /* 如果觉得还不够，可以加一点 margin-left */
+            margin-left: 4px !important;
+        }
+        
+        /* ------------------------------------------------------------
+           其他原有适配保持不变
+           ------------------------------------------------------------ */
         .wrapper {
             width: 92% !important; 
             margin: 0 auto;
         }
-
-        /* 4. Profile Cover - 修复2: 确保学校/学院信息显示 */
         #profile-cover {
             height: auto !important;
             padding: 60px 0 40px 0;
@@ -292,160 +353,34 @@
             text-align: center !important;
             width: 90% !important;
         }
-        
-        .profile-col-1 {
-            margin-bottom: 20px !important;
-            width: auto !important;
-            float: none !important;
-        }
-        .profile-col-2 {
+        .profile-col-1, .profile-col-2 {
             width: 100% !important;
-            padding-left: 0 !important;
             float: none !important;
             text-align: center !important;
-        }
-        
-        #profile-avatar {
-            width: 140px !important;
-            height: 140px !important;
-        }
-
-        /* 强制显示学校和头衔，颜色加深 */
-        #my-title {
-            display: block !important;
-            color: #555 !important;
-            margin-top: 5px;
-            font-size: 14px;
-            line-height: 1.6;
-        }
-        
-        .my-social-box {
-            justify-content: center !important;
-            flex-wrap: wrap;
-        }
-
-        /* 5. Publications: 修复1 - 标签流式跟随 */
-        .pub {
-            flex-direction: column !important;
-            align-items: center !important;
-            gap: 15px !important;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 25px;
-        }
-        .pub-left {
-            width: 100% !important;
-            margin-bottom: 10px;
-        }
-        .pub-right {
-            width: 100% !important;
             padding-left: 0 !important;
         }
-
-        /* 🚨 核心逻辑：移除 Flex，强制行内流式布局 */
-        .pub-right .title {
-            display: block !important; /* 容器为块级 */
-            line-height: 1.8 !important; /* 增加行高防止标签重叠 */
-        }
+        .profile-col-1 { margin-bottom: 20px !important; }
         
-        .pub-right .title a {
-            display: inline !important; /* 标题文字行内显示 */
-            margin-right: 6px; /* 标题和第一个标签的间距 */
-            vertical-align: baseline;
-        }
+        #profile-avatar { width: 140px !important; height: 140px !important; }
+        #my-title { display: block !important; color: #555 !important; margin-top: 5px; font-size: 14px; line-height: 1.6; }
+        .my-social-box { justify-content: center !important; flex-wrap: wrap; }
 
-        /* 标签容器行内显示 */
-        .pub-right .title > span {
-            display: inline !important; 
-        }
-
-        /* 单个标签保持不换行，但整体跟随文字流动 */
-        .badge-item {
-            display: inline-block !important;
-            margin: 2px 2px !important; /* 标签之间的微小间距 */
-            vertical-align: middle;
-            transform: translateY(-1px); /* 微调垂直对齐 */
-        }
+        .pub { flex-direction: column !important; align-items: center !important; gap: 15px !important; border-bottom: 1px solid #eee; padding-bottom: 25px; }
+        .pub-left, .pub-right { width: 100% !important; padding-left: 0 !important; }
+        .pub-right .title { display: block !important; line-height: 1.8 !important; }
+        .pub-right .title a { display: inline !important; margin-right: 6px; vertical-align: baseline; }
+        .pub-right .title > span { display: inline !important; }
+        .badge-item { display: inline-block !important; margin: 2px 2px !important; vertical-align: middle; transform: translateY(-1px); }
+        .intro-img { width: 95% !important; max-width: 95% !important; margin: 0 auto !important; display: block; height: auto; }
         
-        /* 图片缩放 */
-        .intro-img {
-            width: 95% !important; 
-            max-width: 95% !important;
-            margin: 0 auto !important; 
-            display: block;
-            height: auto;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.15); 
-        }
+        .std-list { padding-left: 12px !important; }
+        .card-container, .github-card { width: 100% !important; box-sizing: border-box; }
+        .github-card { zoom: 0.85; transform-origin: center top; }
+        #visitor-map > div > div { transform: scale(0.9); transform-origin: center center; max-width: 100vw; overflow: hidden; }
 
-        /* 6. Timeline Spacing */
-        .timeline-item {
-            margin-bottom: 35px !important; 
-            padding-bottom: 5px;
-            border-bottom: 1px dashed #f5f5f5; 
-        }
-        .timeline-item:last-child {
-            margin-bottom: 0 !important;
-            border-bottom: none;
-        }
-
-        /* 7. List Fix */
-        .std-list {
-            padding-left: 12px !important; 
-        }
-        .std-list li {
-            padding-left: 2px;
-        }
-        .std-list li b {
-            font-size: 15px; 
-            letter-spacing: -0.3px; 
-        }
-
-        /* 8. Intelligent Scaling */
-        .card-container, .github-card {
-             width: 100% !important;
-             box-sizing: border-box;
-        }
-        .github-card {
-            zoom: 0.85; 
-            transform-origin: center top;
-        }
-        #visitor-map > div > div {
-            transform: scale(0.9);
-            transform-origin: center center;
-            max-width: 100vw;
-            overflow: hidden;
-        }
-
-        /* 9. Footer Alignment Fix - 修复3: 强制居中对齐 */
-        .footer-col-wrapper {
-            display: flex !important;
-            flex-direction: column !important;
-            align-items: center !important; /* 垂直轴居中 */
-            justify-content: center !important;
-            text-align: center !important;
-        }
-        
-        .footer-col {
-            width: 100% !important;
-            text-align: center !important;
-            margin-bottom: 20px !important;
-            padding: 0 !important;
-        }
-        
-        /* 专门针对 Email 列表居中 */
-        .contact-list {
-            padding: 0 !important;
-            margin: 0 auto !important;
-            list-style: none !important;
-            text-align: center !important;
-        }
-        .contact-list li {
-            text-align: center !important;
-        }
-
-        /* 修正 Last Updated 的对齐 */
-        .footer-col-3 {
-            text-align: center !important;
-        }
+        .footer-col-wrapper { display: flex !important; flex-direction: column !important; align-items: center !important; text-align: center !important; }
+        .footer-col, .contact-list, .footer-col-3 { width: 100% !important; text-align: center !important; padding: 0 !important; margin: 0 auto !important; }
+        .footer-col { margin-bottom: 20px !important; }
     }
   </style>
   
@@ -455,29 +390,39 @@
 <body>
 
 <header class="site-header">
-  <div class="wrapper">
+  
+  <div class="wrapper desktop-nav">
     <nav class="site-nav">
       <a href="#" class="menu-icon">
-        <svg viewBox="0 0 18 15">
-          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
-          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
-          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
-        </svg>
+        <svg viewBox="0 0 18 15"><path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/><path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/><path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/></svg>
       </a>
-
       <div class="trigger">
-        <a class="page-link" href="#about"><b>About</b></a>
-        <a class="page-link" href="#research"><b>Research</b></a>
-        <a class="page-link" href="#education"><b>Education</b></a>
-        <a class="page-link" href="#timeline"><b>Experiences</b></a>
-        <a class="page-link" href="#publications"><b>Publications</b></a>
-        <a class="page-link" href="#codebase"><b>GitHub</b></a>
-        <a class="page-link" href="#honors"><b>Honors</b></a>
-        <a class="page-link" href="#service"><b>Services</b></a>
-        <a class="page-link" href="#visitor-map"><b>Visitors</b></a>
+        <a class="page-link" href="#about">About</a>
+        <a class="page-link" href="#research">Research</a>
+        <a class="page-link" href="#education">Education</a>
+        <a class="page-link" href="#timeline">Experiences</a>
+        <a class="page-link" href="#publications">Publications</a>
+        <a class="page-link" href="#codebase">GitHub</a>
+        <a class="page-link" href="#honors">Honors</a>
+        <a class="page-link" href="#service">Services</a>
+        <a class="page-link" href="#visitor-map">Visitors</a>
       </div>
     </nav>
   </div>
+
+  <div class="mobile-scroll-nav">
+    <a href="#page-top" class="nav-top">Top</a>
+    <a href="#about">About</a>
+    <a href="#research">Research</a>
+    <a href="#education">Education</a>
+    <a href="#timeline">Experiences</a>
+    <a href="#publications">Publications</a>
+    <a href="#codebase">GitHub</a>
+    <a href="#honors">Honors</a>
+    <a href="#service">Services</a>
+    <a href="#visitor-map">Visitors</a>
+  </div>
+
 </header>
 
 <div id="profile-cover" class="cover shallow-bg img-responsive">
@@ -1244,14 +1189,16 @@ jQuery(document).ready(function() {
     });
     
     // Smooth scroll for nav links & fix offset
-    $('.site-nav .page-link').on('click', function(e) {
+    // 适配新的移动端导航
+    $('.site-nav .page-link, .mobile-scroll-nav a').on('click', function(e) {
         if (this.hash !== "") {
             e.preventDefault();
             var hash = this.hash;
             var $target = $(hash);
             if($target.length){
                 $('html, body').animate({
-                    scrollTop: $target.offset().top - 75 /* Offset for fixed header */
+                    // 60 is the header height
+                    scrollTop: $target.offset().top - 60 
                 }, 500);
             }
         }
