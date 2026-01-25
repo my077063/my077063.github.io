@@ -104,8 +104,9 @@
         display: block; 
     }
 
+    /* 禁用 CSS 滚动平滑，防止与 jQuery 动画冲突 */
     html {
-        /* scroll-behavior: smooth; */ /* 禁用 CSS 滚动，防止与 JS 冲突 */
+        scroll-behavior: auto !important;
     }
 
     /* =========================================
@@ -293,13 +294,19 @@
             padding: 0 14px; 
             font-size: 15px;
             font-weight: 700;
-            /* 🔴 颜色修复: 强制覆盖所有颜色，不给蓝色机会 */
+            /* 🔴 强制统一颜色为深灰 */
             color: #555 !important; 
             text-decoration: none;
             flex-shrink: 0; 
             height: 60px;
             line-height: 60px; 
             position: relative;
+        }
+
+        /* 🔴 Top 按钮样式：颜色强制改为深灰，去除之前的蓝色设置 */
+        #mobile-top-btn {
+            color: #555 !important; 
+            margin-right: 5px;
         }
 
         .mobile-scroll-nav a:active {
@@ -394,7 +401,7 @@
   </div>
 
   <div class="mobile-scroll-nav">
-    <a href="#page-top" class="nav-top">Top</a>
+    <a href="javascript:void(0);" id="mobile-top-btn">Top</a>
     <a href="#about">About</a>
     <a href="#research">Research</a>
     <a href="#education">Education</a>
@@ -932,47 +939,6 @@
             </span>
           </div>
         </div>
-        
-        <div class="github-card">
-          <div>
-            <a class="repo-link" href="javascript:void(0);" style="cursor: default; text-decoration: none;">
-              Mingyu Wang/<strong>Research-Works</strong>
-            </a>
-            <span class="label" style="background-color: #eee; color: #555;">Preparing</span>
-          </div>
-          <div class="description">
-            Future repository for Structural Health Monitoring (SHM) research and datasets.
-          </div>
-          <div class="meta">
-            <div class="dot"></div>
-            <div>Python</div>
-            <span style="display: flex; align-items: center; margin-left: 10px; color: #555;">
-              <svg fill="currentColor" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" style="width: 14px; height: 14px; margin-right: 3px;">
-                <path d="M908.1 353.1l-253.9-36.9L540.7 86.1c-3.1-6.3-8.2-11.4-14.5-14.5-15.8-7.8-35-1.3-42.9 
-                14.5L369.8 316.2 115.9 353.1c-7 1-13.4 4.3-18.3 9.3a32.05 32.05 0 0 0 .6 45.3l183.7 
-                179.1-43.4 252.9a31.95 31.95 0 0 0 46.4 33.7L512 754l227.1 
-                119.4c6.2 3.3 13.4 4.4 20.3 3.2 17.4-3 29.1-19.5 
-                26.1-36.9l-43.4-252.9 183.7-179.1c5-4.9 
-                8.3-11.3 9.3-18.3 2.7-17.5-9.5-33.7-27-36.3z"></path>
-              </svg>
-              Star &nbsp; -
-            </span>
-            <span style="display: flex; align-items: center; margin-left: 10px; color: #555;">
-              <svg fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" style="width: 14px; height: 14px; margin-right: 3px;">
-                <path d="M14 4a2 2 0 1 0-2.47 1.94V7a.48.48 0 0 1-.27.44L8.49 
-                8.88l-2.76-1.4A.49.49 0 0 1 5.46 7V5.94a2 2 0 1 0-1 
-                0V7a1.51 1.51 0 0 0 .82 1.34L8 
-                9.74v1.32a2 2 0 1 0 1 0V9.74l2.7-1.36A1.49 
-                1.49 0 0 0 12.52 7V5.92A2 2 0 0 0 14 
-                4zM4 4a1 1 0 1 1 2 0 1 1 0 0 1-2 
-                0zm5.47 9a1 1 0 1 1-2 0 1 1 0 0 
-                1 2 0zM12 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
-                </path>
-              </svg>
-              Fork &nbsp; -
-            </span>
-          </div>
-        </div>
 
       </div>
     </div>
@@ -1171,25 +1137,40 @@ jQuery(document).ready(function() {
         return false;
     });
     
-    // 🔴 修复2: 统一所有导航按钮逻辑，并处理 Top 按钮的负值问题
-    $('.site-nav .page-link, .mobile-scroll-nav a').on('click', function(e) {
+    // ------------------------------------------------------------
+    // 🚨 核心逻辑修复区 (Fix Logic)
+    // ------------------------------------------------------------
+
+    // 1. 专门处理 Top 按钮点击事件 (隔离处理，强制归零)
+    $('#mobile-top-btn').on('click', function(e) {
+        e.preventDefault(); // 阻止默认锚点跳转
+        e.stopPropagation(); // 阻止事件冒泡
+        
+        // 使用 jQuery 动画强制滚动到 0
+        $('html, body').stop().animate({scrollTop: 0}, 500);
+        
+        // 双重保险：如果动画不触发，直接通过 DOM 归零（兼容性兜底）
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+        
+        return false;
+    });
+
+    // 2. 处理其他普通导航链接的跳转 (不包含 Top 按钮)
+    // 选择器：只选 .site-nav 的链接 和 移动端非 Top 的链接
+    $('.site-nav .page-link, .mobile-scroll-nav a:not(#mobile-top-btn)').on('click', function(e) {
         if (this.hash !== "") {
             e.preventDefault();
             var hash = this.hash;
             var $target = $(hash);
             
             if($target.length){
-                // 计算目标位置
-                var targetTop = $target.offset().top - 60;
+                // 计算目标偏移量
+                var targetOffset = $target.offset().top - 60;
                 
-                // 🔴 核心修复: 如果计算结果小于0 (比如 Top 按钮)，强制归零
-                // 这解决了浏览器忽略负值滚动导致 "没反应" 的问题
-                if (targetTop < 0) {
-                    targetTop = 0;
-                }
-
+                // 执行平滑滚动动画
                 $('html, body').animate({
-                    scrollTop: targetTop
+                    scrollTop: targetOffset
                 }, 500);
             }
         }
