@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html id="page-top"> <head>
+<html id="page-top">
+
+<head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
@@ -34,7 +36,7 @@
         font-size: 16px;
         line-height: 1.6;
         color: #333;
-        padding-top: 60px; /* 稍微减小顶部留白，适配新导航条 */
+        padding-top: 60px;
     }
 
     h1, h2, h3, h4, h5, h6 {
@@ -117,19 +119,17 @@
         z-index: 9999;
         background-color: rgba(255, 255, 255, 0.98);
         box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        height: 60px; /* 稍微改矮一点，更精致 */
+        height: 60px;
         display: flex;
         align-items: center;
     }
     
-    /* 桌面端仍然保留原来的 wrapper 布局，
-       移动端我们将彻底覆盖它 */
     .desktop-nav {
         display: block;
         width: 100%;
     }
     .mobile-scroll-nav {
-        display: none; /* 桌面端隐藏 */
+        display: none; 
     }
 
     /* =========================================
@@ -263,80 +263,69 @@
         }
 
         /* ------------------------------------------------------------
-           🔴 修复2: 顶部导航栏重构 (Horizontal Scroll Nav)
+           Top Navigation Bar
            ------------------------------------------------------------ */
         .site-header {
-            padding: 0; /* 移除 padding，利用 flex 布局 */
-            overflow-x: auto; /* 允许横向滚动 */
-            white-space: nowrap; /* 强制不换行 */
-            -webkit-overflow-scrolling: touch; /* iOS 平滑滚动 */
-            /* 隐藏滚动条 */
-            scrollbar-width: none; /* Firefox */
+            padding: 0;
+            overflow-x: auto; 
+            white-space: nowrap; 
+            -webkit-overflow-scrolling: touch; 
+            scrollbar-width: none; 
         }
         .site-header::-webkit-scrollbar {
-            display: none; /* Chrome/Safari */
+            display: none; 
         }
 
-        /* 隐藏原来的桌面导航 wrapper */
         .desktop-nav {
             display: none !important;
         }
 
-        /* 显示移动端滚动导航 */
         .mobile-scroll-nav {
             display: flex !important;
             align-items: center;
             height: 100%;
-            padding: 0 10px; /* 左右稍微留白 */
+            padding: 0 10px; 
             box-sizing: border-box;
         }
 
         .mobile-scroll-nav a {
             display: inline-block;
-            padding: 0 14px; /* 按钮之间的间距 */
+            padding: 0 14px; 
             font-size: 15px;
             font-weight: 700;
-            color: #555;
+            color: #555; /* 统一颜色，之前 Top 是蓝色，现在统一为深灰 */
             text-decoration: none;
-            flex-shrink: 0; /* 防止文字被压缩 */
+            flex-shrink: 0; 
             height: 60px;
-            line-height: 60px; /* 垂直居中 */
+            line-height: 60px; 
             position: relative;
         }
 
-        /* "Top" 按钮特殊样式（可选：加粗或换个颜色） */
+        /* 修复1: 统一颜色，移除原来的蓝色定义，仅保留加粗 */
         .mobile-scroll-nav a.nav-top {
-            color: #4A90E2; 
+            color: #555;  /* 与其他按钮一致 */
             margin-right: 5px;
-            border-bottom: 2px solid transparent;
+            /* border-bottom: 2px solid transparent; */
         }
 
-        /* 激活/点击态简单反馈 */
         .mobile-scroll-nav a:active {
             color: #000;
             background-color: rgba(0,0,0,0.03);
         }
 
-
         /* ------------------------------------------------------------
-           🔴 修复1: 时间轴间距微调 (Timeline Spacing)
+           Timeline Spacing
            ------------------------------------------------------------ */
         .timeline-item {
             margin-bottom: 35px !important; 
             padding-bottom: 5px;
             border-bottom: 1px dashed #f5f5f5;
-            
-            /* 关键修改：增加左内边距，让内容离左边的黑色轴线/图标远一点 */
-            /* 假设原代码中时间轴线是由父级或其他元素控制的，
-               这里增加 padding-left 会直接把文字往右推 */
             padding-left: 10px !important; 
-            
-            /* 如果觉得还不够，可以加一点 margin-left */
             margin-left: 4px !important;
         }
         
         /* ------------------------------------------------------------
-           其他原有适配保持不变
+           Other Adapts
            ------------------------------------------------------------ */
         .wrapper {
             width: 92% !important; 
@@ -1188,13 +1177,22 @@ jQuery(document).ready(function() {
         return false;
     });
     
-    // Smooth scroll for nav links & fix offset
-    // 适配新的移动端导航
+    // 🔴 修复2: 增加针对 #page-top 的特判逻辑，确保强制滚动到 0
     $('.site-nav .page-link, .mobile-scroll-nav a').on('click', function(e) {
-        if (this.hash !== "") {
-            e.preventDefault();
-            var hash = this.hash;
-            var $target = $(hash);
+        e.preventDefault();
+        
+        var target = this.hash;
+        
+        // 如果是点击 Top 按钮，强制去顶部 (0)
+        if (target === "#page-top" || $(this).hasClass('nav-top')) {
+            $('html, body').animate({
+                scrollTop: 0
+            }, 500);
+            return;
+        }
+
+        if (target !== "") {
+            var $target = $(target);
             if($target.length){
                 $('html, body').animate({
                     // 60 is the header height

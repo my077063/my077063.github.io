@@ -263,7 +263,7 @@
         }
 
         /* ------------------------------------------------------------
-           Top Navigation Bar
+           Top Navigation Bar (Scrollable)
            ------------------------------------------------------------ */
         .site-header {
             padding: 0;
@@ -293,7 +293,7 @@
             padding: 0 14px; 
             font-size: 15px;
             font-weight: 700;
-            color: #555; /* 统一颜色，之前 Top 是蓝色，现在统一为深灰 */
+            color: #555; /* 统一所有链接为深灰色 */
             text-decoration: none;
             flex-shrink: 0; 
             height: 60px;
@@ -301,11 +301,10 @@
             position: relative;
         }
 
-        /* 修复1: 统一颜色，移除原来的蓝色定义，仅保留加粗 */
+        /* 🔴 修复1: 强制 Top 按钮颜色统一，不使用蓝色 */
         .mobile-scroll-nav a.nav-top {
-            color: #555;  /* 与其他按钮一致 */
+            color: #555 !important;  
             margin-right: 5px;
-            /* border-bottom: 2px solid transparent; */
         }
 
         .mobile-scroll-nav a:active {
@@ -1177,25 +1176,22 @@ jQuery(document).ready(function() {
         return false;
     });
     
-    // 🔴 修复2: 增加针对 #page-top 的特判逻辑，确保强制滚动到 0
-    $('.site-nav .page-link, .mobile-scroll-nav a').on('click', function(e) {
+    // 🔴 修复2: 独立 Top 按钮逻辑，确保点击必回顶部
+    $('.mobile-scroll-nav a.nav-top').on('click', function(e) {
         e.preventDefault();
-        
-        var target = this.hash;
-        
-        // 如果是点击 Top 按钮，强制去顶部 (0)
-        if (target === "#page-top" || $(this).hasClass('nav-top')) {
-            $('html, body').animate({
-                scrollTop: 0
-            }, 500);
-            return;
-        }
+        // 强制滚动到 0
+        $('html, body').animate({scrollTop: 0}, 500);
+        return false;
+    });
 
-        if (target !== "") {
-            var $target = $(target);
+    // 其他导航链接逻辑
+    $('.site-nav .page-link, .mobile-scroll-nav a:not(.nav-top)').on('click', function(e) {
+        if (this.hash !== "") {
+            e.preventDefault();
+            var hash = this.hash;
+            var $target = $(hash);
             if($target.length){
                 $('html, body').animate({
-                    // 60 is the header height
                     scrollTop: $target.offset().top - 60 
                 }, 500);
             }
