@@ -881,9 +881,9 @@
           </div>
       </div>
       
-      <div class="footer-col footer-col-3">
-		    <p class="text">Last updated: Jan, 2026.</p>
-	    </div>
+      <div class="footer-col footer-col-3" style="text-align: right;">
+         <p class="text">Last updated by Mingyu Wang: Jan, 2026.</p>
+      </div>
     </div>
   </div>
 </footer>
