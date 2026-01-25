@@ -11,101 +11,257 @@
   <meta name="keywords" lang="en" content="Mingyu WANG, Civil Engineering, AI, Southeast University" />
 
   <link rel="shortcut icon" href="images/J.jpeg">
+
   <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="css/custom.css">
+  
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/academicons.css"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
   <script src="js/jquery-2.1.3.min.js"> </script>
 
-	<style>
-	    /* 2. 修改：全局字体改为更高级的 Lato */
-	    body {
-	        font-family: 'Lato', 'Helvetica Neue', Helvetica, sans-serif;
-	        padding-top: 70px; /* 防止内容被导航栏挡住 */
-	    }
+  <style>
+    /* =========================================
+       1. Global Typography & Structure
+       ========================================= */
+    body {
+        font-family: 'Lato', 'Helvetica Neue', Helvetica, sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        color: #333;
+        padding-top: 70px; /* Offset for fixed header */
+    }
 
-	    /* 3. 新增：头像阴影与悬停效果 */
-	    #profile-avatar {
-	        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* 柔和的阴影 */
-	        transition: transform 0.3s ease; /* 动画过渡 */
-	    }
-	    #profile-avatar:hover {
-	        transform: scale(1.05); /* 鼠标放上去轻微放大 */
-	    }
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Lato', sans-serif;
+        color: #333;
+    }
 
-	    /* 下面是你原有的样式，保持不变 */
-	    li.indented {
-	        position: relative;
-	        padding-left: 90px;
-	    }
+    /* 全局链接样式 */
+    a {
+        color: #4A90E2;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    a:hover {
+        color: #2a6fb8;
+        text-decoration: underline;
+    }
 
-	    li.indented::before {
-	        content: attr(data-date);
-	        position: absolute;
-	        left: 0;
-	        top: 0;
-	        white-space: nowrap;
-	    }
-	    
-	    .site-header {
-	        position: fixed;
-	        top: 0;
-	        left: 0;
-	        width: 100%;
-	        z-index: 9999;
-	        background-color: rgba(255, 255, 255, 0.98);
-	        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-	    }
+    /* Standard Section Heading Style */
+    .md-heading {
+        font-size: 26px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: #222;
+        border-bottom: none; 
+    }
+    .md-heading i {
+        margin-right: 10px;
+        color: #444;
+        width: 30px; 
+        text-align: center;
+    }
 
-	    html {
-	        scroll-behavior: smooth;
-	    }
+    /* Sub-heading Style */
+    .sub-heading {
+        font-size: 18px; 
+        font-weight: bold; 
+        border-bottom: 2px solid #f0f0f0; 
+        padding-bottom: 10px; 
+        margin-bottom: 15px; 
+        margin-top: 30px;
+        color: #333;
+    }
+    .sub-heading i {
+        margin-right: 8px; 
+        color: #555;
+    }
 
-	    .anchor-offset {
-	        padding-top: 85px; 
-	        margin-top: -65px; 
-	        display: block; 
-	    }
-	    
-	    /* Social Box 样式 */
-	    .my-social-box {
-	      display: flex;
-	      align-items: center;
-	      justify-content: flex-start; 
-	      gap: 12px;
-	      margin-top: 15px;
-	    }
-	    .my-social-box a.icon-btn {
-	      display: inline-flex;
-	      align-items: center;
-	      justify-content: center;
-	      width: 50px;
-	      height: 50px;
-	      border-radius: 50%;
-	      text-decoration: none;
-	      background-color: #ffffff; 
-	      color: #333333;
-	      transition: all 0.3s ease;
-	      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-	    }
-	    .my-social-box a.icon-btn:hover {
-	      background-color: #000000;
-	      color: #ffffff;
-	      border-color: #000000;
-	      transform: translateY(-2px);
-	    }
-	    .my-social-box a.icon-btn i {
-	      font-size: 1.65rem; 
-	      line-height: 1;
-	    }
-	  </style>
+    /* Standard List Styling */
+    .std-list {
+        list-style-type: disc; 
+        padding-left: 20px; 
+        margin-top: 15px; 
+        font-size: 16px; 
+        line-height: 1.8;
+    }
+    .std-list li {
+        margin-bottom: 12px;
+    }
+    
+    /* Secondary/Meta Text */
+    .text-meta {
+        color: #666;
+        font-size: 14px;
+    }
+
+    /* Anchor Offset for Fixed Header */
+    .anchor-offset {
+        padding-top: 85px; 
+        margin-top: -65px; 
+        display: block; 
+    }
+
+    /* Smooth Scroll */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* =========================================
+       2. Header & Navigation
+       ========================================= */
+    .site-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9999;
+        background-color: rgba(255, 255, 255, 0.98);
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        height: 70px; 
+        display: flex;
+        align-items: center;
+    }
+
+    /* =========================================
+       3. Profile & Avatar (修改版：背景透明度分离)
+       ========================================= */
+    
+    /* 1. 父容器：负责布局，不再直接挂背景图 */
+    #profile-cover {
+        height: 520px; 
+        position: relative; /* 关键：给伪元素做定位参考 */
+        z-index: 0;        /* 建立层级基准 */
+        
+        /* 弹性布局让名片居中 */
+        display: flex; 
+        align-items: center; 
+        justify-content: center;
+        margin-bottom: 40px;
+        
+        /* 建议：给一个白色底色。当背景图变透明时，会透出这个白色，看起来就是变淡了 */
+        background-color: #ffffff;
+        overflow: hidden; /* 防止背景图溢出 */
+    }
+
+    /* 2. 伪元素：专门负责放背景图，并设置透明度 */
+    #profile-cover::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        
+        /* 这里放背景图 */
+        background-image: url('images/background.jpg');
+        background-size: cover;
+        background-position: center;
+        
+        /* 🔴 核心修改：透明度控制 */
+        /* 0.35 表示保留 35% 的不透明度（即比较淡，适合做背景） */
+        /* 如果觉得太淡，可以改成 0.5 (50%) 或 0.65 (65%) */
+        opacity: 0.7; 
+        
+        z-index: -1; /* 关键：把它放在白色名片卡片的后面 */
+    }
+
+    #profile-avatar {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s ease;
+    }
+    #profile-avatar:hover {
+        transform: scale(1.05);
+    }
+
+    /* =========================================
+       4. Social Icons (Unified)
+       ========================================= */
+    .my-social-box {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start; 
+      gap: 12px;
+      margin-top: 15px;
+    }
+    .my-social-box a.icon-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px; 
+      height: 45px;
+      border-radius: 50%;
+      text-decoration: none;
+      background-color: #ffffff; 
+      color: #333333;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border: 1px solid #eee;
+    }
+    .my-social-box a.icon-btn:hover {
+      background-color: #333;
+      color: #ffffff;
+      border-color: #333;
+      transform: translateY(-2px);
+    }
+    .my-social-box a.icon-btn i {
+      font-size: 1.5rem; 
+      line-height: 1;
+    }
+
+    /* =========================================
+       5. Timeline (Education & Experiences) - REDESIGNED
+       ========================================= */
+    
+    /* 职务/学位：改为深暗红色 (Dark Red) */
+    .timeline-title {
+        font-size: 17px;
+        font-weight: 700;
+        color: #8B0000; /* 更深、更稳重的暗红色 */
+        margin-bottom: 4px;
+    }
+    
+    /* 强制统一所有机构链接的颜色 (蓝色)，避免 visited 导致的色差 */
+    .timeline-title a {
+        color: #4A90E2 !important; 
+        font-weight: 700;
+    }
+    .timeline-title a:hover {
+        color: #2a6fb8 !important;
+        text-decoration: underline;
+    }
+
+    /* 时间：改为纯黑色 (Black) */
+    .timeline-date {
+        font-size: 14px;
+        font-weight: 600;
+        color: #000000; /* 纯黑 */
+        margin-bottom: 5px;
+    }
+
+    .timeline-desc {
+        font-size: 15px;
+        color: #555;
+        margin-top: 5px;
+        line-height: 1.6;
+    }
+    
+    .social-icon {
+        width: auto; 
+        height: 22px; 
+        vertical-align: middle; 
+        margin-right: 8px;
+    }
+
+  </style>
   
 </head>
 
@@ -138,7 +294,7 @@
   </div>
 </header>
 
-<div id="profile-cover" class="cover shallow-bg img-responsive" style="background-image: url('images/background.jpg'); background-size: cover; background-position: center;">
+<div id="profile-cover" class="cover shallow-bg img-responsive">
   <div id="profile-namecard" class="profile-wrapper wrapper-light">
     
     <div id="my-pic" class="profile-col profile-col-1">
@@ -160,40 +316,6 @@
         my077063@163.com
       </div>
 
-      <style>
-        /* Social Box 样式 */
-        .my-social-box {
-          display: flex;
-          align-items: center;
-          justify-content: flex-start; 
-          gap: 12px;
-          margin-top: 15px;
-        }
-        .my-social-box a.icon-btn {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          width: 50px;
-          height: 50px;
-          border-radius: 50%;
-          text-decoration: none;
-          background-color: #ffffff; 
-          color: #333333;
-          transition: all 0.3s ease;
-          box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-        .my-social-box a.icon-btn:hover {
-          background-color: #000000;
-          color: #ffffff;
-          border-color: #000000;
-          transform: translateY(-2px);
-        }
-        .my-social-box a.icon-btn i {
-          font-size: 1.65rem; 
-          line-height: 1;
-        }
-      </style>
-
       <div class="my-social-box">
         <a href="https://scholar.google.com/citations?user=hmu-ly4AAAAJ&hl=zh-CN" target="_blank" class="icon-btn" aria-label="Google Scholar">
           <i class="ai ai-google-scholar-square"></i>
@@ -204,12 +326,12 @@
         </a>
         
         <a href="https://orcid.org/0009-0004-9724-5238" target="_blank" class="icon-btn" aria-label="ORCID">
-     			<i class="ai ai-orcid"></i>
-   			</a>
+          <i class="ai ai-orcid"></i>
+        </a>
         
         <a href="https://www.researchgate.net/profile/Mingyu-Wang-33?ev=hdr_xprf" target="_blank" class="icon-btn" aria-label="ResearchGate">
-    			<i class="ai ai-researchgate"></i>
-  			</a>
+          <i class="ai ai-researchgate"></i>
+        </a>
         
         <a href="https://www.douyin.com/user/MS4wLjABAAAAWT0EEgepjPRq6Iz6xavShWKRQB7PJE5-vLUuqGQUTL8?from_tab_name=main" target="_blank" class="icon-btn" aria-label="TikTok">
           <i class="fa-brands fa-tiktok"></i>
@@ -226,425 +348,429 @@
 <div class="page-content">
 <div class="wrapper">
 
-<div id="about" class="bio anchor-offset">
-  <h1 class="md-heading text-left">
-    <i class="fa fa-id-card" aria-hidden="true"></i>
-    About
-  </h1>
-  <div class="bio-body" style="overflow:hidden;">
-  <div style="margin-bottom: 20px;">
-      <div style="font-size: 26px; font-weight: 700; line-height: 1.5; color: #333; font-family: 'Roboto', sans-serif;">
-        Hi! I'm Mingyu Wang. <br>
-        I'm a 
-        <span style="color: #4A90E2; background: linear-gradient(180deg, rgba(255,255,255,0) 65%, #DBE9F9 65%);">Researcher</span>, 
-        
-        <span style="color: #41B883; background: linear-gradient(180deg, rgba(255,255,255,0) 65%, #D6F3E6 65%);">Civil Engineer</span>, 
-        
-        and 
-        <span style="color: #9013FE; background: linear-gradient(180deg, rgba(255,255,255,0) 65%, #EBD0FF 65%);">AI Enthusiast</span>
-        
-        who aspires to become an 
-        <span style="color: #E25555; background: linear-gradient(180deg, rgba(255,255,255,0) 65%, #FAD1D1 65%);">Educator</span>
-        
-        and a 
-        <span style="color: #00B8D4; background: linear-gradient(180deg, rgba(255,255,255,0) 65%, #C4F5FA 65%);">Builder</span>
-        
-        of Smarter Infrastructures.
+  <div id="about" class="bio anchor-offset">
+    <h1 class="md-heading text-left">
+      <i class="fa fa-id-card" aria-hidden="true"></i>
+      About
+    </h1>
+    <div class="bio-body" style="overflow:hidden;">
+      <div style="margin-bottom: 20px;">
+        <div style="font-size: 26px; font-weight: 700; line-height: 1.5; color: #333; font-family: 'Lato', sans-serif;">
+          Hi! I'm Mingyu Wang. <br>
+          I'm a 
+          <span style="color: #4A90E2; background: linear-gradient(180deg, rgba(255,255,255,0) 65%, #DBE9F9 65%);">Researcher</span>, 
+          
+          <span style="color: #41B883; background: linear-gradient(180deg, rgba(255,255,255,0) 65%, #D6F3E6 65%);">Civil Engineer</span>, 
+          
+          and 
+          <span style="color: #9013FE; background: linear-gradient(180deg, rgba(255,255,255,0) 65%, #EBD0FF 65%);">AI Enthusiast</span>
+          
+          who aspires to become an 
+          <span style="color: #E25555; background: linear-gradient(180deg, rgba(255,255,255,0) 65%, #FAD1D1 65%);">Educator</span>
+          
+          and a 
+          <span style="color: #00B8D4; background: linear-gradient(180deg, rgba(255,255,255,0) 65%, #C4F5FA 65%);">Builder</span>
+          
+          of Smarter Infrastructures.
+        </div>
+        <p style="font-size: 16px; line-height: 1.8; color: #555; margin-top: 15px;">
+          I am currently a doctoral student at the School of Civil Engineering, Southeast University. I am passionate about empowering traditional engineering with AI intelligence to create the next generation of resilient infrastructure.
+        </p>
+        <p style="font-size: 16px; line-height: 1.8; color: #555;">
+          Feel free to drop me an <a href="mailto:my077063@163.com" style="text-decoration: underline; color: #333;">email</a> for collaboration.
+        </p>
       </div>
-      <p style="font-size: 16px; line-height: 1.8; color: #555; margin-top: 15px;">
-        I am currently a doctoral student at the School of Civil Engineering, Southeast University. I am passionate about empowering traditional engineering with AI intelligence to create the next generation of resilient infrastructure.
-      </p>
-      <p style="font-size: 16px; line-height: 1.8; color: #555;">
-        Feel free to drop me an <a href="mailto:my077063@163.com" style="text-decoration: underline; color: #333;">email</a> for collaboration.
-      </p>
     </div>
-
+    
     <div id="research" class="anchor-offset" style="width: 100%; margin-bottom: 30px;">
       <h1 class="md-heading text-left">
         <i class="fa fa-star" aria-hidden="true"></i>
         Research Interests
       </h1>
-      <ul style="margin-top: 15px;">
-        <li><b>Structural Health Monitoring (SHM)</b></li>
-        <span style="color: #666; font-size: 14px;">Focusing on high-speed railway bridges and infrastructure safety.</span>
+      <ul class="std-list">
+        <li><b>Structural Health Monitoring (SHM)</b><br>
+          <span class="text-meta">Focusing on high-speed railway bridges and infrastructure safety.</span>
+        </li>
         
-        <li style="margin-top: 10px;"><b>Neural Operators</b></li>
-        <span style="color: #666; font-size: 14px;">Leveraging deep learning models (FNO, DeepONet) to accelerate solving partial differential equations in engineering.</span>
+        <li><b>Neural Operators</b><br>
+          <span class="text-meta">Leveraging deep learning models (FNO, DeepONet) to accelerate solving partial differential equations in engineering.</span>
+        </li>
         
-        <li style="margin-top: 10px;"><b>AI for Mechanics</b></li>
-        <span style="color: #666; font-size: 14px;">Data-driven modeling for complex structural dynamics.</span>
+        <li><b>AI for Mechanics</b><br>
+          <span class="text-meta">Data-driven modeling for complex structural dynamics.</span>
+        </li>
 
-        <li style="margin-top: 10px;"><b>Finite Element Analysis</b></li>
-        <span style="color: #666; font-size: 14px;">Numerical simulation for structural mechanics and multi-physics problems.</span>
+        <li><b>Finite Element Analysis</b><br>
+          <span class="text-meta">Numerical simulation for structural mechanics and multi-physics problems.</span>
+        </li>
       </ul>
     </div>
 
     <div id="education" class="timeline-brief anchor-offset" style="clear: both;">
-    <h1 class="md-heading text-left">
-      <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-      Education
-    </h1>
-    <div class="timeline-body">
-      
-      <div class="timeline-item">
-        <div class="timeline-date">
-          <img class="social-icon" src="images/SEU_logo.png" style="width:auto; height:24px; vertical-align:middle; margin-right:5px;"/>
-          Sep, 2025 - Present
+      <h1 class="md-heading text-left">
+        <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+        Education
+      </h1>
+      <div class="timeline-body">
+        
+        <div class="timeline-item">
+          <div class="timeline-date">
+            <img class="social-icon" src="images/SEU_logo.png"/>
+            Sep, 2025 - Present
+          </div>
+          <div class="timeline-title">
+            Doctoral Student<br>
+            @ <a href="https://www.seu.edu.cn/english/" target="_blank">Southeast University</a>
+          </div>
+          <div class="timeline-desc">
+            Major in Civil and Hydraulic Engineering.<br>
+            <b>Supervisor:</b> Prof. Yi Zhang
+          </div>
         </div>
-        <div class="timeline-title">
-          Doctoral Student<br>
-          @ <a href="https://www.seu.edu.cn/english/" target="_blank">Southeast University</a>
+
+        <div class="timeline-item">
+          <div class="timeline-date">
+            <img class="social-icon" src="images/SIT_logo.jpg"/>
+            Sep, 2022 - Mar, 2025
+          </div>
+          <div class="timeline-title">
+            Master Student<br>
+            @ <a href="https://english.sit.edu.cn/" target="_blank">Shanghai Institute of Technology</a>
+          </div>
+          <div class="timeline-desc">
+            Major in Resources and Environment.<br>
+            <b>Supervisor:</b> Prof. Peigang Li
+          </div>
         </div>
-        <div class="timeline-desc">
-          Major in Civil and Hydraulic Engineering.<br>
-          <b>Supervisor:</b> Prof. Yi Zhang
+
+        <div class="timeline-item">
+          <div class="timeline-date">
+            <img class="social-icon" src="images/SJU_logo.jpg"/>
+            Sep, 2016 - Dec, 2019
+          </div>
+          <div class="timeline-title">
+            Bachelor Student<br>
+            @ <a href="https://en.swjtu.edu.cn/" target="_blank">Southwest Jiaotong University</a>
+          </div>
+          <div class="timeline-desc">
+            Major in Engineering Cost.
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">
+            <img class="social-icon" src="images/JY_logo.png"/>
+            Sep, 2015 - Jun, 2018
+          </div>
+          <div class="timeline-title">
+            Associate Student<br>
+            @ <a href="https://www.scat.edu.cn/" target="_blank">Sichuan College of Architectural Technology</a>
+          </div>
+          <div class="timeline-desc">
+            Major in Construction Management.
+          </div>
         </div>
       </div>
+    </div>
 
-      <div class="timeline-item">
-        <div class="timeline-date">
-          <img class="social-icon" src="images/SIT_logo.jpg" style="width:auto; height:24px; vertical-align:middle; margin-right:5px;"/>
-          Sep, 2022 - Mar, 2025
+    <div id="timeline" class="timeline-brief anchor-offset">
+      <h1 class="md-heading text-left">
+        <i class="fa fa-tasks" aria-hidden="true"></i>
+        Experiences
+      </h1>
+      <div class="timeline-body">
+        
+        <div class="timeline-item">
+          <div class="timeline-date">
+            <img class="social-icon" src="images/GZ_logo.png"/>
+            Sep, 2025 - Present
+          </div>
+          <div class="timeline-title">
+            Researcher<br>
+            @ <a href="https://civil.seu.edu.cn/berc/" target="_blank">National Key Laboratory of Safety, Durability and Healthy Operation of Long Span Bridges</a>
+          </div>
+          <div class="timeline-desc">
+            Investigating the damage evolution mechanisms and resilience assessment of vehicle-track-bridge (VTB) systems under extreme service environments.
+          </div>
         </div>
-        <div class="timeline-title">
-          Master Student<br>
-          @ <a href="https://english.sit.edu.cn/" target="_blank">Shanghai Institute of Technology</a>
-        </div>
-        <div class="timeline-desc">
-          Major in Resources and Environment.<br>
-          <b>Supervisor:</b> Prof. Peigang Li
-        </div>
-      </div>
 
-      <div class="timeline-item">
-        <div class="timeline-date">
-          <img class="social-icon" src="images/SJU_logo.jpg" style="width:auto; height:24px; vertical-align:middle; margin-right:5px;"/>
-          Sep, 2016 - Dec, 2019
+        <div class="timeline-item">
+          <div class="timeline-date">
+            <img class="social-icon" src="images/HYY_logo.png"/>
+            Feb, 2025 - Present
+          </div>
+          <div class="timeline-title">
+            Researcher<br>
+            @ <a href="https://www.aoiseu.ac.cn/" target="_blank">Advanced Ocean Institute of Southeast University Nantong</a>
+          </div>
+          <div class="timeline-desc">
+             Specializing in multi-physics coupling simulation and durability analysis for civil engineering structures.
+          </div>
         </div>
-        <div class="timeline-title">
-          Bachelor Student<br>
-          @ <a href="https://en.swjtu.edu.cn/" target="_blank">Southwest Jiaotong University</a>
-        </div>
-        <div class="timeline-desc">
-          Major in Engineering Cost.
-        </div>
-      </div>
 
-      <div class="timeline-item">
-        <div class="timeline-date">
-          <img class="social-icon" src="images/JY_logo.png" style="width:auto; height:24px; vertical-align:middle; margin-right:5px;"/>
-          Sep, 2015 - Jun, 2018
+        <div class="timeline-item">
+          <div class="timeline-date">
+            <img class="social-icon" src="images/CDJG.png"/>
+            Mar, 2018 - Mar, 2021
+          </div>
+          <div class="timeline-title">
+            Assistant Engineer<br>
+            @ <a href="https://www.cdceg.com.cn/" target="_blank">Chengdu Construction Engineering Group</a>
+          </div>
+          <div class="timeline-desc">
+            Responsible for on-site construction management and technical coordination.
+          </div>
         </div>
-        <div class="timeline-title">
-          Associate Student<br>
-          @ <a href="https://www.scat.edu.cn/" target="_blank">Sichuan College of Architectural Technology</a>
-        </div>
-        <div class="timeline-desc">
-          Major in Construction Management.
-        </div>
+
       </div>
   </div>
-</div>
 
-<div id="timeline" class="timeline-brief anchor-offset">
+  <div id="publications" class="publications anchor-offset">
     <h1 class="md-heading text-left">
-      <i class="fa fa-tasks" aria-hidden="true"></i>
-      Experiences
+      <i class="fa fa-file" aria-hidden="true"></i>
+      Publications
     </h1>
-    <div class="timeline-body">
-      
-      <div class="timeline-item">
-        <div class="timeline-date">
-          <img class="social-icon" src="images/GZ_logo.png" style="width:auto; height:24px; vertical-align:middle; margin-right:5px;"/>
-          Sep, 2025 - Present
-        </div>
-        <div class="timeline-title">
-          Researcher<br>
-          @ <a href="https://civil.seu.edu.cn/berc/" target="_blank">National Key Laboratory of Safety, Durability and Healthy Operation of Long Span Bridges</a>
-        </div>
-        <div class="timeline-desc">
-          Investigating the damage evolution mechanisms and resilience assessment of vehicle-track-bridge (VTB) systems under extreme service environments.
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-date">
-          <img class="social-icon" src="images/HYY_logo.png" style="width:auto; height:24px; vertical-align:middle; margin-right:5px;"/>
-          Feb, 2025 - Present
-        </div>
-        <div class="timeline-title">
-          Researcher<br>
-          @ <a href="https://www.aoiseu.ac.cn/" target="_blank">Advanced Ocean Institute of Southeast University Nantong</a>
-        </div>
-        <div class="timeline-desc">
-           Specializing in multi-physics coupling simulation and durability analysis for civil engineering structures.
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-date">
-          <img class="social-icon" src="images/CDJG.png" style="width:auto; height:24px; vertical-align:middle; margin-right:5px;"/>
-          Mar, 2018 - Mar, 2021
-        </div>
-        <div class="timeline-title">
-          Assistant Engineer<br>
-          @ <a href="https://www.cdceg.com.cn/" target="_blank">Chengdu Construction Engineering Group</a>
-        </div>
-        <div class="timeline-desc">
-          Responsible for on-site construction management and technical coordination.
-        </div>
-      </div>
-
-    </div>
-</div>
-
-<div id="publications" class="publications anchor-offset">
-  <h1 class="md-heading text-left">
-    <i class="fa fa-file" aria-hidden="true"></i>
-    Publications
-  </h1>
-
-  <div class="pub" data-selected="true" style="margin-bottom: 30px; display: flex; align-items: flex-start; gap: 25px;">
-      <div class="pub-left" style="width: 32%; flex-shrink: 0;">
-        <img class="intro-img frame" src="images/Paper7.png" style="width: 100%; height: auto; box-shadow: 2px 2px 6px rgba(0,0,0,0.15); border-radius: 4px; display: block;">
-      </div>
-      <div class="pub-right" style="flex-grow: 1; display: flex; flex-direction: column;">
-        <div class="title" style="margin-bottom: 12px; line-height: 1.5; font-size: 18px; font-weight: 600;">
-          <a class="hover-underline" href="https://doi.org/10.1016/j.engfailanal.2025.110417" target="_blank" style="color: #333; vertical-align: middle;">
-            Failure assessment of typical defects in ballastless track structures based on iron pad response
-          </a>
-          <span style="display: inline-block; vertical-align: middle; margin-left: 8px;">
-            <span style="background-color: #e0f7fa; color: #006064; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #b2ebf2; margin-right: 3px;">Research Article</span>
-            <span style="background-color: #e7f6df; color: #2e7d32; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #c8e6c9; margin-right: 3px;">JCR Q1</span>
-            <span style="background-color: #fff3e0; color: #ef6c00; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #ffe0b2; margin-right: 3px;">IF: 5.7</span>
-            <span style="background-color: #f3e5f5; color: #7b1fa2; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #e1bee7;">First Author</span>
-          </span>
-        </div>
-        <div class="authors" style="margin-bottom: 12px; font-size: 16px; line-height: 1.5; color: #444;">
-            <b style="color: #4A90E2; font-weight: 700;">Mingyu Wang</b>, 
-            Yi Zhang*, Jialong Cai, Xinxin Yue, Shanshan Li, Tianyu Yu, Fei Yu, Ning Feng, Peigang Li, Tong Guo, Zhenhao Zhang
-        </div>
-        <div style="margin-bottom: 8px; font-size: 14px; color: #000;">
-          <a class="hover-underline" href="https://www.sciencedirect.com/journal/engineering-failure-analysis" target="_blank" style="font-weight: bold; font-style: italic; color: #000;">Engineering Failure Analysis</a>, 
-          <span style="font-weight: bold; color: #A52A2A; margin-left: 3px;">2026</span>, 
-          Vol. 185, Article 110417
-        </div>
-        <div style="font-size: 14px; color: #555;">
-          <span style="font-weight: bold; color: #333; margin-right: 5px;">DOI:</span> 
-          <a class="hover-underline" href="https://doi.org/10.1016/j.engfailanal.2025.110417" target="_blank" style="color: #666; font-family: Consolas, monospace;">
-            https://doi.org/10.1016/j.engfailanal.2025.110417
-          </a>
-        </div>
-      </div>
-    </div>
 
     <div class="pub" data-selected="true" style="margin-bottom: 30px; display: flex; align-items: flex-start; gap: 25px;">
-      <div class="pub-left" style="width: 32%; flex-shrink: 0;">
-        <img class="intro-img frame" src="images/Paper6.png" style="width: 100%; height: auto; box-shadow: 2px 2px 6px rgba(0,0,0,0.15); border-radius: 4px; display: block;">
+        <div class="pub-left" style="width: 32%; flex-shrink: 0;">
+          <img class="intro-img frame" src="images/Paper7.png" style="width: 100%; height: auto; box-shadow: 0 2px 6px rgba(0,0,0,0.15); border-radius: 4px; display: block;">
+        </div>
+        <div class="pub-right" style="flex-grow: 1; display: flex; flex-direction: column;">
+          <div class="title" style="margin-bottom: 12px; line-height: 1.5; font-size: 18px; font-weight: 600;">
+            <a class="hover-underline" href="https://doi.org/10.1016/j.engfailanal.2025.110417" target="_blank" style="color: #333; vertical-align: middle;">
+              Failure assessment of typical defects in ballastless track structures based on iron pad response
+            </a>
+            <span style="display: inline-block; vertical-align: middle; margin-left: 8px;">
+              <span style="background-color: #e0f7fa; color: #006064; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #b2ebf2; margin-right: 3px;">Research Article</span>
+              <span style="background-color: #e7f6df; color: #2e7d32; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #c8e6c9; margin-right: 3px;">JCR Q1</span>
+              <span style="background-color: #fff3e0; color: #ef6c00; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #ffe0b2; margin-right: 3px;">IF: 5.7</span>
+              <span style="background-color: #f3e5f5; color: #7b1fa2; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #e1bee7;">First Author</span>
+            </span>
+          </div>
+          <div class="authors" style="margin-bottom: 12px; font-size: 16px; line-height: 1.5; color: #444;">
+              <b style="color: #4A90E2; font-weight: 700;">Mingyu Wang</b>, 
+              Yi Zhang*, Jialong Cai, Xinxin Yue, Shanshan Li, Tianyu Yu, Fei Yu, Ning Feng, Peigang Li, Tong Guo, Zhenhao Zhang
+          </div>
+          <div style="margin-bottom: 8px; font-size: 14px; color: #000;">
+            <a class="hover-underline" href="https://www.sciencedirect.com/journal/engineering-failure-analysis" target="_blank" style="font-weight: bold; font-style: italic; color: #000;">Engineering Failure Analysis</a>, 
+            <span style="font-weight: bold; color: #A52A2A; margin-left: 3px;">2026</span>, 
+            Vol. 185, Article 110417
+          </div>
+          <div style="font-size: 14px; color: #555;">
+            <span style="font-weight: bold; color: #333; margin-right: 5px;">DOI:</span> 
+            <a class="hover-underline" href="https://doi.org/10.1016/j.engfailanal.2025.110417" target="_blank" style="color: #666; font-family: Consolas, monospace;">
+              https://doi.org/10.1016/j.engfailanal.2025.110417
+            </a>
+          </div>
+        </div>
       </div>
-      <div class="pub-right" style="flex-grow: 1; display: flex; flex-direction: column;">
-        <div class="title" style="margin-bottom: 12px; line-height: 1.5; font-size: 18px; font-weight: 600;">
-          <a class="hover-underline" href="https://doi.org/10.1016/j.seta.2025.104203" target="_blank" style="color: #333; vertical-align: middle;">
-            A self-powered triboelectric nanosensor based on track vibration energy harvesting for smart railway
-          </a>
-          <span style="display: inline-block; vertical-align: middle; margin-left: 8px;">
-            <span style="background-color: #e0f7fa; color: #006064; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #b2ebf2; margin-right: 3px;">Research Article</span>
-            <span style="background-color: #e7f6df; color: #2e7d32; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #c8e6c9; margin-right: 3px;">JCR Q1</span>
-            <span style="background-color: #fff3e0; color: #ef6c00; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #ffe0b2; margin-right: 3px;">IF: 7.0</span>
-          </span>
-        </div>
-        <div class="authors" style="margin-bottom: 12px; font-size: 16px; line-height: 1.5; color: #444;">
-            Yifan Chen, Hongjie Tang, Daning Hao, Tingsheng Zhang, Xiaofeng Xia, 
-            <b style="color: #4A90E2; font-weight: 700;">Mingyu Wang</b>, 
-            Zutao Zhang, Peigang Li*
-        </div>
-        <div style="margin-bottom: 8px; font-size: 14px; color: #000;">
-          <a class="hover-underline" href="https://www.sciencedirect.com/journal/sustainable-energy-technologies-and-assessments" target="_blank" style="font-weight: bold; font-style: italic; color: #000;">Sustainable Energy Technologies and Assessments</a>, 
-          <span style="font-weight: bold; color: #A52A2A; margin-left: 3px;">2025</span>, 
-          Vol. 75, Article 104203
-        </div>
-        <div style="font-size: 14px; color: #555;">
-          <span style="font-weight: bold; color: #333; margin-right: 5px;">DOI:</span> 
-          <a class="hover-underline" href="https://doi.org/10.1016/j.seta.2025.104203" target="_blank" style="color: #666; font-family: Consolas, monospace;">
-            https://doi.org/10.1016/j.seta.2025.104203
-          </a>
-        </div>
-      </div>
-    </div>
 
-    <div class="pub" data-selected="true" style="margin-bottom: 30px; display: flex; align-items: flex-start; gap: 25px;">
-      <div class="pub-left" style="width: 32%; flex-shrink: 0;">
-        <img class="intro-img frame" src="images/Paper5.png" style="width: 100%; height: auto; box-shadow: 2px 2px 6px rgba(0,0,0,0.15); border-radius: 4px; display: block;">
+      <div class="pub" data-selected="true" style="margin-bottom: 30px; display: flex; align-items: flex-start; gap: 25px;">
+        <div class="pub-left" style="width: 32%; flex-shrink: 0;">
+          <img class="intro-img frame" src="images/Paper6.png" style="width: 100%; height: auto; box-shadow: 0 2px 6px rgba(0,0,0,0.15); border-radius: 4px; display: block;">
+        </div>
+        <div class="pub-right" style="flex-grow: 1; display: flex; flex-direction: column;">
+          <div class="title" style="margin-bottom: 12px; line-height: 1.5; font-size: 18px; font-weight: 600;">
+            <a class="hover-underline" href="https://doi.org/10.1016/j.seta.2025.104203" target="_blank" style="color: #333; vertical-align: middle;">
+              A self-powered triboelectric nanosensor based on track vibration energy harvesting for smart railway
+            </a>
+            <span style="display: inline-block; vertical-align: middle; margin-left: 8px;">
+              <span style="background-color: #e0f7fa; color: #006064; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #b2ebf2; margin-right: 3px;">Research Article</span>
+              <span style="background-color: #e7f6df; color: #2e7d32; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #c8e6c9; margin-right: 3px;">JCR Q1</span>
+              <span style="background-color: #fff3e0; color: #ef6c00; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #ffe0b2; margin-right: 3px;">IF: 7.0</span>
+            </span>
+          </div>
+          <div class="authors" style="margin-bottom: 12px; font-size: 16px; line-height: 1.5; color: #444;">
+              Yifan Chen, Hongjie Tang, Daning Hao, Tingsheng Zhang, Xiaofeng Xia, 
+              <b style="color: #4A90E2; font-weight: 700;">Mingyu Wang</b>, 
+              Zutao Zhang, Peigang Li*
+          </div>
+          <div style="margin-bottom: 8px; font-size: 14px; color: #000;">
+            <a class="hover-underline" href="https://www.sciencedirect.com/journal/sustainable-energy-technologies-and-assessments" target="_blank" style="font-weight: bold; font-style: italic; color: #000;">Sustainable Energy Technologies and Assessments</a>, 
+            <span style="font-weight: bold; color: #A52A2A; margin-left: 3px;">2025</span>, 
+            Vol. 75, Article 104203
+          </div>
+          <div style="font-size: 14px; color: #555;">
+            <span style="font-weight: bold; color: #333; margin-right: 5px;">DOI:</span> 
+            <a class="hover-underline" href="https://doi.org/10.1016/j.seta.2025.104203" target="_blank" style="color: #666; font-family: Consolas, monospace;">
+              https://doi.org/10.1016/j.seta.2025.104203
+            </a>
+          </div>
+        </div>
       </div>
-      <div class="pub-right" style="flex-grow: 1; display: flex; flex-direction: column;">
-        <div class="title" style="margin-bottom: 12px; line-height: 1.5; font-size: 18px; font-weight: 600;">
-          <a class="hover-underline" href="https://doi.org/10.1016/j.engfailanal.2025.109358" target="_blank" style="color: #333; vertical-align: middle;">
-            A damage evaluation method for track structures based on iron pad strain
-          </a>
-          <span style="display: inline-block; vertical-align: middle; margin-left: 8px;">
-            <span style="background-color: #e0f7fa; color: #006064; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #b2ebf2; margin-right: 3px;">Research Article</span>
-            <span style="background-color: #e7f6df; color: #2e7d32; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #c8e6c9; margin-right: 3px;">JCR Q1</span>
-            <span style="background-color: #fff3e0; color: #ef6c00; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #ffe0b2; margin-right: 3px;">IF: 5.7</span>
-            <span style="background-color: #f3e5f5; color: #7b1fa2; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #e1bee7;">Corresponding Author</span>
-          </span>
-        </div>
-        <div class="authors" style="margin-bottom: 12px; font-size: 16px; line-height: 1.5; color: #444;">
-            Peigang Li, Shanshan Li, 
-            <b style="color: #4A90E2; font-weight: 700;">Mingyu Wang*</b>, 
-            Yi Zhang, Zhipeng Zhang, Jialong Cai, Jingqi Li, Ning Feng
-        </div>
-        <div style="margin-bottom: 8px; font-size: 14px; color: #000;">
-          <a class="hover-underline" href="https://www.sciencedirect.com/journal/engineering-failure-analysis" target="_blank" style="font-weight: bold; font-style: italic; color: #000;">Engineering Failure Analysis</a>, 
-          <span style="font-weight: bold; color: #A52A2A; margin-left: 3px;">2025</span>, 
-          Vol. 171, Article 109358
-        </div>
-        <div style="font-size: 14px; color: #555;">
-          <span style="font-weight: bold; color: #333; margin-right: 5px;">DOI:</span> 
-          <a class="hover-underline" href="https://doi.org/10.1016/j.engfailanal.2025.109358" target="_blank" style="color: #666; font-family: Consolas, monospace;">
-            https://doi.org/10.1016/j.engfailanal.2025.109358
-          </a>
-        </div>
-      </div>
-    </div>
 
-    <div class="pub" data-selected="true" style="margin-bottom: 30px; display: flex; align-items: flex-start; gap: 25px;">
-      <div class="pub-left" style="width: 32%; flex-shrink: 0;">
-        <img class="intro-img frame" src="images/Paper4.png" style="width: 100%; height: auto; box-shadow: 2px 2px 6px rgba(0,0,0,0.15); border-radius: 4px; display: block;">
+      <div class="pub" data-selected="true" style="margin-bottom: 30px; display: flex; align-items: flex-start; gap: 25px;">
+        <div class="pub-left" style="width: 32%; flex-shrink: 0;">
+          <img class="intro-img frame" src="images/Paper5.png" style="width: 100%; height: auto; box-shadow: 0 2px 6px rgba(0,0,0,0.15); border-radius: 4px; display: block;">
+        </div>
+        <div class="pub-right" style="flex-grow: 1; display: flex; flex-direction: column;">
+          <div class="title" style="margin-bottom: 12px; line-height: 1.5; font-size: 18px; font-weight: 600;">
+            <a class="hover-underline" href="https://doi.org/10.1016/j.engfailanal.2025.109358" target="_blank" style="color: #333; vertical-align: middle;">
+              A damage evaluation method for track structures based on iron pad strain
+            </a>
+            <span style="display: inline-block; vertical-align: middle; margin-left: 8px;">
+              <span style="background-color: #e0f7fa; color: #006064; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #b2ebf2; margin-right: 3px;">Research Article</span>
+              <span style="background-color: #e7f6df; color: #2e7d32; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #c8e6c9; margin-right: 3px;">JCR Q1</span>
+              <span style="background-color: #fff3e0; color: #ef6c00; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #ffe0b2; margin-right: 3px;">IF: 5.7</span>
+              <span style="background-color: #f3e5f5; color: #7b1fa2; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #e1bee7;">Corresponding Author</span>
+            </span>
+          </div>
+          <div class="authors" style="margin-bottom: 12px; font-size: 16px; line-height: 1.5; color: #444;">
+              Peigang Li, Shanshan Li, 
+              <b style="color: #4A90E2; font-weight: 700;">Mingyu Wang*</b>, 
+              Yi Zhang, Zhipeng Zhang, Jialong Cai, Jingqi Li, Ning Feng
+          </div>
+          <div style="margin-bottom: 8px; font-size: 14px; color: #000;">
+            <a class="hover-underline" href="https://www.sciencedirect.com/journal/engineering-failure-analysis" target="_blank" style="font-weight: bold; font-style: italic; color: #000;">Engineering Failure Analysis</a>, 
+            <span style="font-weight: bold; color: #A52A2A; margin-left: 3px;">2025</span>, 
+            Vol. 171, Article 109358
+          </div>
+          <div style="font-size: 14px; color: #555;">
+            <span style="font-weight: bold; color: #333; margin-right: 5px;">DOI:</span> 
+            <a class="hover-underline" href="https://doi.org/10.1016/j.engfailanal.2025.109358" target="_blank" style="color: #666; font-family: Consolas, monospace;">
+              https://doi.org/10.1016/j.engfailanal.2025.109358
+            </a>
+          </div>
+        </div>
       </div>
-      <div class="pub-right" style="flex-grow: 1; display: flex; flex-direction: column;">
-        <div class="title" style="margin-bottom: 12px; line-height: 1.5; font-size: 18px; font-weight: 600;">
-          <a class="hover-underline" href="https://kns.cnki.net/kcms2/article/abstract?v=-w8R4t09JVWGb7ErEP4KODJsesY6zCfz_qHUIgzipI_WVWAUuJWbfdPQJa7kKjPbYGQzl6Or02lMRyK3lwrW-ePvb1vqQROdCj_7wAeWgU3B0qjtuY8Fo06yOyfJt3_BL8o93A8K-u1rru-lbOON01_yb3zuYKlPk2xtjx6e0W4zyK0k4m5Fwjglyd-uXuXE&uniplatform=NZKPT&language=CHS" target="_blank" style="color: #333; vertical-align: middle;">
-            Research on the Monitoring and Evaluation Method of Ballastless Track Service Condition Based on Iron Pad Dynamic Strain
-          </a>
-          <span style="display: inline-block; vertical-align: middle; margin-left: 8px;">
-            <span style="background-color: #e0f7fa; color: #006064; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #b2ebf2; margin-right: 3px;">Master's Thesis</span>
-          </span>
-        </div>
-        <div class="authors" style="margin-bottom: 12px; font-size: 16px; line-height: 1.5; color: #444;">
-            <b style="color: #4A90E2; font-weight: 700;">Mingyu Wang</b>
-        </div>
-        <div style="margin-bottom: 8px; font-size: 14px; color: #000;">
-          <a class="hover-underline" href="https://english.sit.edu.cn/" target="_blank" style="font-weight: bold; font-style: italic; color: #000;">Shanghai Institute of Technology</a>, 
-          <span style="font-weight: bold; color: #A52A2A; margin-left: 3px;">2024</span>
-        </div>
-        <div style="font-size: 14px; color: #555;">
-          <span style="font-weight: bold; color: #333; margin-right: 5px;">DOI:</span> 
-          <a class="hover-underline" href="https://kns.cnki.net/kcms2/article/abstract?v=-w8R4t09JVWGb7ErEP4KODJsesY6zCfz_qHUIgzipI_WVWAUuJWbfdPQJa7kKjPbYGQzl6Or02lMRyK3lwrW-ePvb1vqQROdCj_7wAeWgU3B0qjtuY8Fo06yOyfJt3_BL8o93A8K-u1rru-lbOON01_yb3zuYKlPk2xtjx6e0W4zyK0k4m5Fwjglyd-uXuXE&uniplatform=NZKPT&language=CHS" target="_blank" style="color: #666; font-family: Consolas, monospace;">
-            https://10.27801/d.cnki.gshyy.2024.000002
-          </a>
-        </div>
-      </div>
-    </div>
 
-    <div class="pub" data-selected="true" style="margin-bottom: 30px; display: flex; align-items: flex-start; gap: 25px;">
-      <div class="pub-left" style="width: 32%; flex-shrink: 0;">
-        <img class="intro-img frame" src="images/Paper3.png" style="width: 100%; height: auto; box-shadow: 2px 2px 6px rgba(0,0,0,0.15); border-radius: 4px; display: block;">
-      </div>
-      <div class="pub-right" style="flex-grow: 1; display: flex; flex-direction: column;">
-        <div class="title" style="margin-bottom: 12px; line-height: 1.5; font-size: 18px; font-weight: 600;">
-          <a class="hover-underline" href="https://doi.org/10.1016/j.engfailanal.2024.108780" target="_blank" style="color: #333; vertical-align: middle;">
-            A refined track dynamic model considering the bending properties of iron pad: Proposal and validation
-          </a>
-          <span style="display: inline-block; vertical-align: middle; margin-left: 8px;">
-            <span style="background-color: #e0f7fa; color: #006064; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #b2ebf2; margin-right: 3px;">Research Article</span>
-            <span style="background-color: #e7f6df; color: #2e7d32; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #c8e6c9; margin-right: 3px;">JCR Q1</span>
-            <span style="background-color: #fff3e0; color: #ef6c00; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #ffe0b2; margin-right: 3px;">IF: 5.7</span>
-            <span style="background-color: #f3e5f5; color: #7b1fa2; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #e1bee7;">First Author</span>
-          </span>
+      <div class="pub" data-selected="true" style="margin-bottom: 30px; display: flex; align-items: flex-start; gap: 25px;">
+        <div class="pub-left" style="width: 32%; flex-shrink: 0;">
+          <img class="intro-img frame" src="images/Paper4.png" style="width: 100%; height: auto; box-shadow: 0 2px 6px rgba(0,0,0,0.15); border-radius: 4px; display: block;">
         </div>
-        <div class="authors" style="margin-bottom: 12px; font-size: 16px; line-height: 1.5; color: #444;">
-            <b style="color: #4A90E2; font-weight: 700;">Mingyu Wang</b>, 
-            Peigang Li, Shanshan Li, Tianyu Yu, Zhiyuan Zhang, Yi Zeng, Ning Feng, Kang Yang, Cheng Chen
-        </div>
-        <div style="margin-bottom: 8px; font-size: 14px; color: #000;">
-          <a class="hover-underline" href="https://www.sciencedirect.com/journal/engineering-failure-analysis" target="_blank" style="font-weight: bold; font-style: italic; color: #000;">Engineering Failure Analysis</a>, 
-          <span style="font-weight: bold; color: #A52A2A; margin-left: 3px;">2024</span>, 
-          Vol. 165, Article 108780
-        </div>
-        <div style="font-size: 14px; color: #555;">
-          <span style="font-weight: bold; color: #333; margin-right: 5px;">DOI:</span> 
-          <a class="hover-underline" href="https://doi.org/10.1016/j.engfailanal.2024.108780" target="_blank" style="color: #666; font-family: Consolas, monospace;">
-            https://doi.org/10.1016/j.engfailanal.2024.108780
-          </a>
+        <div class="pub-right" style="flex-grow: 1; display: flex; flex-direction: column;">
+          <div class="title" style="margin-bottom: 12px; line-height: 1.5; font-size: 18px; font-weight: 600;">
+            <a class="hover-underline" href="https://kns.cnki.net/kcms2/article/abstract?v=-w8R4t09JVWGb7ErEP4KODJsesY6zCfz_qHUIgzipI_WVWAUuJWbfdPQJa7kKjPbYGQzl6Or02lMRyK3lwrW-ePvb1vqQROdCj_7wAeWgU3B0qjtuY8Fo06yOyfJt3_BL8o93A8K-u1rru-lbOON01_yb3zuYKlPk2xtjx6e0W4zyK0k4m5Fwjglyd-uXuXE&uniplatform=NZKPT&language=CHS" target="_blank" style="color: #333; vertical-align: middle;">
+              Research on the Monitoring and Evaluation Method of Ballastless Track Service Condition Based on Iron Pad Dynamic Strain
+            </a>
+            <span style="display: inline-block; vertical-align: middle; margin-left: 8px;">
+              <span style="background-color: #e0f7fa; color: #006064; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #b2ebf2; margin-right: 3px;">Master's Thesis</span>
+            </span>
+          </div>
+          <div class="authors" style="margin-bottom: 12px; font-size: 16px; line-height: 1.5; color: #444;">
+              <b style="color: #4A90E2; font-weight: 700;">Mingyu Wang</b>
+          </div>
+          <div style="margin-bottom: 8px; font-size: 14px; color: #000;">
+            <a class="hover-underline" href="https://english.sit.edu.cn/" target="_blank" style="font-weight: bold; font-style: italic; color: #000;">Shanghai Institute of Technology</a>, 
+            <span style="font-weight: bold; color: #A52A2A; margin-left: 3px;">2024</span>
+          </div>
+          <div style="font-size: 14px; color: #555;">
+            <span style="font-weight: bold; color: #333; margin-right: 5px;">DOI:</span> 
+            <a class="hover-underline" href="https://kns.cnki.net/kcms2/article/abstract?v=-w8R4t09JVWGb7ErEP4KODJsesY6zCfz_qHUIgzipI_WVWAUuJWbfdPQJa7kKjPbYGQzl6Or02lMRyK3lwrW-ePvb1vqQROdCj_7wAeWgU3B0qjtuY8Fo06yOyfJt3_BL8o93A8K-u1rru-lbOON01_yb3zuYKlPk2xtjx6e0W4zyK0k4m5Fwjglyd-uXuXE&uniplatform=NZKPT&language=CHS" target="_blank" style="color: #666; font-family: Consolas, monospace;">
+              https://10.27801/d.cnki.gshyy.2024.000002
+            </a>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="pub" data-selected="true" style="margin-bottom: 30px; display: flex; align-items: flex-start; gap: 25px;">
-      <div class="pub-left" style="width: 32%; flex-shrink: 0;">
-        <img class="intro-img frame" src="images/Paper2.png" style="width: 100%; height: auto; box-shadow: 2px 2px 6px rgba(0,0,0,0.15); border-radius: 4px; display: block;">
+      <div class="pub" data-selected="true" style="margin-bottom: 30px; display: flex; align-items: flex-start; gap: 25px;">
+        <div class="pub-left" style="width: 32%; flex-shrink: 0;">
+          <img class="intro-img frame" src="images/Paper3.png" style="width: 100%; height: auto; box-shadow: 0 2px 6px rgba(0,0,0,0.15); border-radius: 4px; display: block;">
+        </div>
+        <div class="pub-right" style="flex-grow: 1; display: flex; flex-direction: column;">
+          <div class="title" style="margin-bottom: 12px; line-height: 1.5; font-size: 18px; font-weight: 600;">
+            <a class="hover-underline" href="https://doi.org/10.1016/j.engfailanal.2024.108780" target="_blank" style="color: #333; vertical-align: middle;">
+              A refined track dynamic model considering the bending properties of iron pad: Proposal and validation
+            </a>
+            <span style="display: inline-block; vertical-align: middle; margin-left: 8px;">
+              <span style="background-color: #e0f7fa; color: #006064; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #b2ebf2; margin-right: 3px;">Research Article</span>
+              <span style="background-color: #e7f6df; color: #2e7d32; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #c8e6c9; margin-right: 3px;">JCR Q1</span>
+              <span style="background-color: #fff3e0; color: #ef6c00; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #ffe0b2; margin-right: 3px;">IF: 5.7</span>
+              <span style="background-color: #f3e5f5; color: #7b1fa2; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #e1bee7;">First Author</span>
+            </span>
+          </div>
+          <div class="authors" style="margin-bottom: 12px; font-size: 16px; line-height: 1.5; color: #444;">
+              <b style="color: #4A90E2; font-weight: 700;">Mingyu Wang</b>, 
+              Peigang Li, Shanshan Li, Tianyu Yu, Zhiyuan Zhang, Yi Zeng, Ning Feng, Kang Yang, Cheng Chen
+          </div>
+          <div style="margin-bottom: 8px; font-size: 14px; color: #000;">
+            <a class="hover-underline" href="https://www.sciencedirect.com/journal/engineering-failure-analysis" target="_blank" style="font-weight: bold; font-style: italic; color: #000;">Engineering Failure Analysis</a>, 
+            <span style="font-weight: bold; color: #A52A2A; margin-left: 3px;">2024</span>, 
+            Vol. 165, Article 108780
+          </div>
+          <div style="font-size: 14px; color: #555;">
+            <span style="font-weight: bold; color: #333; margin-right: 5px;">DOI:</span> 
+            <a class="hover-underline" href="https://doi.org/10.1016/j.engfailanal.2024.108780" target="_blank" style="color: #666; font-family: Consolas, monospace;">
+              https://doi.org/10.1016/j.engfailanal.2024.108780
+            </a>
+          </div>
+        </div>
       </div>
-      <div class="pub-right" style="flex-grow: 1; display: flex; flex-direction: column;">
-        <div class="title" style="margin-bottom: 12px; line-height: 1.5; font-size: 18px; font-weight: 600;">
-          <a class="hover-underline" href="https://doi.org/10.1016/j.measurement.2024.114720" target="_blank" style="color: #333; vertical-align: middle;">
-            Application research on FRP-OFBG bars in static load test for maglev guideway prestressed concrete girders
-          </a>
-          <span style="display: inline-block; vertical-align: middle; margin-left: 8px;">
-            <span style="background-color: #e0f7fa; color: #006064; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #b2ebf2; margin-right: 3px;">Research Article</span>
-            <span style="background-color: #e7f6df; color: #2e7d32; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #c8e6c9; margin-right: 3px;">JCR Q1</span>
-            <span style="background-color: #fff3e0; color: #ef6c00; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #ffe0b2; margin-right: 3px;">IF: 5.6</span>
-          </span>
-        </div>
-        <div class="authors" style="margin-bottom: 12px; font-size: 16px; line-height: 1.5; color: #444;">
-            Peigang Li, Ning Feng*, Zhao Huo, Jianping He, 
-            <b style="color: #4A90E2; font-weight: 700;">Mingyu Wang</b>, 
-            Kang Yang, Jinchao Bai, Shanshan Li
-        </div>
-        <div style="margin-bottom: 8px; font-size: 14px; color: #000;">
-          <a class="hover-underline" href="https://www.sciencedirect.com/journal/measurement" target="_blank" style="font-weight: bold; font-style: italic; color: #000;">Measurement</a>, 
-          <span style="font-weight: bold; color: #A52A2A; margin-left: 3px;">2024</span>, 
-          Vol. 232, Article 114720
-        </div>
-        <div style="font-size: 14px; color: #555;">
-          <span style="font-weight: bold; color: #333; margin-right: 5px;">DOI:</span> 
-          <a class="hover-underline" href="https://doi.org/10.1016/j.measurement.2024.114720" target="_blank" style="color: #666; font-family: Consolas, monospace;">
-            https://doi.org/10.1016/j.measurement.2024.114720
-          </a>
-        </div>
-      </div>
-    </div>
 
-    <div class="pub" data-selected="true" style="margin-bottom: 30px; display: flex; align-items: flex-start; gap: 25px;">
-      <div class="pub-left" style="width: 32%; flex-shrink: 0;">
-        <img class="intro-img frame" src="images/Paper1.png" style="width: 100%; height: auto; box-shadow: 2px 2px 6px rgba(0,0,0,0.15); border-radius: 4px; display: block;">
+      <div class="pub" data-selected="true" style="margin-bottom: 30px; display: flex; align-items: flex-start; gap: 25px;">
+        <div class="pub-left" style="width: 32%; flex-shrink: 0;">
+          <img class="intro-img frame" src="images/Paper2.png" style="width: 100%; height: auto; box-shadow: 0 2px 6px rgba(0,0,0,0.15); border-radius: 4px; display: block;">
+        </div>
+        <div class="pub-right" style="flex-grow: 1; display: flex; flex-direction: column;">
+          <div class="title" style="margin-bottom: 12px; line-height: 1.5; font-size: 18px; font-weight: 600;">
+            <a class="hover-underline" href="https://doi.org/10.1016/j.measurement.2024.114720" target="_blank" style="color: #333; vertical-align: middle;">
+              Application research on FRP-OFBG bars in static load test for maglev guideway prestressed concrete girders
+            </a>
+            <span style="display: inline-block; vertical-align: middle; margin-left: 8px;">
+              <span style="background-color: #e0f7fa; color: #006064; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #b2ebf2; margin-right: 3px;">Research Article</span>
+              <span style="background-color: #e7f6df; color: #2e7d32; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #c8e6c9; margin-right: 3px;">JCR Q1</span>
+              <span style="background-color: #fff3e0; color: #ef6c00; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #ffe0b2; margin-right: 3px;">IF: 5.6</span>
+            </span>
+          </div>
+          <div class="authors" style="margin-bottom: 12px; font-size: 16px; line-height: 1.5; color: #444;">
+              Peigang Li, Ning Feng*, Zhao Huo, Jianping He, 
+              <b style="color: #4A90E2; font-weight: 700;">Mingyu Wang</b>, 
+              Kang Yang, Jinchao Bai, Shanshan Li
+          </div>
+          <div style="margin-bottom: 8px; font-size: 14px; color: #000;">
+            <a class="hover-underline" href="https://www.sciencedirect.com/journal/measurement" target="_blank" style="font-weight: bold; font-style: italic; color: #000;">Measurement</a>, 
+            <span style="font-weight: bold; color: #A52A2A; margin-left: 3px;">2024</span>, 
+            Vol. 232, Article 114720
+          </div>
+          <div style="font-size: 14px; color: #555;">
+            <span style="font-weight: bold; color: #333; margin-right: 5px;">DOI:</span> 
+            <a class="hover-underline" href="https://doi.org/10.1016/j.measurement.2024.114720" target="_blank" style="color: #666; font-family: Consolas, monospace;">
+              https://doi.org/10.1016/j.measurement.2024.114720
+            </a>
+          </div>
+        </div>
       </div>
-      <div class="pub-right" style="flex-grow: 1; display: flex; flex-direction: column;">
-        <div class="title" style="margin-bottom: 12px; line-height: 1.5; font-size: 18px; font-weight: 600;">
-          <a class="hover-underline" href="https://doi.org/10.1016/j.conbuildmat.2024.135169" target="_blank" style="color: #333; vertical-align: middle;">
-            A monitoring method of rail fastener reaction force based on iron pad strain
-          </a>
-          <span style="display: inline-block; vertical-align: middle; margin-left: 8px;">
-            <span style="background-color: #e0f7fa; color: #006064; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #b2ebf2; margin-right: 3px;">Research Article</span>
-            <span style="background-color: #e7f6df; color: #2e7d32; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #c8e6c9; margin-right: 3px;">JCR Q1</span>
-            <span style="background-color: #ffebee; color: #c62828; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #ffcdd2; margin-right: 3px;">Top</span>
-            <span style="background-color: #fff3e0; color: #ef6c00; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #ffe0b2; margin-right: 3px;">IF: 8.0</span>
-            <span style="background-color: #f3e5f5; color: #7b1fa2; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #e1bee7;">Corresponding Author</span>
-          </span>
+
+      <div class="pub" data-selected="true" style="margin-bottom: 30px; display: flex; align-items: flex-start; gap: 25px;">
+        <div class="pub-left" style="width: 32%; flex-shrink: 0;">
+          <img class="intro-img frame" src="images/Paper1.png" style="width: 100%; height: auto; box-shadow: 0 2px 6px rgba(0,0,0,0.15); border-radius: 4px; display: block;">
         </div>
-        <div class="authors" style="margin-bottom: 12px; font-size: 16px; line-height: 1.5; color: #444;">
-            Peigang Li, 
-            <b style="color: #4A90E2; font-weight: 700;">Mingyu Wang*</b>, 
-            Tianyu Yu, Ning Feng, Caihao Lan, Kang Yang, Shanshan Li, Hongzhi Zhang
-        </div>
-        <div style="margin-bottom: 8px; font-size: 14px; color: #000;">
-          <a class="hover-underline" href="https://www.sciencedirect.com/journal/construction-and-building-materials" target="_blank" style="font-weight: bold; font-style: italic; color: #000;">Construction and Building Materials</a>, 
-          <span style="font-weight: bold; color: #A52A2A; margin-left: 3px;">2024</span>, 
-          Vol. 418, Article 135169
-        </div>
-        <div style="font-size: 14px; color: #555;">
-          <span style="font-weight: bold; color: #333; margin-right: 5px;">DOI:</span> 
-          <a class="hover-underline" href="https://doi.org/10.1016/j.conbuildmat.2024.135169" target="_blank" style="color: #666; font-family: Consolas, monospace;">
-            https://doi.org/10.1016/j.conbuildmat.2024.135169
-          </a>
+        <div class="pub-right" style="flex-grow: 1; display: flex; flex-direction: column;">
+          <div class="title" style="margin-bottom: 12px; line-height: 1.5; font-size: 18px; font-weight: 600;">
+            <a class="hover-underline" href="https://doi.org/10.1016/j.conbuildmat.2024.135169" target="_blank" style="color: #333; vertical-align: middle;">
+              A monitoring method of rail fastener reaction force based on iron pad strain
+            </a>
+            <span style="display: inline-block; vertical-align: middle; margin-left: 8px;">
+              <span style="background-color: #e0f7fa; color: #006064; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #b2ebf2; margin-right: 3px;">Research Article</span>
+              <span style="background-color: #e7f6df; color: #2e7d32; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #c8e6c9; margin-right: 3px;">JCR Q1</span>
+              <span style="background-color: #ffebee; color: #c62828; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #ffcdd2; margin-right: 3px;">Top</span>
+              <span style="background-color: #fff3e0; color: #ef6c00; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #ffe0b2; margin-right: 3px;">IF: 8.0</span>
+              <span style="background-color: #f3e5f5; color: #7b1fa2; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #e1bee7;">Corresponding Author</span>
+            </span>
+          </div>
+          <div class="authors" style="margin-bottom: 12px; font-size: 16px; line-height: 1.5; color: #444;">
+              Peigang Li*, 
+              <b style="color: #4A90E2; font-weight: 700;">Mingyu Wang*</b>, 
+              Tianyu Yu, Ning Feng, Caihao Lan, Kang Yang, Shanshan Li, Hongzhi Zhang
+          </div>
+          <div style="margin-bottom: 8px; font-size: 14px; color: #000;">
+            <a class="hover-underline" href="https://www.sciencedirect.com/journal/construction-and-building-materials" target="_blank" style="font-weight: bold; font-style: italic; color: #000;">Construction and Building Materials</a>, 
+            <span style="font-weight: bold; color: #A52A2A; margin-left: 3px;">2024</span>, 
+            Vol. 418, Article 135169
+          </div>
+          <div style="font-size: 14px; color: #555;">
+            <span style="font-weight: bold; color: #333; margin-right: 5px;">DOI:</span> 
+            <a class="hover-underline" href="https://doi.org/10.1016/j.conbuildmat.2024.135169" target="_blank" style="color: #666; font-family: Consolas, monospace;">
+              https://doi.org/10.1016/j.conbuildmat.2024.135169
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<div class="wrapper">
-  <div id="codebase" class="bio anchor-offset">
-    <div class="bio-body" style="overflow:hidden;">
+  <div class="wrapper">
+    <div id="codebase" class="bio anchor-offset">
       <h1 class="md-heading text-left">
         <i class="fa fa-tasks" aria-hidden="true"></i>
         GitHub
@@ -736,111 +862,110 @@
       </div>
     </div>
   </div>
-</div>
 
-<div class="wrapper">
-  <div id="honors" class="timeline-brief anchor-offset" style="width: 100%; margin-bottom: 40px; clear: both;">
+  <div class="wrapper">
+    <div id="honors" class="timeline-brief anchor-offset" style="width: 100%; margin-bottom: 40px; clear: both;">
+        <h1 class="md-heading text-left">
+          <i class="fa fa-trophy" aria-hidden="true"></i>
+          Honors & Awards
+        </h1>
+        <ul class="std-list">
+          <li>
+            <b>SEU Innovation Capability Enhancement Plan for Doctoral Students</b>
+            <span style="float: right; font-size: 14px; color: #666;">2026</span>
+            <br>
+            <span style="color: #666; font-size: 14px;">Southeast University (Grant: CNY 48,000)</span>
+          </li>
+          <li>
+            <b>Third Prize, Traffic Infrastructure Structural Monitoring Technology Innovation Competition</b>
+            <span style="float: right; font-size: 14px; color: #666;">2025</span>
+            <br>
+            <span style="color: #666; font-size: 14px;">China Highway and Transportation Society</span>
+          </li>
+          <li>
+            <b>Outstanding Graduate</b>
+            <span style="float: right; font-size: 14px; color: #666;">2025</span>
+            <br>
+            <span style="color: #666; font-size: 14px;">Shanghai Institute of Technology</span>
+          </li>
+          <li>
+            <b>National Scholarship for Postgraduates</b>
+            <span style="float: right; font-size: 14px; color: #666;">2024</span>
+            <br>
+            <span style="color: #666; font-size: 14px;">Ministry of Education of the P.R. China (Grant: CNY 20,000)</span>
+          </li>
+          <li>
+            <b>First-Class Academic Scholarship</b>
+            <span style="float: right; font-size: 14px; color: #666;">2024</span>
+            <br>
+            <span style="color: #666; font-size: 14px;">Shanghai Institute of Technology (Grant: CNY 10,000)</span>
+          </li>
+          <li>
+            <b>Academic Scholarship</b>
+            <span style="float: right; font-size: 14px; color: #666;">2023</span>
+            <br>
+            <span style="color: #666; font-size: 14px;">Shanghai Institute of Technology (Grant: CNY 6,000)</span>
+          </li>
+          <li>
+            <b>Academic Scholarship</b>
+            <span style="float: right; font-size: 14px; color: #666;">2022</span>
+            <br>
+            <span style="color: #666; font-size: 14px;">Shanghai Institute of Technology (Grant: CNY 6,000)</span>
+          </li>
+        </ul>
+      </div>
+  </div>
+
+  <div class="wrapper">
+    <div id="service" class="timeline-brief anchor-offset" style="width: 100%; margin-bottom: 40px; clear: both;">
       <h1 class="md-heading text-left">
-        <i class="fa fa-trophy" aria-hidden="true"></i>
-        Honors & Awards
+        <i class="fa fa-users" aria-hidden="true"></i>
+        Academic Services
       </h1>
-      <ul style="list-style-type: disc; padding-left: 20px; margin-top: 15px; font-size: 16px; line-height: 1.6;">
-        <li style="margin-bottom: 12px;">
-          <b>SEU Innovation Capability Enhancement Plan for Doctoral Students</b>
-          <span style="float: right; color: #666; font-size: 14px;">2026</span>
-          <br>
-          <span style="color: #666; font-size: 14px;">Southeast University (Grant: CNY 48,000)</span>
-        </li>
-        <li style="margin-bottom: 12px;">
-          <b>Third Prize, Traffic Infrastructure Structural Monitoring Technology Innovation Competition</b>
-          <span style="float: right; color: #666; font-size: 14px;">2025</span>
-          <br>
-          <span style="color: #666; font-size: 14px;">China Highway and Transportation Society</span>
-        </li>
-        <li style="margin-bottom: 12px;">
-          <b>Outstanding Graduate</b>
-          <span style="float: right; color: #666; font-size: 14px;">2025</span>
-          <br>
-          <span style="color: #666; font-size: 14px;">Shanghai Institute of Technology</span>
-        </li>
-        <li style="margin-bottom: 12px;">
-          <b>National Scholarship for Postgraduates</b>
-          <span style="float: right; color: #666; font-size: 14px;">2024</span>
-          <br>
-          <span style="color: #666; font-size: 14px;">Ministry of Education of the P.R. China (Grant: CNY 20,000)</span>
-        </li>
-        <li style="margin-bottom: 12px;">
-          <b>First-Class Academic Scholarship</b>
-          <span style="float: right; color: #666; font-size: 14px;">2024</span>
-          <br>
-          <span style="color: #666; font-size: 14px;">Shanghai Institute of Technology (Grant: CNY 10,000)</span>
-        </li>
-        <li style="margin-bottom: 12px;">
-          <b>Academic Scholarship</b>
-          <span style="float: right; color: #666; font-size: 14px;">2023</span>
-          <br>
-          <span style="color: #666; font-size: 14px;">Shanghai Institute of Technology (Grant: CNY 6,000)</span>
-        </li>
-        <li style="margin-bottom: 12px;">
-          <b>Academic Scholarship</b>
-          <span style="float: right; color: #666; font-size: 14px;">2022</span>
-          <br>
-          <span style="color: #666; font-size: 14px;">Shanghai Institute of Technology (Grant: CNY 6,000)</span>
-        </li>
-      </ul>
-    </div>
-</div>
+      <div style="width: 100%; margin-top: 20px; margin-bottom: 30px;">
+        <h3 class="sub-heading">
+          <i class="fa fa-id-card-o" aria-hidden="true"></i>Society Memberships
+        </h3>
+        <ul class="std-list">
+          <li>
+            <b>Member</b>, American Society of Civil Engineers (ASCE)
+          </li>
+          <li>
+            <b>Member</b>, American Concrete Institute (ACI)
+          </li>
+          <li>
+            <b>Member</b>, China Civil Engineering Society (CCES)
+          </li>
+          <li>
+            <b>Member</b>, Chinese Optical Society (COS)
+          </li>
+        </ul>
+      </div>
 
-<div class="wrapper">
-  <div id="service" class="timeline-brief anchor-offset" style="width: 100%; margin-bottom: 40px; clear: both;">
-    <h1 class="md-heading text-left">
-      <i class="fa fa-users" aria-hidden="true"></i>
-      Academic Services
-    </h1>
-    <div style="width: 100%; margin-top: 20px; margin-bottom: 30px;">
-      <h3 style="font-size: 18px; font-weight: bold; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; margin-bottom: 15px; color: #333;">
-        <i class="fa fa-id-card-o" aria-hidden="true" style="margin-right: 8px; color: #555;"></i>Society Memberships
-      </h3>
-      <ul style="list-style-type: disc; padding-left: 20px; font-size: 16px; line-height: 1.8; color: #444;">
-        <li style="margin-bottom: 5px;">
-          <b>Member</b>, American Society of Civil Engineers (ASCE)
-        </li>
-        <li style="margin-bottom: 5px;">
-          <b>Member</b>, American Concrete Institute (ACI)
-        </li>
-        <li style="margin-bottom: 5px;">
-          <b>Member</b>, China Civil Engineering Society (CCES)
-        </li>
-        <li style="margin-bottom: 5px;">
-          <b>Member</b>, Chinese Optical Society (COS)
-        </li>
-      </ul>
-    </div>
-
-    <div style="width: 100%;">
-      <h3 style="font-size: 18px; font-weight: bold; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; margin-bottom: 15px; color: #333;">
-        <i class="fa fa-pencil-square-o" aria-hidden="true" style="margin-right: 8px; color: #555;"></i>Journal Reviewer
-      </h3>
-      <ul style="list-style-type: circle; padding-left: 20px; font-size: 16px; line-height: 1.8; color: #444;">
-        <li style="margin-bottom: 8px;">
-          Reviewer for <b>Measurement</b>
-          <span style="background-color: #f0f0f0; color: #666; padding: 1px 6px; border-radius: 4px; font-size: 12px; margin-left: 5px;">3 reviews</span>
-        </li>
-        <li style="margin-bottom: 8px;">
-          Reviewer for <b>Journal of King Saud University - Engineering Sciences</b>
-          <span style="background-color: #f0f0f0; color: #666; padding: 1px 6px; border-radius: 4px; font-size: 12px; margin-left: 5px;">1 review</span>
-        </li>
-        <li style="margin-bottom: 8px;">
-          Reviewer for <b>Scientific Reports</b>
-          <span style="background-color: #f0f0f0; color: #666; padding: 1px 6px; border-radius: 4px; font-size: 12px; margin-left: 5px;">2 review</span>
-        </li>
-        <li style="list-style: none; margin-top: 10px; font-size: 14px; color: #777; font-style: italic;">
-          (Total: 6 verified reviews)
-        </li>
-      </ul>
+      <div style="width: 100%;">
+        <h3 class="sub-heading">
+          <i class="fa fa-pencil-square-o" aria-hidden="true"></i>Journal Reviewer
+        </h3>
+        <ul class="std-list">
+          <li>
+            Reviewer for <b>Measurement</b>
+            <span style="background-color: #f0f0f0; color: #666; padding: 1px 6px; border-radius: 4px; font-size: 12px; margin-left: 5px;">3 reviews</span>
+          </li>
+          <li>
+            Reviewer for <b>Journal of King Saud University - Engineering Sciences</b>
+            <span style="background-color: #f0f0f0; color: #666; padding: 1px 6px; border-radius: 4px; font-size: 12px; margin-left: 5px;">1 review</span>
+          </li>
+          <li>
+            Reviewer for <b>Scientific Reports</b>
+            <span style="background-color: #f0f0f0; color: #666; padding: 1px 6px; border-radius: 4px; font-size: 12px; margin-left: 5px;">2 review</span>
+          </li>
+          <li style="list-style: none; margin-top: 10px; font-size: 14px; color: #777; font-style: italic;">
+            (Total: 6 verified reviews)
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
-</div>
 
 </div>
 </div>
@@ -911,7 +1036,7 @@
       
       <div class="footer-col footer-col-3" style="text-align: right;">
          <p class="text">
-            Last updated by <span style="color: #4A90E2;">Mingyu Wang</span><br>
+            Last updated by <span style="color: #4A90E2; font-weight: bold;">Mingyu Wang</span><br>
             Jan, 2026.
          </p>
       </div>
@@ -925,21 +1050,23 @@
 jQuery(document).ready(function() {
     var offset = 220;
     var duration = 500;
+    
+    // Back to top button logic
     jQuery(window).scroll(function() {
         if (jQuery(this).scrollTop() > offset) {
             jQuery('.back-to-top').fadeIn(duration);
         } else {
             jQuery('.back-to-top').fadeOut(duration);
-    
         }
     });
+    
     jQuery('.back-to-top').click(function(event) {
         event.preventDefault();
         jQuery('html, body').animate({scrollTop: 0}, duration);
         return false;
-    })
+    });
     
-    // 只保留：修复点击跳转的偏移 + 平滑滚动
+    // Smooth scroll for nav links & fix offset
     $('.site-nav .page-link').on('click', function(e) {
         if (this.hash !== "") {
             e.preventDefault();
@@ -947,8 +1074,7 @@ jQuery(document).ready(function() {
             var $target = $(hash);
             if($target.length){
                 $('html, body').animate({
-                    // 这里的 -75 是为了留出导航栏的空间
-                    scrollTop: $target.offset().top - 75 
+                    scrollTop: $target.offset().top - 75 /* Offset for fixed header */
                 }, 500);
             }
         }
