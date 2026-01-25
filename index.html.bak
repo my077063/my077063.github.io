@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="css/custom.css">
   
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/academicons.css"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -461,7 +461,7 @@
 <div class="page-content">
   <div class="wrapper">
 
-    <div id="about" class="bio anchor-offset" style="width: 100%;">
+    <div id="about" class="anchor-offset" style="width: 100%;">
       <h1 class="md-heading text-left">
         <i class="fa fa-id-card" aria-hidden="true"></i>
         About
