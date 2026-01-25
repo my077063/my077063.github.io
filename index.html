@@ -134,6 +134,20 @@
     /* =========================================
        3. Profile & Avatar
        ========================================= */
+       /* 核心修改：控制顶部背景图的高度和居中 */
+    #profile-cover {
+        height: 520px; /* 强制设为 520px，符合你截图的红框高度 */
+        background-image: url('images/background.jpg');
+        background-size: cover;
+        background-position: center;
+        
+        /* 弹性布局：让里面的白色名片死死定在正中间 */
+        display: flex; 
+        align-items: center; 
+        justify-content: center;
+        
+        margin-bottom: 40px; /* 保持与下方 About 的距离 */
+    }
     #profile-avatar {
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
         transition: transform 0.3s ease;
@@ -254,7 +268,7 @@
   </div>
 </header>
 
-<div id="profile-cover" class="cover shallow-bg img-responsive" style="background-image: url('images/background.jpg'); background-size: cover; background-position: center;">
+<div id="profile-cover" class="cover shallow-bg img-responsive">
   <div id="profile-namecard" class="profile-wrapper wrapper-light">
     
     <div id="my-pic" class="profile-col profile-col-1">
