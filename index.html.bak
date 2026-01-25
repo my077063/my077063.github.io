@@ -502,20 +502,32 @@
         Research Interests
       </h1>
       <ul class="std-list">
-        <li><b>Structural Health Monitoring (SHM)</b><br>
-          <span class="text-meta">Focusing on high-speed railway bridges and infrastructure safety.</span>
+        <li>
+          <b>Structural Health Monitoring (SHM)</b>
+          <span style="color: #8B0000; font-weight: bold; margin-left: 8px; font-size: 15px;">Application</span>
+          <br>
+          <span class="text-meta">Deploying smart algorithms on high-speed railways to translate massive sensor data into real-time actionable health diagnostics.</span>
         </li>
         
-        <li><b>Neural Operators</b><br>
-          <span class="text-meta">Leveraging deep learning models (FNO, DeepONet) to accelerate solving partial differential equations in engineering.</span>
+        <li>
+          <b>Neural Operators</b>
+          <span style="color: #8B0000; font-weight: bold; margin-left: 8px; font-size: 15px;">Technique</span>
+          <br>
+          <span class="text-meta">Mastering operator learning architectures (FNO/DeepONet) to bypass iterative solvers, accelerating simulations from hours to milliseconds.</span>
         </li>
         
-        <li><b>AI for Mechanics</b><br>
-          <span class="text-meta">Data-driven modeling for complex structural dynamics.</span>
+        <li>
+          <b>Physics-Informed AI</b>
+          <span style="color: #8B0000; font-weight: bold; margin-left: 8px; font-size: 15px;">Strategy</span>
+          <br>
+          <span class="text-meta">A dual-drive strategy that embeds physical laws (PDEs) into neural networks, ensuring AI predictions are not just fast, but physically consistent.</span>
         </li>
 
-        <li><b>Finite Element Analysis</b><br>
-          <span class="text-meta">Numerical simulation for structural mechanics and multi-physics problems.</span>
+        <li>
+          <b>Finite Element Method (FEM)</b>
+          <span style="color: #8B0000; font-weight: bold; margin-left: 8px; font-size: 15px;">Foundation</span>
+          <br>
+          <span class="text-meta">Generating the rigorous "Ground Truth" rooted in classical mechanics, serving as the essential cornerstone for model training and validation.</span>
         </li>
       </ul>
     </div>
