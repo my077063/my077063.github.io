@@ -344,7 +344,7 @@
         }
         .profile-col-1 { margin-bottom: 20px !important; }
         
-        #profile-avatar { width: 140px !important; height: 140px !important; }
+        #profile-avatar { width: 140px !important; height: 140px !important; margin-top: 30px !important; }
         #my-title { display: block !important; color: #555 !important; margin-top: 5px; font-size: 14px; line-height: 1.6; }
         .my-social-box { justify-content: center !important; flex-wrap: wrap; }
 
