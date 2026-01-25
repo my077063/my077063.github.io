@@ -54,6 +54,7 @@
         text-decoration: underline;
     }
 
+    /* Standard Section Heading Style */
     .md-heading {
         font-size: 26px;
         font-weight: 700;
@@ -68,6 +69,7 @@
         text-align: center;
     }
 
+    /* Sub-heading Style */
     .sub-heading {
         font-size: 18px; 
         font-weight: bold; 
@@ -82,6 +84,7 @@
         color: #555;
     }
 
+    /* Standard List Styling */
     .std-list {
         list-style-type: disc; 
         padding-left: 20px; 
@@ -93,17 +96,20 @@
         margin-bottom: 12px;
     }
     
+    /* Secondary/Meta Text */
     .text-meta {
         color: #666;
         font-size: 14px;
     }
 
+    /* Anchor Offset for Fixed Header */
     .anchor-offset {
         padding-top: 85px; 
         margin-top: -65px; 
         display: block; 
     }
 
+    /* Smooth Scroll */
     html {
         scroll-behavior: smooth;
     }
@@ -161,6 +167,7 @@
         transform: scale(1.05);
     }
 
+    /* Social Icons */
     .my-social-box {
       display: flex;
       align-items: center;
@@ -191,6 +198,19 @@
     .my-social-box a.icon-btn i {
       font-size: 1.5rem; 
       line-height: 1;
+    }
+
+    /* =========================================
+       4. Publication Badges (Desktop Default)
+       ========================================= */
+    .badge-item {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 3px;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 11px;
+        font-weight: bold;
     }
 
     /* =========================================
@@ -260,7 +280,7 @@
             margin: 0 auto;
         }
 
-        /* 4. Profile Cover */
+        /* 4. Profile Cover - 修复2: 确保学校/学院信息显示 */
         #profile-cover {
             height: auto !important;
             padding: 60px 0 40px 0;
@@ -289,13 +309,22 @@
             width: 140px !important;
             height: 140px !important;
         }
+
+        /* 强制显示学校和头衔，颜色加深 */
+        #my-title {
+            display: block !important;
+            color: #555 !important;
+            margin-top: 5px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
         
         .my-social-box {
             justify-content: center !important;
             flex-wrap: wrap;
         }
 
-        /* 5. Publications: Card Layout & Image Scaling */
+        /* 5. Publications: 修复1 - 标签流式跟随 */
         .pub {
             flex-direction: column !important;
             align-items: center !important;
@@ -311,23 +340,46 @@
             width: 100% !important;
             padding-left: 0 !important;
         }
+
+        /* 🚨 核心逻辑：移除 Flex，强制行内流式布局 */
+        .pub-right .title {
+            display: block !important; /* 容器为块级 */
+            line-height: 1.8 !important; /* 增加行高防止标签重叠 */
+        }
         
-        /* 🔴 修复2: 图片缩放至 95%，防止右侧边框被切 */
+        .pub-right .title a {
+            display: inline !important; /* 标题文字行内显示 */
+            margin-right: 6px; /* 标题和第一个标签的间距 */
+            vertical-align: baseline;
+        }
+
+        /* 标签容器行内显示 */
+        .pub-right .title > span {
+            display: inline !important; 
+        }
+
+        /* 单个标签保持不换行，但整体跟随文字流动 */
+        .badge-item {
+            display: inline-block !important;
+            margin: 2px 2px !important; /* 标签之间的微小间距 */
+            vertical-align: middle;
+            transform: translateY(-1px); /* 微调垂直对齐 */
+        }
+        
+        /* 图片缩放 */
         .intro-img {
             width: 95% !important; 
             max-width: 95% !important;
-            margin: 0 auto !important; /* 居中显示 */
+            margin: 0 auto !important; 
             display: block;
             height: auto;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.15); /* 保持阴影 */
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15); 
         }
 
-        /* 6. Timeline Spacing Fix */
-        /* 🔴 修复1: 增加每个经历条目之间的间距 */
+        /* 6. Timeline Spacing */
         .timeline-item {
             margin-bottom: 35px !important; 
             padding-bottom: 5px;
-            /* 可选：加个虚线分割会更清晰，不喜欢可删掉下面这行 */
             border-bottom: 1px dashed #f5f5f5; 
         }
         .timeline-item:last-child {
@@ -335,21 +387,16 @@
             border-bottom: none;
         }
 
-        /* 7. List & Awards Layout Fix */
-        /* 🔴 修复3: 减少缩进，让奖项标题有更多空间 */
+        /* 7. List Fix */
         .std-list {
-            padding-left: 12px !important; /* 原来是 20px 或更多，改小 */
+            padding-left: 12px !important; 
         }
-        
-        /* 确保年份不会太容易换行 */
         .std-list li {
             padding-left: 2px;
         }
-        
-        /* 稍微缩小奖项标题字号，防止它挤下年份 */
         .std-list li b {
             font-size: 15px; 
-            letter-spacing: -0.3px; /* 稍微紧凑一点 */
+            letter-spacing: -0.3px; 
         }
 
         /* 8. Intelligent Scaling */
@@ -366,6 +413,38 @@
             transform-origin: center center;
             max-width: 100vw;
             overflow: hidden;
+        }
+
+        /* 9. Footer Alignment Fix - 修复3: 强制居中对齐 */
+        .footer-col-wrapper {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important; /* 垂直轴居中 */
+            justify-content: center !important;
+            text-align: center !important;
+        }
+        
+        .footer-col {
+            width: 100% !important;
+            text-align: center !important;
+            margin-bottom: 20px !important;
+            padding: 0 !important;
+        }
+        
+        /* 专门针对 Email 列表居中 */
+        .contact-list {
+            padding: 0 !important;
+            margin: 0 auto !important;
+            list-style: none !important;
+            text-align: center !important;
+        }
+        .contact-list li {
+            text-align: center !important;
+        }
+
+        /* 修正 Last Updated 的对齐 */
+        .footer-col-3 {
+            text-align: center !important;
         }
     }
   </style>
@@ -644,17 +723,19 @@
           <img class="intro-img frame" src="images/Paper7.png" style="width: 100%; height: auto; box-shadow: 0 2px 6px rgba(0,0,0,0.15); border-radius: 4px; display: block;">
         </div>
         <div class="pub-right" style="flex-grow: 1; display: flex; flex-direction: column;">
-          <div class="title" style="margin-bottom: 12px; line-height: 1.5; font-size: 18px; font-weight: 600;">
+          
+          <div class="title" style="margin-bottom: 12px; font-size: 18px; font-weight: 600;">
             <a class="hover-underline" href="https://doi.org/10.1016/j.engfailanal.2025.110417" target="_blank" style="color: #333; vertical-align: middle;">
               Failure assessment of typical defects in ballastless track structures based on iron pad response
             </a>
-            <span style="display: inline-block; vertical-align: middle; margin-left: 8px;">
-              <span style="background-color: #e0f7fa; color: #006064; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #b2ebf2; margin-right: 3px;">Research Article</span>
-              <span style="background-color: #e7f6df; color: #2e7d32; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #c8e6c9; margin-right: 3px;">JCR Q1</span>
-              <span style="background-color: #fff3e0; color: #ef6c00; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #ffe0b2; margin-right: 3px;">IF: 5.7</span>
-              <span style="background-color: #f3e5f5; color: #7b1fa2; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #e1bee7;">First Author</span>
+            <span>
+              <span class="badge-item" style="background-color: #e0f7fa; color: #006064; border: 1px solid #b2ebf2;">Research Article</span>
+              <span class="badge-item" style="background-color: #e7f6df; color: #2e7d32; border: 1px solid #c8e6c9;">JCR Q1</span>
+              <span class="badge-item" style="background-color: #fff3e0; color: #ef6c00; border: 1px solid #ffe0b2;">IF: 5.7</span>
+              <span class="badge-item" style="background-color: #f3e5f5; color: #7b1fa2; border: 1px solid #e1bee7;">First Author</span>
             </span>
           </div>
+
           <div class="authors" style="margin-bottom: 12px; font-size: 16px; line-height: 1.5; color: #444;">
               <b style="color: #4A90E2; font-weight: 700;">Mingyu Wang</b>, 
               Yi Zhang*, Jialong Cai, Xinxin Yue, Shanshan Li, Tianyu Yu, Fei Yu, Ning Feng, Peigang Li, Tong Guo, Zhenhao Zhang
@@ -678,14 +759,14 @@
           <img class="intro-img frame" src="images/Paper6.png" style="width: 100%; height: auto; box-shadow: 0 2px 6px rgba(0,0,0,0.15); border-radius: 4px; display: block;">
         </div>
         <div class="pub-right" style="flex-grow: 1; display: flex; flex-direction: column;">
-          <div class="title" style="margin-bottom: 12px; line-height: 1.5; font-size: 18px; font-weight: 600;">
+          <div class="title" style="margin-bottom: 12px; font-size: 18px; font-weight: 600;">
             <a class="hover-underline" href="https://doi.org/10.1016/j.seta.2025.104203" target="_blank" style="color: #333; vertical-align: middle;">
               A self-powered triboelectric nanosensor based on track vibration energy harvesting for smart railway
             </a>
-            <span style="display: inline-block; vertical-align: middle; margin-left: 8px;">
-              <span style="background-color: #e0f7fa; color: #006064; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #b2ebf2; margin-right: 3px;">Research Article</span>
-              <span style="background-color: #e7f6df; color: #2e7d32; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #c8e6c9; margin-right: 3px;">JCR Q1</span>
-              <span style="background-color: #fff3e0; color: #ef6c00; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #ffe0b2; margin-right: 3px;">IF: 7.0</span>
+            <span>
+              <span class="badge-item" style="background-color: #e0f7fa; color: #006064; border: 1px solid #b2ebf2;">Research Article</span>
+              <span class="badge-item" style="background-color: #e7f6df; color: #2e7d32; border: 1px solid #c8e6c9;">JCR Q1</span>
+              <span class="badge-item" style="background-color: #fff3e0; color: #ef6c00; border: 1px solid #ffe0b2;">IF: 7.0</span>
             </span>
           </div>
           <div class="authors" style="margin-bottom: 12px; font-size: 16px; line-height: 1.5; color: #444;">
@@ -712,15 +793,15 @@
           <img class="intro-img frame" src="images/Paper5.png" style="width: 100%; height: auto; box-shadow: 0 2px 6px rgba(0,0,0,0.15); border-radius: 4px; display: block;">
         </div>
         <div class="pub-right" style="flex-grow: 1; display: flex; flex-direction: column;">
-          <div class="title" style="margin-bottom: 12px; line-height: 1.5; font-size: 18px; font-weight: 600;">
+          <div class="title" style="margin-bottom: 12px; font-size: 18px; font-weight: 600;">
             <a class="hover-underline" href="https://doi.org/10.1016/j.engfailanal.2025.109358" target="_blank" style="color: #333; vertical-align: middle;">
               A damage evaluation method for track structures based on iron pad strain
             </a>
-            <span style="display: inline-block; vertical-align: middle; margin-left: 8px;">
-              <span style="background-color: #e0f7fa; color: #006064; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #b2ebf2; margin-right: 3px;">Research Article</span>
-              <span style="background-color: #e7f6df; color: #2e7d32; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #c8e6c9; margin-right: 3px;">JCR Q1</span>
-              <span style="background-color: #fff3e0; color: #ef6c00; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #ffe0b2; margin-right: 3px;">IF: 5.7</span>
-              <span style="background-color: #f3e5f5; color: #7b1fa2; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #e1bee7;">Corresponding Author</span>
+            <span>
+              <span class="badge-item" style="background-color: #e0f7fa; color: #006064; border: 1px solid #b2ebf2;">Research Article</span>
+              <span class="badge-item" style="background-color: #e7f6df; color: #2e7d32; border: 1px solid #c8e6c9;">JCR Q1</span>
+              <span class="badge-item" style="background-color: #fff3e0; color: #ef6c00; border: 1px solid #ffe0b2;">IF: 5.7</span>
+              <span class="badge-item" style="background-color: #f3e5f5; color: #7b1fa2; border: 1px solid #e1bee7;">Corresponding Author</span>
             </span>
           </div>
           <div class="authors" style="margin-bottom: 12px; font-size: 16px; line-height: 1.5; color: #444;">
@@ -747,12 +828,12 @@
           <img class="intro-img frame" src="images/Paper4.png" style="width: 100%; height: auto; box-shadow: 0 2px 6px rgba(0,0,0,0.15); border-radius: 4px; display: block;">
         </div>
         <div class="pub-right" style="flex-grow: 1; display: flex; flex-direction: column;">
-          <div class="title" style="margin-bottom: 12px; line-height: 1.5; font-size: 18px; font-weight: 600;">
+          <div class="title" style="margin-bottom: 12px; font-size: 18px; font-weight: 600;">
             <a class="hover-underline" href="https://kns.cnki.net/kcms2/article/abstract?v=-w8R4t09JVWGb7ErEP4KODJsesY6zCfz_qHUIgzipI_WVWAUuJWbfdPQJa7kKjPbYGQzl6Or02lMRyK3lwrW-ePvb1vqQROdCj_7wAeWgU3B0qjtuY8Fo06yOyfJt3_BL8o93A8K-u1rru-lbOON01_yb3zuYKlPk2xtjx6e0W4zyK0k4m5Fwjglyd-uXuXE&uniplatform=NZKPT&language=CHS" target="_blank" style="color: #333; vertical-align: middle;">
               Research on the Monitoring and Evaluation Method of Ballastless Track Service Condition Based on Iron Pad Dynamic Strain
             </a>
-            <span style="display: inline-block; vertical-align: middle; margin-left: 8px;">
-              <span style="background-color: #e0f7fa; color: #006064; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #b2ebf2; margin-right: 3px;">Master's Thesis</span>
+            <span>
+              <span class="badge-item" style="background-color: #e0f7fa; color: #006064; border: 1px solid #b2ebf2;">Master's Thesis</span>
             </span>
           </div>
           <div class="authors" style="margin-bottom: 12px; font-size: 16px; line-height: 1.5; color: #444;">
@@ -776,15 +857,15 @@
           <img class="intro-img frame" src="images/Paper3.png" style="width: 100%; height: auto; box-shadow: 0 2px 6px rgba(0,0,0,0.15); border-radius: 4px; display: block;">
         </div>
         <div class="pub-right" style="flex-grow: 1; display: flex; flex-direction: column;">
-          <div class="title" style="margin-bottom: 12px; line-height: 1.5; font-size: 18px; font-weight: 600;">
+          <div class="title" style="margin-bottom: 12px; font-size: 18px; font-weight: 600;">
             <a class="hover-underline" href="https://doi.org/10.1016/j.engfailanal.2024.108780" target="_blank" style="color: #333; vertical-align: middle;">
               A refined track dynamic model considering the bending properties of iron pad: Proposal and validation
             </a>
-            <span style="display: inline-block; vertical-align: middle; margin-left: 8px;">
-              <span style="background-color: #e0f7fa; color: #006064; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #b2ebf2; margin-right: 3px;">Research Article</span>
-              <span style="background-color: #e7f6df; color: #2e7d32; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #c8e6c9; margin-right: 3px;">JCR Q1</span>
-              <span style="background-color: #fff3e0; color: #ef6c00; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #ffe0b2; margin-right: 3px;">IF: 5.7</span>
-              <span style="background-color: #f3e5f5; color: #7b1fa2; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #e1bee7;">First Author</span>
+            <span>
+              <span class="badge-item" style="background-color: #e0f7fa; color: #006064; border: 1px solid #b2ebf2;">Research Article</span>
+              <span class="badge-item" style="background-color: #e7f6df; color: #2e7d32; border: 1px solid #c8e6c9;">JCR Q1</span>
+              <span class="badge-item" style="background-color: #fff3e0; color: #ef6c00; border: 1px solid #ffe0b2;">IF: 5.7</span>
+              <span class="badge-item" style="background-color: #f3e5f5; color: #7b1fa2; border: 1px solid #e1bee7;">First Author</span>
             </span>
           </div>
           <div class="authors" style="margin-bottom: 12px; font-size: 16px; line-height: 1.5; color: #444;">
@@ -810,14 +891,14 @@
           <img class="intro-img frame" src="images/Paper2.png" style="width: 100%; height: auto; box-shadow: 0 2px 6px rgba(0,0,0,0.15); border-radius: 4px; display: block;">
         </div>
         <div class="pub-right" style="flex-grow: 1; display: flex; flex-direction: column;">
-          <div class="title" style="margin-bottom: 12px; line-height: 1.5; font-size: 18px; font-weight: 600;">
+          <div class="title" style="margin-bottom: 12px; font-size: 18px; font-weight: 600;">
             <a class="hover-underline" href="https://doi.org/10.1016/j.measurement.2024.114720" target="_blank" style="color: #333; vertical-align: middle;">
               Application research on FRP-OFBG bars in static load test for maglev guideway prestressed concrete girders
             </a>
-            <span style="display: inline-block; vertical-align: middle; margin-left: 8px;">
-              <span style="background-color: #e0f7fa; color: #006064; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #b2ebf2; margin-right: 3px;">Research Article</span>
-              <span style="background-color: #e7f6df; color: #2e7d32; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #c8e6c9; margin-right: 3px;">JCR Q1</span>
-              <span style="background-color: #fff3e0; color: #ef6c00; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #ffe0b2; margin-right: 3px;">IF: 5.6</span>
+            <span>
+              <span class="badge-item" style="background-color: #e0f7fa; color: #006064; border: 1px solid #b2ebf2;">Research Article</span>
+              <span class="badge-item" style="background-color: #e7f6df; color: #2e7d32; border: 1px solid #c8e6c9;">JCR Q1</span>
+              <span class="badge-item" style="background-color: #fff3e0; color: #ef6c00; border: 1px solid #ffe0b2;">IF: 5.6</span>
             </span>
           </div>
           <div class="authors" style="margin-bottom: 12px; font-size: 16px; line-height: 1.5; color: #444;">
@@ -844,16 +925,16 @@
           <img class="intro-img frame" src="images/Paper1.png" style="width: 100%; height: auto; box-shadow: 0 2px 6px rgba(0,0,0,0.15); border-radius: 4px; display: block;">
         </div>
         <div class="pub-right" style="flex-grow: 1; display: flex; flex-direction: column;">
-          <div class="title" style="margin-bottom: 12px; line-height: 1.5; font-size: 18px; font-weight: 600;">
+          <div class="title" style="margin-bottom: 12px; font-size: 18px; font-weight: 600;">
             <a class="hover-underline" href="https://doi.org/10.1016/j.conbuildmat.2024.135169" target="_blank" style="color: #333; vertical-align: middle;">
               A monitoring method of rail fastener reaction force based on iron pad strain
             </a>
-            <span style="display: inline-block; vertical-align: middle; margin-left: 8px;">
-              <span style="background-color: #e0f7fa; color: #006064; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #b2ebf2; margin-right: 3px;">Research Article</span>
-              <span style="background-color: #e7f6df; color: #2e7d32; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #c8e6c9; margin-right: 3px;">JCR Q1</span>
-              <span style="background-color: #ffebee; color: #c62828; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #ffcdd2; margin-right: 3px;">Top</span>
-              <span style="background-color: #fff3e0; color: #ef6c00; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #ffe0b2; margin-right: 3px;">IF: 8.0</span>
-              <span style="background-color: #f3e5f5; color: #7b1fa2; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #e1bee7;">Corresponding Author</span>
+            <span>
+              <span class="badge-item" style="background-color: #e0f7fa; color: #006064; border: 1px solid #b2ebf2;">Research Article</span>
+              <span class="badge-item" style="background-color: #e7f6df; color: #2e7d32; border: 1px solid #c8e6c9;">JCR Q1</span>
+              <span class="badge-item" style="background-color: #ffebee; color: #c62828; border: 1px solid #ffcdd2;">Top</span>
+              <span class="badge-item" style="background-color: #fff3e0; color: #ef6c00; border: 1px solid #ffe0b2;">IF: 8.0</span>
+              <span class="badge-item" style="background-color: #f3e5f5; color: #7b1fa2; border: 1px solid #e1bee7;">Corresponding Author</span>
             </span>
           </div>
           <div class="authors" style="margin-bottom: 12px; font-size: 16px; line-height: 1.5; color: #444;">
