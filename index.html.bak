@@ -223,7 +223,7 @@
         <li style="margin-top: 10px;"><b>Neural Operators</b></li>
         <span style="color: #666; font-size: 14px;">Leveraging deep learning models (FNO, DeepONet) to accelerate solving partial differential equations in engineering.</span>
         
-        <li style="margin-top: 10px;"><b>Scientific Machine Learning</b></li>
+        <li style="margin-top: 10px;"><b>AI for Mechanics</b></li>
         <span style="color: #666; font-size: 14px;">Data-driven modeling for complex structural dynamics.</span>
 
         <li style="margin-top: 10px;"><b>Finite Element Analysis</b></li>
