@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html id="page-top">
+<html>
 
 <head>
   <meta charset="utf-8">
@@ -104,10 +104,8 @@
         display: block; 
     }
 
-    /* 🔴 关键修复：删除了 html { scroll-behavior: smooth; } */
-    /* 这会让 jQuery 的 animate 函数重新生效，解决 Top 点击无反应的问题 */
     html {
-        /* scroll-behavior: smooth;  <-- 已注释掉 */
+        /* scroll-behavior: smooth; */ /* 禁用 CSS 滚动，防止与 JS 冲突 */
     }
 
     /* =========================================
@@ -295,7 +293,8 @@
             padding: 0 14px; 
             font-size: 15px;
             font-weight: 700;
-            color: #555; /* 统一所有链接为深灰色 */
+            /* 🔴 颜色修复: 强制覆盖所有颜色，不给蓝色机会 */
+            color: #555 !important; 
             text-decoration: none;
             flex-shrink: 0; 
             height: 60px;
@@ -303,14 +302,8 @@
             position: relative;
         }
 
-        /* 🔴 颜色修复: 强制统一为黑色/深灰色，去除蓝色 */
-        .mobile-scroll-nav a.nav-top {
-            color: #555 !important; 
-            margin-right: 5px;
-        }
-
         .mobile-scroll-nav a:active {
-            color: #000;
+            color: #000 !important;
             background-color: rgba(0,0,0,0.03);
         }
 
@@ -377,7 +370,7 @@
 </head>
 
 
-<body>
+<body id="page-top">
 
 <header class="site-header">
   
@@ -1178,23 +1171,25 @@ jQuery(document).ready(function() {
         return false;
     });
     
-    // 🔴 修复2: 独立 Top 按钮逻辑，确保点击必回顶部
-    // 使用 .stop() 防止动画队列堆积
-    $('.mobile-scroll-nav').on('click', '.nav-top', function(e) {
-        e.preventDefault();
-        $('html, body').stop().animate({scrollTop: 0}, 500);
-        return false;
-    });
-
-    // 其他导航链接逻辑
-    $('.site-nav .page-link, .mobile-scroll-nav a:not(.nav-top)').on('click', function(e) {
+    // 🔴 修复2: 统一所有导航按钮逻辑，并处理 Top 按钮的负值问题
+    $('.site-nav .page-link, .mobile-scroll-nav a').on('click', function(e) {
         if (this.hash !== "") {
             e.preventDefault();
             var hash = this.hash;
             var $target = $(hash);
+            
             if($target.length){
+                // 计算目标位置
+                var targetTop = $target.offset().top - 60;
+                
+                // 🔴 核心修复: 如果计算结果小于0 (比如 Top 按钮)，强制归零
+                // 这解决了浏览器忽略负值滚动导致 "没反应" 的问题
+                if (targetTop < 0) {
+                    targetTop = 0;
+                }
+
                 $('html, body').animate({
-                    scrollTop: $target.offset().top - 60 
+                    scrollTop: targetTop
                 }, 500);
             }
         }

@@ -104,8 +104,10 @@
         display: block; 
     }
 
+    /* 🔴 关键修复：删除了 html { scroll-behavior: smooth; } */
+    /* 这会让 jQuery 的 animate 函数重新生效，解决 Top 点击无反应的问题 */
     html {
-        scroll-behavior: smooth;
+        /* scroll-behavior: smooth;  <-- 已注释掉 */
     }
 
     /* =========================================
@@ -301,9 +303,9 @@
             position: relative;
         }
 
-        /* 🔴 修复1: 强制 Top 按钮颜色统一，不使用蓝色 */
+        /* 🔴 颜色修复: 强制统一为黑色/深灰色，去除蓝色 */
         .mobile-scroll-nav a.nav-top {
-            color: #555 !important;  
+            color: #555 !important; 
             margin-right: 5px;
         }
 
@@ -1177,10 +1179,10 @@ jQuery(document).ready(function() {
     });
     
     // 🔴 修复2: 独立 Top 按钮逻辑，确保点击必回顶部
-    $('.mobile-scroll-nav a.nav-top').on('click', function(e) {
+    // 使用 .stop() 防止动画队列堆积
+    $('.mobile-scroll-nav').on('click', '.nav-top', function(e) {
         e.preventDefault();
-        // 强制滚动到 0
-        $('html, body').animate({scrollTop: 0}, 500);
+        $('html, body').stop().animate({scrollTop: 0}, 500);
         return false;
     });
 
