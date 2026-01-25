@@ -132,6 +132,7 @@
         <a class="page-link" href="#codebase"><b>GitHub</b></a>
         <a class="page-link" href="#honors"><b>Honors</b></a>
         <a class="page-link" href="#service"><b>Services</b></a>
+        <a class="page-link" href="#visitor-map"><b>Visitors</b></a>
       </div>
     </nav>
   </div>
@@ -294,7 +295,8 @@
           @ <a href="https://www.seu.edu.cn/english/" target="_blank">Southeast University</a>
         </div>
         <div class="timeline-desc">
-          Major in Civil and Hydraulic Engineering.
+          Major in Civil and Hydraulic Engineering.<br>
+          <b>Supervisor:</b> Prof. Yi Zhang
         </div>
       </div>
       <div class="timeline-item">
@@ -307,7 +309,8 @@
           @ <a href="https://english.sit.edu.cn/" target="_blank">Shanghai Institute of Technology</a>
         </div>
         <div class="timeline-desc">
-          Major in Resources and Environment.
+          Major in Resources and Environment.<br>
+          <b>Supervisor:</b> Prof. Peigang Li
         </div>
       </div>
       <div class="timeline-item">
@@ -842,7 +845,7 @@
 </div>
 
 <div class="wrapper">
-	<div id="visitor-map" style="width: 100%; margin-top: 40px; margin-bottom: 40px; clear: both;">
+	<div id="visitor-map" class="anchor-offset" style="width: 100%; margin-bottom: 40px; clear: both;">
 	      <h1 class="md-heading text-left">
 	        <i class="fa fa-globe" aria-hidden="true"></i>
 	        Visitor Analytics
