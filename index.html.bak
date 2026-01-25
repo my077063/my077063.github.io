@@ -1122,54 +1122,70 @@ jQuery(document).ready(function() {
 <script>
 $(document).ready(function() {
     
-    // 获取所有的导航链接和它们对应的版块
-    // 注意：这里我们过滤掉了没有 href 或者 href="#" 的链接
     var $navLinks = $('.site-nav .page-link');
-    
-    // 滚动监听事件
-    $(window).scroll(function() {
-        var scrollPos = $(window).scrollTop(); // 获取当前滚动条位置
-        var headerHeight = 70; // 导航栏的大致高度，作为偏移量
+    var navHeight = 70; // 导航栏高度
 
-        // 遍历所有的导航链接
+    // 滚动监听主逻辑
+    $(window).scroll(function() {
+        var scrollPos = $(window).scrollTop();
+        
+        // 核心变量：用来记录当前应该亮起的 ID
+        var currentSectionId = "";
+
+        // 1. 遍历所有导航链接
         $navLinks.each(function() {
             var currLink = $(this);
             var refElementId = currLink.attr("href");
             
-            // 确保 href 是以 # 开头的 ID 选择器，且不是空的 #
+            // 确保是一个有效的 ID
             if (refElementId && refElementId.startsWith("#") && refElementId.length > 1) {
                 var $refElement = $(refElementId);
                 
-                // 检查目标版块是否存在
+                // 如果页面上有这个版块
                 if ($refElement.length) {
-                    // 核心逻辑：如果当前滚动位置 >= 版块顶部 且 < 版块底部
-                    if ($refElement.offset().top - headerHeight <= scrollPos && 
-                        $refElement.offset().top + $refElement.height() > scrollPos) {
-                        
-                        // 移除其他链接的高亮
-                        $('.site-nav .page-link').removeClass("active-nav");
-                        // 给当前链接添加高亮
-                        currLink.addClass("active-nav");
-                    }
-                    else{
-                        currLink.removeClass("active-nav");
+                    var elementTop = $refElement.offset().top;
+                    
+                    // 【改进点】逻辑：只要滚动条的位置超过了这个版块的顶部（减去导航栏偏移）
+                    // 我们就暂时认为它是“当前版块”。
+                    // 因为 each 是按顺序从上往下执行的，所以 currentSectionId 会不断被下方更新的版块覆盖
+                    // 循环结束时，留下的那个就是“最靠下的那个已滚过的版块”，也就是用户当前看到的版块。
+                    if (elementTop - navHeight - 30 <= scrollPos) {
+                        currentSectionId = refElementId;
                     }
                 }
             }
         });
+        
+        // 2. 额外处理：如果滚到底部了，强制高亮最后一个（防止因页面太短触达不到最后一个锚点）
+        if($(window).scrollTop() + $(window).height() > $(document).height() - 50) {
+             // 获取最后一个有效的链接 ID
+             var lastLink = $navLinks.last().attr("href");
+             if(lastLink) currentSectionId = lastLink;
+        }
+
+        // 3. 统一应用样式
+        $navLinks.each(function() {
+            var currLink = $(this);
+            // 如果该链接的 href 等于我们计算出的 ID，就高亮
+            if (currentSectionId && currLink.attr("href") === currentSectionId) {
+                currLink.addClass("active-nav");
+            } else {
+                currLink.removeClass("active-nav");
+            }
+        });
     });
 
-    // 修复点击导航遮挡问题（可选）
-    // 因为设置了 fixed header，点击跳转时标题会被挡住，这个脚本修正偏移
+    // 点击平滑跳转逻辑（保持不变）
     $('.site-nav .page-link').on('click', function(e) {
         if (this.hash !== "") {
             e.preventDefault();
             var hash = this.hash;
-            $('html, body').animate({
-                scrollTop: $(hash).offset().top - 65
-            }, 800, function(){
-                // 可以在这里更新 URL hash，如果需要的话
-            });
+            var $target = $(hash);
+            if($target.length){
+                $('html, body').animate({
+                    scrollTop: $target.offset().top - navHeight + 5 
+                }, 500);
+            }
         }
     });
 });
