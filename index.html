@@ -94,19 +94,6 @@
         padding-top: 70px; /* 预留出导航栏的高度 */
     }
 
-    /* 3. 导航栏被选中时的样式（蓝色、加粗） */
-    /* 核心修改：同时强制修改 b 标签的颜色，否则会被黑色覆盖 */
-    .site-nav .page-link.active-nav,
-    .site-nav .page-link.active-nav b {
-        color: #4A90E2 !important; /* 强制变成蓝色 */
-        font-weight: bold;
-    }
-    
-    /* 单独给链接加下划线，不需要加给 b 标签 */
-    .site-nav .page-link.active-nav {
-         border-bottom: 2px solid #4A90E2;
-    }
-
     /* 4. 平滑滚动效果 */
     html {
         scroll-behavior: smooth;
@@ -1133,65 +1120,6 @@ jQuery(document).ready(function() {
         jQuery('html, body').animate({scrollTop: 0}, duration);
         return false;
     })
-});
-</script>
-<script>
-$(document).ready(function() {
-    
-    var $navLinks = $('.site-nav .page-link');
-    var navHeight = 70; // 导航栏高度
-
-    // 滚动监听主逻辑
-    $(window).scroll(function() {
-        var scrollPos = $(window).scrollTop() + navHeight + 10; // 这里的 +10 是为了让高亮稍微提前一点点触发
-        
-        var currentSectionId = "";
-
-        // 1. 遍历所有导航链接对应的版块
-        $navLinks.each(function() {
-            var currLink = $(this);
-            var refElementId = currLink.attr("href");
-            
-            // 确保是一个有效的 ID
-            if (refElementId && refElementId.startsWith("#") && refElementId.length > 1) {
-                var $refElement = $(refElementId);
-                
-                // 如果页面上有这个版块
-                if ($refElement.length) {
-                    var elementTop = $refElement.offset().top;
-                    
-                    // 核心逻辑：如果 滚动条位置 > 这个版块的顶部位置
-                    // 说明我们已经进入了这个版块（或者经过了它）
-                    // 因为 each 是从上往下遍历的，所以 currentSectionId 会一直更新，
-                    // 直到最后留在最下面的那个版块 ID 上。
-                    if (scrollPos >= elementTop) {
-                        currentSectionId = refElementId;
-                    }
-                }
-            }
-        });
-
-        // 2. 移除所有高亮，只给当前 ID 添加高亮
-        $('.site-nav .page-link').removeClass("active-nav");
-        if (currentSectionId) {
-            $('.site-nav .page-link[href="' + currentSectionId + '"]').addClass("active-nav");
-        }
-    });
-
-    // 修复点击跳转的偏移
-    $('.site-nav .page-link').on('click', function(e) {
-        if (this.hash !== "") {
-            e.preventDefault();
-            var hash = this.hash;
-            var $target = $(hash);
-            if($target.length){
-                $('html, body').animate({
-                    // 这里的 -75 是为了留出导航栏的空间
-                    scrollTop: $target.offset().top - 75 
-                }, 500);
-            }
-        }
-    });
 });
 </script>
   </body>
