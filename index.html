@@ -261,6 +261,200 @@
         margin-right: 8px;
     }
 
+    /* =========================================
+       6. Responsive / Mobile Styles (Mobile First Adaptation)
+       ========================================= */
+    /* Note: We use max-width: 768px to target tablets and mobile devices.
+       Desktop view (> 768px) remains strictly untouched.
+    */
+    @media screen and (max-width: 768px) {
+        
+        /* --- Layout & Reset --- */
+        body {
+            padding-top: 60px;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+        
+        .wrapper {
+            width: 100% !important;
+            max-width: 100% !important;
+            padding-left: 15px !important;
+            padding-right: 15px !important;
+            box-sizing: border-box;
+        }
+
+        /* --- Navigation (Hamburger) --- */
+        .site-header {
+            height: 60px;
+            padding: 0;
+        }
+        
+        /* Ensure the nav container spans full width */
+        .site-nav {
+            position: absolute;
+            top: 0;
+            right: 15px;
+            background-color: transparent;
+            border: none;
+            border-radius: 5px;
+            text-align: right;
+        }
+
+        /* The hamburger icon */
+        .site-nav .menu-icon {
+            display: inline-block !important; /* Force show on mobile */
+            float: right;
+            padding: 20px 0;
+            cursor: pointer;
+        }
+        
+        .site-nav .menu-icon svg path {
+            fill: #333;
+        }
+
+        /* The dropdown menu */
+        .site-nav .trigger {
+            display: none; /* Hidden by default */
+            clear: both;
+            position: absolute;
+            top: 60px;
+            right: -15px; /* Align to screen edge */
+            width: 100vw; /* Full screen width */
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        /* When toggled via JS */
+        .site-nav .trigger.open {
+            display: block;
+        }
+
+        .site-nav .page-link {
+            display: block;
+            padding: 12px 20px;
+            margin-left: 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 16px;
+            color: #333 !important;
+        }
+        
+        /* --- Profile Cover --- */
+        #profile-cover {
+            height: auto !important; /* Remove fixed height */
+            padding: 40px 0;
+            min-height: auto;
+        }
+
+        #profile-namecard {
+            flex-direction: column !important; /* Stack vertically */
+            width: 100% !important;
+            padding: 20px !important;
+            box-sizing: border-box;
+        }
+
+        .profile-col {
+            width: 100% !important;
+            text-align: center;
+            padding: 0 !important;
+        }
+
+        #my-pic {
+            margin-bottom: 20px;
+        }
+        
+        #profile-avatar {
+            width: 140px; /* Slightly smaller avatar */
+            height: 140px;
+        }
+
+        #my-contact {
+            text-align: center;
+        }
+
+        .my-social-box {
+            justify-content: center !important; /* Center icons */
+            flex-wrap: wrap;
+        }
+
+        /* --- Publications & Lists --- */
+        /* Override inline styles using !important to ensure mobile layout takes precedence */
+        .pub {
+            flex-direction: column !important;
+            gap: 15px !important;
+            margin-bottom: 40px !important;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+        
+        /* Remove border from the last item */
+        .pub:last-child {
+            border-bottom: none;
+        }
+
+        .pub-left {
+            width: 100% !important;
+            margin-right: 0 !important;
+        }
+
+        .intro-img {
+            width: 100% !important;
+            max-width: 100% !important;
+            height: auto !important;
+        }
+
+        .pub-right {
+            width: 100% !important;
+        }
+        
+        .title {
+            font-size: 16px !important;
+        }
+        
+        /* Stack tags (e.g. Q1, IF) if they overflow */
+        .title span {
+            margin-top: 5px;
+        }
+
+        /* --- Footer --- */
+        .footer-col-wrapper {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .footer-col {
+            width: 100%;
+            margin-bottom: 20px;
+            text-align: center !important;
+            padding: 0;
+        }
+        
+        .contact-list {
+            padding: 0;
+        }
+        
+        /* --- Components --- */
+        .github-card {
+            width: 100% !important;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+        }
+
+        /* Prevent long titles from breaking layout */
+        h1, h2, h3 {
+            word-wrap: break-word;
+        }
+        
+        /* Honors List - Stack date */
+        #honors li span[style*="float: right"] {
+            float: none !important;
+            display: block;
+            margin-top: 2px;
+            margin-bottom: 4px;
+        }
+    }
   </style>
   
 </head>
@@ -271,7 +465,7 @@
 <header class="site-header">
   <div class="wrapper">
     <nav class="site-nav">
-      <a href="#" class="menu-icon">
+      <a href="#" class="menu-icon" onclick="document.querySelector('.trigger').classList.toggle('open'); return false;">
         <svg viewBox="0 0 18 15">
           <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
           <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
@@ -1067,7 +1261,13 @@ jQuery(document).ready(function() {
     });
     
     // Smooth scroll for nav links & fix offset
+    // Updated to close mobile menu automatically upon click
     $('.site-nav .page-link').on('click', function(e) {
+        // Close menu on mobile when a link is clicked
+        if ($(window).width() <= 768) {
+            $('.trigger').removeClass('open');
+        }
+
         if (this.hash !== "") {
             e.preventDefault();
             var hash = this.hash;

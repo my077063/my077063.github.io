@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <title>Mingyu WANG</title>
   <meta name="description" lang="en" content="This is an academic website for Mingyu WANG">
@@ -37,9 +37,6 @@
         line-height: 1.6;
         color: #333;
         padding-top: 70px; /* Offset for fixed header */
-        /* 防止横向滚动 */
-        overflow-x: hidden; 
-        width: 100%;
     }
 
     h1, h2, h3, h4, h5, h6 {
@@ -135,21 +132,27 @@
     }
 
     /* =========================================
-       3. Profile & Avatar
+       3. Profile & Avatar (修改版：背景透明度分离)
        ========================================= */
     
+    /* 1. 父容器：负责布局，不再直接挂背景图 */
     #profile-cover {
         height: 520px; 
-        position: relative; 
-        z-index: 0;       
+        position: relative; /* 关键：给伪元素做定位参考 */
+        z-index: 0;        /* 建立层级基准 */
+        
+        /* 弹性布局让名片居中 */
         display: flex; 
         align-items: center; 
         justify-content: center;
         margin-bottom: 40px;
+        
+        /* 建议：给一个白色底色。当背景图变透明时，会透出这个白色，看起来就是变淡了 */
         background-color: #ffffff;
-        overflow: hidden; 
+        overflow: hidden; /* 防止背景图溢出 */
     }
 
+    /* 2. 伪元素：专门负责放背景图，并设置透明度 */
     #profile-cover::before {
         content: "";
         position: absolute;
@@ -157,11 +160,18 @@
         left: 0;
         width: 100%;
         height: 100%;
+        
+        /* 这里放背景图 */
         background-image: url('images/background.jpg');
         background-size: cover;
         background-position: center;
+        
+        /* 🔴 核心修改：透明度控制 */
+        /* 0.35 表示保留 35% 的不透明度（即比较淡，适合做背景） */
+        /* 如果觉得太淡，可以改成 0.5 (50%) 或 0.65 (65%) */
         opacity: 0.7; 
-        z-index: -1; 
+        
+        z-index: -1; /* 关键：把它放在白色名片卡片的后面 */
     }
 
     #profile-avatar {
@@ -208,16 +218,18 @@
     }
 
     /* =========================================
-       5. Timeline (Education & Experiences)
+       5. Timeline (Education & Experiences) - REDESIGNED
        ========================================= */
     
+    /* 职务/学位：改为深暗红色 (Dark Red) */
     .timeline-title {
         font-size: 17px;
         font-weight: 700;
-        color: #8B0000; 
+        color: #8B0000; /* 更深、更稳重的暗红色 */
         margin-bottom: 4px;
     }
     
+    /* 强制统一所有机构链接的颜色 (蓝色)，避免 visited 导致的色差 */
     .timeline-title a {
         color: #4A90E2 !important; 
         font-weight: 700;
@@ -227,10 +239,11 @@
         text-decoration: underline;
     }
 
+    /* 时间：改为纯黑色 (Black) */
     .timeline-date {
         font-size: 14px;
         font-weight: 600;
-        color: #000000; 
+        color: #000000; /* 纯黑 */
         margin-bottom: 5px;
     }
 
@@ -246,164 +259,6 @@
         height: 22px; 
         vertical-align: middle; 
         margin-right: 8px;
-    }
-
-    /* =========================================================
-       🔥🔥🔥 MOBILE OPTIMIZATION / 手机端核心适配代码 🔥🔥🔥
-       此部分代码仅在屏幕宽度小于 768px (手机/平板竖屏) 时生效
-       它会强制覆盖上方的样式和HTML中的行内样式
-       ========================================================= */
-    @media screen and (max-width: 768px) {
-        
-        /* --- 1. 基础容器修复 --- */
-        body {
-            padding-top: 60px; /* 调整头部偏移量 */
-            font-size: 15px; /* 稍微调小字体适应小屏 */
-        }
-        
-        .wrapper {
-            width: 100% !important;
-            padding-left: 15px !important;
-            padding-right: 15px !important;
-            box-sizing: border-box !important;
-        }
-
-        /* --- 2. 个人名片区 (Profile) 彻底重构 --- */
-        #profile-cover {
-            height: auto !important; /* 取消固定高度 */
-            min-height: auto !important;
-            padding-top: 100px; /* 留出顶部空间 */
-            padding-bottom: 40px;
-            display: block !important; /* 块级显示 */
-        }
-
-        #profile-namecard {
-            display: flex !important;
-            flex-direction: column !important; /* 强制上下排列 */
-            width: 92% !important; /* 宽度适配手机 */
-            margin: 0 auto !important; /* 居中 */
-            padding: 30px 15px !important;
-            height: auto !important;
-            box-sizing: border-box !important;
-            gap: 20px; /* 头像和文字间距 */
-        }
-
-        /* 头像区域 */
-        #my-pic.profile-col {
-            width: 100% !important;
-            padding-right: 0 !important;
-            display: flex;
-            justify-content: center;
-            margin-bottom: 10px;
-        }
-        
-        #profile-avatar {
-            width: 140px !important; /* 头像稍微调小 */
-            height: 140px !important;
-        }
-
-        /* 文字信息区域 */
-        #my-contact.profile-col {
-            width: 100% !important;
-            padding-left: 0 !important;
-            text-align: center !important; /* 强制文字居中 */
-        }
-
-        /* 社交图标居中 */
-        .my-social-box {
-            justify-content: center !important;
-            flex-wrap: wrap; /* 如果图标太多允许换行 */
-        }
-
-        /* --- 3. 论文列表 (Publications) 彻底重构 --- */
-        /* 这里的关键是用 !important 覆盖 HTML 里的行内 style="width:32%" */
-        .pub {
-            flex-direction: column !important; /* 强制图片在上，文字在下 */
-            align-items: center !important;
-            gap: 15px !important;
-            border-bottom: 1px dashed #eee; /* 手机端增加分隔线更清晰 */
-            padding-bottom: 25px;
-            margin-bottom: 25px !important;
-        }
-
-        .pub-left {
-            width: 100% !important; /* 图片容器占满宽 */
-            max-width: 100% !important;
-            margin-right: 0 !important;
-        }
-
-        .pub-left img {
-            width: 100% !important; /* 图片撑满 */
-            height: auto !important; /* 保持比例 */
-            object-fit: contain; 
-        }
-
-        .pub-right {
-            width: 100% !important; /* 文字容器占满宽 */
-            padding-left: 0 !important;
-        }
-
-        /* --- 4. 标题与文字排版优化 --- */
-        .md-heading {
-            font-size: 22px !important; /* 标题改小一点 */
-            text-align: center !important; /* 手机端标题居中更好看 */
-            margin-top: 10px;
-        }
-        
-        /* 让 About 部分的 Hi, I'm... 不那么拥挤 */
-        .bio-body div[style*="font-size: 26px"] {
-            font-size: 20px !important; /* 强制改小欢迎语字号 */
-            line-height: 1.4 !important;
-            text-align: left;
-        }
-
-        /* 标签自适应 (JCR Q1, IF 等) */
-        .pub-right .title span {
-            display: inline-block;
-            margin-top: 5px;
-        }
-
-        /* --- 5. GitHub 卡片优化 --- */
-        /* 假设 .card-container 用了 flex */
-        .card-container {
-            display: flex;
-            flex-direction: column; /* 上下排 */
-        }
-        .github-card {
-            width: 100% !important; /* 占满 */
-            margin-bottom: 15px;
-        }
-
-        /* --- 6. 底部 Footer 优化 --- */
-        .footer-col-wrapper {
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-            gap: 20px;
-        }
-        .footer-col {
-            width: 100% !important;
-            padding: 0 !important;
-            text-align: center !important;
-        }
-        .footer-col-3 {
-            text-align: center !important;
-        }
-        
-        /* --- 7. 地球与访问者 --- */
-        #clstr_globe {
-            max-width: 100% !important;
-        }
-
-        /* --- 8. 荣誉奖项的年份对齐修复 --- */
-        #honors li span[style*="float: right"] {
-            float: none !important;
-            display: block;
-            margin-top: 2px;
-            margin-bottom: 4px;
-            font-weight: bold;
-            color: #4A90E2 !important;
-        }
     }
 
   </style>
