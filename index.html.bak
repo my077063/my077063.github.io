@@ -105,6 +105,14 @@
     html {
         scroll-behavior: smooth;
     }
+    /* --- 在 style 标签中添加这个新类 --- */
+
+/* 专门用于修复导航栏遮挡的偏移类 */
+.anchor-offset {
+    padding-top: 85px;  /* 增加顶部内边距，把内容“挤”下来，留出导航栏的空间 */
+    margin-top: -65px;  /* 使用负边距把布局拉回去，避免页面空白太大 */
+    display: block;     /* 确保对所有元素生效 */
+}
   </style>
   
 
