@@ -350,123 +350,124 @@
     </div>
 
     <div id="education" class="timeline-brief anchor-offset" style="clear: both;">
-      <h1 class="md-heading text-left">
-        <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-        Education
-      </h1>
-      <div class="timeline-body">
-        
-        <div class="timeline-item">
-          <div class="timeline-date">
-            <img class="social-icon" src="images/SEU_logo.png"/>
-            Sep, 2025 - Present
-          </div>
-          <div class="timeline-title">
-            Doctoral Student<br>
-            @ <a href="https://www.seu.edu.cn/english/" target="_blank">Southeast University</a>
-          </div>
-          <div class="timeline-desc">
-            Major in Civil and Hydraulic Engineering.<br>
-            <b>Supervisor:</b> Prof. Yi Zhang
-          </div>
-        </div>
+	    <h1 class="md-heading text-left">
+	      <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+	      Education
+	    </h1>
+	    <div class="timeline-body">
+	      
+	      <div class="timeline-item">
+	        <div class="timeline-date">
+	          <img class="social-icon" src="images/SEU_logo.png" style="width:auto; height:24px; vertical-align:middle; margin-right:5px;"/>
+	          Sep, 2025 - Present
+	        </div>
+	        <div class="timeline-title">
+	          Doctoral Student<br>
+	          @ <a href="https://www.seu.edu.cn/english/" target="_blank">Southeast University</a>
+	        </div>
+	        <div class="timeline-desc">
+	          Major in Civil and Hydraulic Engineering.<br>
+	          <b>Supervisor:</b> Prof. Yi Zhang
+	        </div>
+	      </div>
 
-        <div class="timeline-item">
-          <div class="timeline-date">
-            <img class="social-icon" src="images/SIT_logo.jpg"/>
-            Sep, 2022 - Mar, 2025
-          </div>
-          <div class="timeline-title">
-            Master Student<br>
-            @ <a href="https://english.sit.edu.cn/" target="_blank">Shanghai Institute of Technology</a>
-          </div>
-          <div class="timeline-desc">
-            Major in Resources and Environment.<br>
-            <b>Supervisor:</b> Prof. Peigang Li
-          </div>
-        </div>
+	      <div class="timeline-item">
+	        <div class="timeline-date">
+	          <img class="social-icon" src="images/SIT_logo.jpg" style="width:auto; height:24px; vertical-align:middle; margin-right:5px;"/>
+	          Sep, 2022 - Mar, 2025
+	        </div>
+	        <div class="timeline-title">
+	          Master Student<br>
+	          @ <a href="https://english.sit.edu.cn/" target="_blank">Shanghai Institute of Technology</a>
+	        </div>
+	        <div class="timeline-desc">
+	          Major in Resources and Environment.<br>
+	          <b>Supervisor:</b> Prof. Peigang Li
+	        </div>
+	      </div>
 
-        <div class="timeline-item">
-          <div class="timeline-date">
-            <img class="social-icon" src="images/SJU_logo.jpg"/>
-            Sep, 2016 - Dec, 2019
-          </div>
-          <div class="timeline-title">
-            Bachelor Student<br>
-            @ <a href="https://en.swjtu.edu.cn/" target="_blank">Southwest Jiaotong University</a>
-          </div>
-          <div class="timeline-desc">
-            Major in Engineering Cost.
-          </div>
-        </div>
+	      <div class="timeline-item">
+	        <div class="timeline-date">
+	          <img class="social-icon" src="images/SJU_logo.jpg" style="width:auto; height:24px; vertical-align:middle; margin-right:5px;"/>
+	          Sep, 2016 - Dec, 2019
+	        </div>
+	        <div class="timeline-title">
+	          Bachelor Student<br>
+	          @ <a href="https://en.swjtu.edu.cn/" target="_blank">Southwest Jiaotong University</a>
+	        </div>
+	        <div class="timeline-desc">
+	          Major in Engineering Cost.
+	        </div>
+	      </div>
 
-        <div class="timeline-item">
-          <div class="timeline-date">
-            <img class="social-icon" src="images/JY_logo.png"/>
-            Sep, 2015 - Jun, 2018
-          </div>
-          <div class="timeline-title">
-            Associate Student<br>
-            @ <a href="https://www.scat.edu.cn/" target="_blank">Sichuan College of Architectural Technology</a>
-          </div>
-          <div class="timeline-desc">
-            Major in Construction Management.
-          </div>
-        </div>
-      </div>
-    </div>
+	      <div class="timeline-item">
+	        <div class="timeline-date">
+	          <img class="social-icon" src="images/JY_logo.png" style="width:auto; height:24px; vertical-align:middle; margin-right:5px;"/>
+	          Sep, 2015 - Jun, 2018
+	        </div>
+	        <div class="timeline-title">
+	          Associate Student<br>
+	          @ <a href="https://www.scat.edu.cn/" target="_blank">Sichuan College of Architectural Technology</a>
+	        </div>
+	        <div class="timeline-desc">
+	          Major in Construction Management.
+	        </div>
+	      </div>
+
+	    </div>
+	</div>
 
     <div id="timeline" class="timeline-brief anchor-offset">
-      <h1 class="md-heading text-left">
-        <i class="fa fa-tasks" aria-hidden="true"></i>
-        Experiences
-      </h1>
-      <div class="timeline-body">
-        
-        <div class="timeline-item">
-          <div class="timeline-date">
-            <img class="social-icon" src="images/GZ_logo.png"/>
-            Sep, 2025 - Present
-          </div>
-          <div class="timeline-title">
-            Researcher<br>
-            @ <a href="https://civil.seu.edu.cn/berc/" target="_blank">National Key Laboratory of Safety, Durability and Healthy Operation of Long Span Bridges</a>
-          </div>
-          <div class="timeline-desc">
-            Investigating the damage evolution mechanisms and resilience assessment of vehicle-track-bridge (VTB) systems under extreme service environments.
-          </div>
-        </div>
+	    <h1 class="md-heading text-left">
+	      <i class="fa fa-tasks" aria-hidden="true"></i>
+	      Experiences
+	    </h1>
+	    <div class="timeline-body">
+	      
+	      <div class="timeline-item">
+	        <div class="timeline-date">
+	          <img class="social-icon" src="images/GZ_logo.png" style="width:auto; height:24px; vertical-align:middle; margin-right:5px;"/>
+	          Sep, 2025 - Present
+	        </div>
+	        <div class="timeline-title">
+	          Researcher<br>
+	          @ <a href="https://civil.seu.edu.cn/berc/" target="_blank">National Key Laboratory of Safety, Durability and Healthy Operation of Long Span Bridges</a>
+	        </div>
+	        <div class="timeline-desc">
+	          Investigating the damage evolution mechanisms and resilience assessment of vehicle-track-bridge (VTB) systems under extreme service environments.
+	        </div>
+	      </div>
 
-        <div class="timeline-item">
-          <div class="timeline-date">
-            <img class="social-icon" src="images/HYY_logo.png"/>
-            Feb, 2025 - Present
-          </div>
-          <div class="timeline-title">
-            Researcher<br>
-            @ <a href="https://www.aoiseu.ac.cn/" target="_blank">Advanced Ocean Institute of Southeast University Nantong</a>
-          </div>
-          <div class="timeline-desc">
-             Specializing in multi-physics coupling simulation and durability analysis for civil engineering structures.
-          </div>
-        </div>
+	      <div class="timeline-item">
+	        <div class="timeline-date">
+	          <img class="social-icon" src="images/HYY_logo.png" style="width:auto; height:24px; vertical-align:middle; margin-right:5px;"/>
+	          Feb, 2025 - Present
+	        </div>
+	        <div class="timeline-title">
+	          Researcher<br>
+	          @ <a href="https://www.aoiseu.ac.cn/" target="_blank">Advanced Ocean Institute of Southeast University Nantong</a>
+	        </div>
+	        <div class="timeline-desc">
+	           Specializing in multi-physics coupling simulation and durability analysis for civil engineering structures.
+	        </div>
+	      </div>
 
-        <div class="timeline-item">
-          <div class="timeline-date">
-            <img class="social-icon" src="images/CDJG.png"/>
-            Mar, 2018 - Mar, 2021
-          </div>
-          <div class="timeline-title">
-            Assistant Engineer<br>
-            @ <a href="https://www.cdceg.com.cn/" target="_blank">Chengdu Construction Engineering Group</a>
-          </div>
-          <div class="timeline-desc">
-            Responsible for on-site construction management and technical coordination.
-          </div>
-        </div>
+	      <div class="timeline-item">
+	        <div class="timeline-date">
+	          <img class="social-icon" src="images/CDJG.png" style="width:auto; height:24px; vertical-align:middle; margin-right:5px;"/>
+	          Mar, 2018 - Mar, 2021
+	        </div>
+	        <div class="timeline-title">
+	          Assistant Engineer<br>
+	          @ <a href="https://www.cdceg.com.cn/" target="_blank">Chengdu Construction Engineering Group</a>
+	        </div>
+	        <div class="timeline-desc">
+	          Responsible for on-site construction management and technical coordination.
+	        </div>
+	      </div>
 
-      </div>
-  </div>
+	    </div>
+	</div>
 
   <div id="publications" class="publications anchor-offset">
     <h1 class="md-heading text-left">
