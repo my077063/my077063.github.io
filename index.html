@@ -75,6 +75,36 @@
         top: 0;
         white-space: nowrap;
     }
+    
+    /* --- 新增：固定导航栏与高亮样式 --- */
+    
+    /* 1. 让导航栏固定在顶部 */
+    .site-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9999;
+        background-color: rgba(255, 255, 255, 0.98); /* 不透明度稍微高一点 */
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* 稍微明显的阴影 */
+    }
+
+    /* 2. 防止内容被导航栏挡住 */
+    body {
+        padding-top: 70px; /* 预留出导航栏的高度 */
+    }
+
+    /* 3. 导航栏被选中时的样式（蓝色、加粗） */
+    .site-nav .page-link.active-nav {
+        color: #4A90E2 !important; /* 强制变成蓝色 */
+        font-weight: bold;
+        border-bottom: 2px solid #4A90E2;
+    }
+
+    /* 4. 平滑滚动效果 */
+    html {
+        scroll-behavior: smooth;
+    }
   </style>
   
 
@@ -1087,6 +1117,61 @@ jQuery(document).ready(function() {
         jQuery('html, body').animate({scrollTop: 0}, duration);
         return false;
     })
+});
+</script>
+<script>
+$(document).ready(function() {
+    
+    // 获取所有的导航链接和它们对应的版块
+    // 注意：这里我们过滤掉了没有 href 或者 href="#" 的链接
+    var $navLinks = $('.site-nav .page-link');
+    
+    // 滚动监听事件
+    $(window).scroll(function() {
+        var scrollPos = $(window).scrollTop(); // 获取当前滚动条位置
+        var headerHeight = 70; // 导航栏的大致高度，作为偏移量
+
+        // 遍历所有的导航链接
+        $navLinks.each(function() {
+            var currLink = $(this);
+            var refElementId = currLink.attr("href");
+            
+            // 确保 href 是以 # 开头的 ID 选择器，且不是空的 #
+            if (refElementId && refElementId.startsWith("#") && refElementId.length > 1) {
+                var $refElement = $(refElementId);
+                
+                // 检查目标版块是否存在
+                if ($refElement.length) {
+                    // 核心逻辑：如果当前滚动位置 >= 版块顶部 且 < 版块底部
+                    if ($refElement.offset().top - headerHeight <= scrollPos && 
+                        $refElement.offset().top + $refElement.height() > scrollPos) {
+                        
+                        // 移除其他链接的高亮
+                        $('.site-nav .page-link').removeClass("active-nav");
+                        // 给当前链接添加高亮
+                        currLink.addClass("active-nav");
+                    }
+                    else{
+                        currLink.removeClass("active-nav");
+                    }
+                }
+            }
+        });
+    });
+
+    // 修复点击导航遮挡问题（可选）
+    // 因为设置了 fixed header，点击跳转时标题会被挡住，这个脚本修正偏移
+    $('.site-nav .page-link').on('click', function(e) {
+        if (this.hash !== "") {
+            e.preventDefault();
+            var hash = this.hash;
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top - 65
+            }, 800, function(){
+                // 可以在这里更新 URL hash，如果需要的话
+            });
+        }
+    });
 });
 </script>
   </body>
