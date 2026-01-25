@@ -1,37 +1,14 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-RFR2GFKT75"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-  
-    gtag('config', 'G-RFR2GFKT75');
-  </script> -->
-  <!-- Google Tag Manager -->
-  <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  })(window,document,'script','dataLayer','GTM-NC38VTD');</script> -->
-  <!-- End Google Tag Manager -->
-
+<head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <!-- <meta http-equiv="refresh" content="0; URL=https://cs.stanford.edu/~leoyuan/"> -->
-
   <meta name="viewport" content="width=device-width, initial-scale=1">
-	  
-	<!-- <meta name="google-site-verification" content="u_--0s_Uw50r4zCgRrzltkmFhNCduYOJwPGlKVTuNJU" /> -->
-
+  
   <title>Mingyu WANG</title>
   <meta name="description" lang="en" content="This is an academic website for Mingyu WANG">
-  <meta name="keywords" lang="en" content="Mingyu WANG" />
-  
+  <meta name="keywords" lang="en" content="Mingyu WANG, Civil Engineering, AI, Southeast University" />
 
   <link rel="shortcut icon" href="images/J.jpeg">
   <link rel="stylesheet" href="main.css">
@@ -39,254 +16,217 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/academicons.css"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
   <script src="js/jquery-2.1.3.min.js"> </script>
 
-  <!--[if lt IE 9]>
-<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
-</script>
-<![endif]-->
+	<style>
+	    /* 2. 修改：全局字体改为更高级的 Lato */
+	    body {
+	        font-family: 'Lato', 'Helvetica Neue', Helvetica, sans-serif;
+	        padding-top: 70px; /* 防止内容被导航栏挡住 */
+	    }
 
-  <script type="text/javascript">
-    function ShowHide(divId, linkDivId) {
-        if(document.getElementById(divId).style.display == 'none') {
-            document.getElementById(divId).style.display='block';
-            document.getElementById(linkDivId).style.display='none'; // Hide the "read more" link
-        }
-        else {
-            document.getElementById(divId).style.display = 'none';
-        }
-    }
-  </script>
+	    /* 3. 新增：头像阴影与悬停效果 */
+	    #profile-avatar {
+	        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* 柔和的阴影 */
+	        transition: transform 0.3s ease; /* 动画过渡 */
+	    }
+	    #profile-avatar:hover {
+	        transform: scale(1.05); /* 鼠标放上去轻微放大 */
+	    }
 
-  <style>
-    /* 为所有列表项设置样式 */
-    li.indented {
-        position: relative;
-        padding-left: 90px; /* 这是对齐效果的关键，可以根据实际内容调整这个值 */
-    }
+	    /* 下面是你原有的样式，保持不变 */
+	    li.indented {
+	        position: relative;
+	        padding-left: 90px;
+	    }
 
-    li.indented::before {
-        content: attr(data-date);
-        position: absolute;
-        left: 0;
-        top: 0;
-        white-space: nowrap;
-    }
-    
-    /* --- 新增：固定导航栏与高亮样式 --- */
-    
-    /* 1. 让导航栏固定在顶部 */
-    .site-header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 9999;
-        background-color: rgba(255, 255, 255, 0.98); /* 不透明度稍微高一点 */
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* 稍微明显的阴影 */
-    }
+	    li.indented::before {
+	        content: attr(data-date);
+	        position: absolute;
+	        left: 0;
+	        top: 0;
+	        white-space: nowrap;
+	    }
+	    
+	    .site-header {
+	        position: fixed;
+	        top: 0;
+	        left: 0;
+	        width: 100%;
+	        z-index: 9999;
+	        background-color: rgba(255, 255, 255, 0.98);
+	        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+	    }
 
-    /* 2. 防止内容被导航栏挡住 */
-    body {
-        padding-top: 70px; /* 预留出导航栏的高度 */
-    }
+	    html {
+	        scroll-behavior: smooth;
+	    }
 
-    /* 4. 平滑滚动效果 */
-    html {
-        scroll-behavior: smooth;
-    }
-    /* --- 在 style 标签中添加这个新类 --- */
-
-/* 专门用于修复导航栏遮挡的偏移类 */
-.anchor-offset {
-    padding-top: 85px;  /* 增加顶部内边距，把内容“挤”下来，留出导航栏的空间 */
-    margin-top: -65px;  /* 使用负边距把布局拉回去，避免页面空白太大 */
-    display: block;     /* 确保对所有元素生效 */
-}
-  </style>
-  
-
+	    .anchor-offset {
+	        padding-top: 85px; 
+	        margin-top: -65px; 
+	        display: block; 
+	    }
+	    
+	    /* Social Box 样式 */
+	    .my-social-box {
+	      display: flex;
+	      align-items: center;
+	      justify-content: flex-start; 
+	      gap: 12px;
+	      margin-top: 15px;
+	    }
+	    .my-social-box a.icon-btn {
+	      display: inline-flex;
+	      align-items: center;
+	      justify-content: center;
+	      width: 50px;
+	      height: 50px;
+	      border-radius: 50%;
+	      text-decoration: none;
+	      background-color: #ffffff; 
+	      color: #333333;
+	      transition: all 0.3s ease;
+	      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+	    }
+	    .my-social-box a.icon-btn:hover {
+	      background-color: #000000;
+	      color: #ffffff;
+	      border-color: #000000;
+	      transform: translateY(-2px);
+	    }
+	    .my-social-box a.icon-btn i {
+	      font-size: 1.65rem; 
+	      line-height: 1;
+	    }
+	  </style>
   
 </head>
 
 
 <body>
 
-    <!-- Google Tag Manager (noscript) -->
-<!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NC38VTD"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
-<!-- End Google Tag Manager (noscript) -->
-
-    <header class="site-header">
-
+<header class="site-header">
   <div class="wrapper">
-<nav class="site-nav">
-  <a href="#" class="menu-icon">
-    <svg viewBox="0 0 18 15">
-      <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
-      <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
-      <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
-    </svg>
-  </a>
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
 
-  <div class="trigger">
-    <a class="page-link" href="#about"><b>About</b></a>
-    <a class="page-link" href="#research"><b>Research</b></a>
-    <a class="page-link" href="#education"><b>Education</b></a>
-    <a class="page-link" href="#timeline"><b>Experiences</b></a>
-    <a class="page-link" href="#publications"><b>Publications</b></a>
-    <a class="page-link" href="#codebase"><b>GitHub</b></a>
-    <a class="page-link" href="#honors"><b>Honors</b></a>
-    <a class="page-link" href="#service"><b>Services</b></a>
-    <!--<a class="page-link" href="#otherprojects">Projects</a>-->
-    <!-- Button for Posts -->
-  </div>
-</nav>
+      <div class="trigger">
+        <a class="page-link" href="#about"><b>About</b></a>
+        <a class="page-link" href="#research"><b>Research</b></a>
+        <a class="page-link" href="#education"><b>Education</b></a>
+        <a class="page-link" href="#timeline"><b>Experiences</b></a>
+        <a class="page-link" href="#publications"><b>Publications</b></a>
+        <a class="page-link" href="#codebase"><b>GitHub</b></a>
+        <a class="page-link" href="#honors"><b>Honors</b></a>
+        <a class="page-link" href="#service"><b>Services</b></a>
+        <a class="page-link" href="#visitor-map"><b>Visitors</b></a>
+      </div>
+    </nav>
   </div>
 </header>
 
-  <div id="profile-cover" class="cover shallow-bg img-responsive" style="background-image: url('background.jpg'); background-size: cover; background-position: center;">
-	  <div id="profile-namecard" class="profile-wrapper wrapper-light">
-	    
-	    <div id="my-pic" class="profile-col profile-col-1">
-	      <img id="profile-avatar" src="images/myself.jpg" alt="Me" class="circle-img border-dark"/>
-	    </div>
-	    
-	    <div id="my-contact" class="profile-col profile-col-2">
-	      
-	      <div id="my-name" class="text-grey-dark">
-	        Mingyu WANG<br>
-	      </div>
-	      
-	      <div id="my-title" class="text-grey">
-	        School of Civil Engineering<br>
-	        Southeast University
-	      </div>
-	      
-	      <div id="my-email" class="text-grey-light">
-	        my077063@163.com
-	      </div>
-
-	      <style>
-	        /* 1. 容器样式：改名为 my-social-box 防止冲突 */
-	        .my-social-box {
-	          display: flex;
-	          align-items: center;
-	          justify-content: flex-start; /* 左对齐，和上方文字保持一致 */
-	          gap: 12px;                   /* 按钮间距 */
-	          margin-top: 15px;            /* 和上面邮箱拉开距离 */
-	        }
-
-	        /* 2. 按钮样式 */
-	        .my-social-box a.icon-btn {
-	          display: inline-flex;
-	          align-items: center;
-	          justify-content: center;
-	          width: 50px;             /* 稍微调小一点，显得精致 */
-	          height: 50px;
-	          border-radius: 50%;
-	          text-decoration: none;
-	          
-	          background-color: #ffffff; /* 默认白底 */
-	          color: #333333;            /* 默认黑图标 */
-	          
-	          transition: all 0.3s ease;
-	          box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* 加点微弱阴影增加立体感 */
-	        }
-
-	        /* 3. 悬停样式 */
-	        .my-social-box a.icon-btn:hover {
-	          background-color: #000000; /* 黑底 */
-	          color: #ffffff;            /* 白字 */
-	          border-color: #000000;
-	          transform: translateY(-2px);
-	        }
-
-	        /* 4. 图标大小 */
-	        .my-social-box a.icon-btn i {
-	          font-size: 1.65rem; 
-	          line-height: 1;
-	        }
-	      </style>
-
-	      <div class="my-social-box">
-	        <a href="https://scholar.google.com/citations?user=hmu-ly4AAAAJ&hl=zh-CN" target="_blank" class="icon-btn" aria-label="Google Scholar">
-	          <i class="ai ai-google-scholar-square"></i>
-	        </a>
-
-	        <a href="https://github.com/my077063" target="_blank" class="icon-btn" aria-label="GitHub">
-	          <i class="fa-brands fa-github"></i>
-	        </a>
-	        
-	        <a href="https://www.douyin.com/user/MS4wLjABAAAAWT0EEgepjPRq6Iz6xavShWKRQB7PJE5-vLUuqGQUTL8?from_tab_name=main" target="_blank" class="icon-btn" aria-label="TikTok">
-	          <i class="fa-brands fa-tiktok"></i>
-	        </a>
-
-	        <a href="mailto:my077063@163.com" target="_blank" class="icon-btn" aria-label="Email">
-	          <i class="fa-solid fa-envelope"></i>
-	        </a>
-	      </div>
-	      </div> </div>
-	</div>
-
-      <!-- <div id="my-desc" class="profile-col profile-col-2 hide">
-        <div id="my-desc-title">
-          Another me.
-        </div>
-        <div id="my-desc-content">
-          I enjoy running, traveling, hiking, movies, music and so much more<br>
-        </div>
-      </div> -->
+<div id="profile-cover" class="cover shallow-bg img-responsive" style="background-image: url('images/background.jpg'); background-size: cover; background-position: center;">
+  <div id="profile-namecard" class="profile-wrapper wrapper-light">
+    
+    <div id="my-pic" class="profile-col profile-col-1">
+      <img id="profile-avatar" src="images/myself.jpg" alt="Me" class="circle-img border-dark"/>
     </div>
+    
+    <div id="my-contact" class="profile-col profile-col-2">
+      
+      <div id="my-name" class="text-grey-dark">
+        Mingyu WANG<br>
+      </div>
+      
+      <div id="my-title" class="text-grey">
+        School of Civil Engineering<br>
+        Southeast University
+      </div>
+      
+      <div id="my-email" class="text-grey-light">
+        my077063@163.com
+      </div>
+
+      <style>
+        /* Social Box 样式 */
+        .my-social-box {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start; 
+          gap: 12px;
+          margin-top: 15px;
+        }
+        .my-social-box a.icon-btn {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          text-decoration: none;
+          background-color: #ffffff; 
+          color: #333333;
+          transition: all 0.3s ease;
+          box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .my-social-box a.icon-btn:hover {
+          background-color: #000000;
+          color: #ffffff;
+          border-color: #000000;
+          transform: translateY(-2px);
+        }
+        .my-social-box a.icon-btn i {
+          font-size: 1.65rem; 
+          line-height: 1;
+        }
+      </style>
+
+      <div class="my-social-box">
+        <a href="https://scholar.google.com/citations?user=hmu-ly4AAAAJ&hl=zh-CN" target="_blank" class="icon-btn" aria-label="Google Scholar">
+          <i class="ai ai-google-scholar-square"></i>
+        </a>
+
+        <a href="https://github.com/my077063" target="_blank" class="icon-btn" aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        
+        <a href="https://orcid.org/0009-0004-9724-5238" target="_blank" class="icon-btn" aria-label="ORCID">
+     			<i class="ai ai-orcid"></i>
+   			</a>
+        
+        <a href="https://www.researchgate.net/profile/Mingyu-Wang-33?ev=hdr_xprf" target="_blank" class="icon-btn" aria-label="ResearchGate">
+    			<i class="ai ai-researchgate"></i>
+  			</a>
+        
+        <a href="https://www.douyin.com/user/MS4wLjABAAAAWT0EEgepjPRq6Iz6xavShWKRQB7PJE5-vLUuqGQUTL8?from_tab_name=main" target="_blank" class="icon-btn" aria-label="TikTok">
+          <i class="fa-brands fa-tiktok"></i>
+        </a>
+
+        <a href="mailto:my077063@163.com" target="_blank" class="icon-btn" aria-label="Email">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+      </div>
+    </div> 
   </div>
-  <!-- <script type="text/javascript">
-    function deepFeature()
-    {
-      $('#profile-avatar').attr('src', 'images/self-portrait/deep-me.jpg');
-      $('#profile-avatar').removeClass('border-dark');
-      $('#profile-avatar').addClass('border-bright');
-
-      $('#profile-cover').removeClass('shallow-bg');
-      $('#profile-cover').addClass('deep-bg');
-      
-      $('#profile-namecard').removeClass('wrapper-light');
-      $('#profile-namecard').addClass('wrapper-dark');
-      
-      $('#my-desc').removeClass('hide');
-      $('#my-contact').addClass('hide');    
-      // console.log('Move in now...');
-    }
-
-    function shallowFeature()
-    {
-      $('#profile-avatar').attr('src', 'images/self-portrait/me.jpg');
-      $('#profile-avatar').removeClass('border-bright');
-      $('#profile-avatar').addClass('border-dark');
-
-      $('#profile-cover').removeClass('deep-bg');
-      $('#profile-cover').addClass('shallow-bg');
-      
-      $('#profile-namecard').removeClass('wrapper-dark');
-      $('#profile-namecard').addClass('wrapper-light');
-      
-      $('#my-contact').removeClass('hide');
-      $('#my-desc').addClass('hide');
-      // console.log('Move out now...');
-    }
-
-    $(function() { 
-      $('#my-pic').hover(deepFeature, shallowFeature);
-    })
-
-  </script> -->
+</div>
 
 <div class="page-content">
 <div class="wrapper">
-<div id="about" class="bio anchor-offset">
 
+<div id="about" class="bio anchor-offset">
   <h1 class="md-heading text-left">
     <i class="fa fa-id-card" aria-hidden="true"></i>
     About
@@ -296,60 +236,54 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div style="font-size: 26px; font-weight: 700; line-height: 1.5; color: #333; font-family: 'Roboto', sans-serif;">
         Hi! I'm Mingyu Wang. <br>
         I'm a 
-        <span style="color: #4A90E2; border-bottom: 3px solid #DBE9F9;">Researcher</span>, 
+        <span style="color: #4A90E2; background: linear-gradient(180deg, rgba(255,255,255,0) 65%, #DBE9F9 65%);">Researcher</span>, 
         
-        <span style="color: #41B883; border-bottom: 3px solid #D6F3E6;">Civil Engineer</span>, 
+        <span style="color: #41B883; background: linear-gradient(180deg, rgba(255,255,255,0) 65%, #D6F3E6 65%);">Civil Engineer</span>, 
+        
         and 
-        
-        <span style="color: #9013FE; border-bottom: 3px solid #EBD0FF;">AI Enthusiast</span>
+        <span style="color: #9013FE; background: linear-gradient(180deg, rgba(255,255,255,0) 65%, #EBD0FF 65%);">AI Enthusiast</span>
         
         who aspires to become an 
-        <span style="color: #E25555; border-bottom: 3px solid #FAD1D1;">Educator</span>
+        <span style="color: #E25555; background: linear-gradient(180deg, rgba(255,255,255,0) 65%, #FAD1D1 65%);">Educator</span>
+        
         and a 
-        <span style="color: #00B8D4; border-bottom: 3px solid #C4F5FA;">Builder</span>
+        <span style="color: #00B8D4; background: linear-gradient(180deg, rgba(255,255,255,0) 65%, #C4F5FA 65%);">Builder</span>
+        
         of Smarter Infrastructures.
       </div>
-
       <p style="font-size: 16px; line-height: 1.8; color: #555; margin-top: 15px;">
         I am currently a doctoral student at the School of Civil Engineering, Southeast University. I am passionate about empowering traditional engineering with AI intelligence to create the next generation of resilient infrastructure.
       </p>
-
       <p style="font-size: 16px; line-height: 1.8; color: #555;">
         Feel free to drop me an <a href="mailto:my077063@163.com" style="text-decoration: underline; color: #333;">email</a> for collaboration.
       </p>
     </div>
 
     <div id="research" class="anchor-offset" style="width: 100%; margin-bottom: 30px;">
-      
       <h1 class="md-heading text-left">
         <i class="fa fa-star" aria-hidden="true"></i>
         Research Interests
       </h1>
-      
       <ul style="margin-top: 15px;">
-        
         <li><b>Structural Health Monitoring (SHM)</b></li>
         <span style="color: #666; font-size: 14px;">Focusing on high-speed railway bridges and infrastructure safety.</span>
         
         <li style="margin-top: 10px;"><b>Neural Operators</b></li>
         <span style="color: #666; font-size: 14px;">Leveraging deep learning models (FNO, DeepONet) to accelerate solving partial differential equations in engineering.</span>
         
-        <li style="margin-top: 10px;"><b>Scientific Machine Learning</b></li>
+        <li style="margin-top: 10px;"><b>AI for Mechanics</b></li>
         <span style="color: #666; font-size: 14px;">Data-driven modeling for complex structural dynamics.</span>
 
         <li style="margin-top: 10px;"><b>Finite Element Analysis</b></li>
         <span style="color: #666; font-size: 14px;">Numerical simulation for structural mechanics and multi-physics problems.</span>
-      
       </ul>
     </div>
 
     <div id="education" class="timeline-brief anchor-offset" style="clear: both;">
-    
     <h1 class="md-heading text-left">
       <i class="fa fa-graduation-cap" aria-hidden="true"></i>
       Education
     </h1>
-  
     <div class="timeline-body">
       
       <div class="timeline-item">
@@ -362,7 +296,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           @ <a href="https://www.seu.edu.cn/english/" target="_blank">Southeast University</a>
         </div>
         <div class="timeline-desc">
-          Major in Civil and Hydraulic Engineering.
+          Major in Civil and Hydraulic Engineering.<br>
+          <b>Supervisor:</b> Prof. Yi Zhang
         </div>
       </div>
 
@@ -376,10 +311,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           @ <a href="https://english.sit.edu.cn/" target="_blank">Shanghai Institute of Technology</a>
         </div>
         <div class="timeline-desc">
-          Major in Resources and Environment.
+          Major in Resources and Environment.<br>
+          <b>Supervisor:</b> Prof. Peigang Li
         </div>
       </div>
-  
+
       <div class="timeline-item">
         <div class="timeline-date">
           <img class="social-icon" src="images/SJU_logo.jpg" style="width:auto; height:24px; vertical-align:middle; margin-right:5px;"/>
@@ -390,9 +326,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           @ <a href="https://en.swjtu.edu.cn/" target="_blank">Southwest Jiaotong University</a>
         </div>
         <div class="timeline-desc">
-          <div class="timeline-host">
-             Major in Engineering Cost.
-          </div>
+          Major in Engineering Cost.
         </div>
       </div>
 
@@ -406,39 +340,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           @ <a href="https://www.scat.edu.cn/" target="_blank">Sichuan College of Architectural Technology</a>
         </div>
         <div class="timeline-desc">
-          <div class="timeline-host">
-             Major in Construction Management.
-          </div>
+          Major in Construction Management.
         </div>
       </div>
-  
-    </div>
   </div>
 </div>
 
-<!-- <div id="news" class="bio">
-  <h1 class="md-heading text-left">
-    <i class="fa fa-tasks" aria-hidden="true"></i>
-    News
-  </h1>  
-  <ul>
-    	<li class="indented" data-date="[Feb, 2024]"> Give a talk on <a href="https://arxiv.org/pdf/2402.03675.pdf">protein-protein interaction prediction</a> to <a href="https://jian-tang.com/students/">Jian Tang's group</a>. [<a href="files/ppiretrieval.pdf">Slide</a>]</li>
-	<li class="indented" data-date="[Dec, 2023]"> Give a talk on <a href="https://arxiv.org/pdf/2304.14621.pdf">structure-based molecule design</a> at LoG2023 Montreal. [<a href="files/mudiff.pdf">Slide</a>][<a href="https://www.youtube.com/watch?v=Z5l-gaV-DUo">Video</a>]</li>
-    	<li class="indented" data-date="[Nov, 2023]"> One paper accepted to 2nd Learning on Graphs Conference.</li>
-    	<li class="indented" data-date="[Oct, 2023]"> One paper accepted to 37th Conference on Neural Information Processing Systems.</li>
-    	<li class="indented" data-date="[Sep, 2023]"> One paper accepted to 12th International Conference on Complex Networks and their Applications.</li>
-   	<li class="indented" data-date="[Oct, 2022]"> One paper accepted to 36th Conference on Neural Information Processing Systems, GLFrontiers, and selected for <b><span style="color: red;">Oral</span></b> presentation.</li>
-   	<li class="indented" data-date="[Oct, 2022]"> Two papers accepted to 36th Conference on Neural Information Processing Systems, and one paper selected for <b><span style="color: red;">Spotlight</span></b> presentation.</li>
-  </ul>
-</div> -->
-
-<!-- <div class="wrapper"> -->
-  <div id="timeline" class="timeline-brief anchor-offset">
+<div id="timeline" class="timeline-brief anchor-offset">
     <h1 class="md-heading text-left">
       <i class="fa fa-tasks" aria-hidden="true"></i>
       Experiences
     </h1>
-  
     <div class="timeline-body">
       
       <div class="timeline-item">
@@ -468,7 +380,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
            Specializing in multi-physics coupling simulation and durability analysis for civil engineering structures.
         </div>
       </div>
-  
+
       <div class="timeline-item">
         <div class="timeline-date">
           <img class="social-icon" src="images/CDJG.png" style="width:auto; height:24px; vertical-align:middle; margin-right:5px;"/>
@@ -479,22 +391,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           @ <a href="https://www.cdceg.com.cn/" target="_blank">Chengdu Construction Engineering Group</a>
         </div>
         <div class="timeline-desc">
-          <div class="timeline-host">
-             Responsible for on-site construction management and technical coordination.
-          </div>
+          Responsible for on-site construction management and technical coordination.
         </div>
       </div>
-    </div>
-  </div>
 
+    </div>
+</div>
 
 <div id="publications" class="publications anchor-offset">
   <h1 class="md-heading text-left">
     <i class="fa fa-file" aria-hidden="true"></i>
     Publications
   </h1>
-
-
 
   <div class="pub" data-selected="true" style="margin-bottom: 30px; display: flex; align-items: flex-start; gap: 25px;">
       <div class="pub-left" style="width: 32%; flex-shrink: 0;">
@@ -605,9 +513,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="pub-right" style="flex-grow: 1; display: flex; flex-direction: column;">
         <div class="title" style="margin-bottom: 12px; line-height: 1.5; font-size: 18px; font-weight: 600;">
-          <span class="hover-underline" style="color: #333; vertical-align: middle; cursor: default;">
+          <a class="hover-underline" href="https://kns.cnki.net/kcms2/article/abstract?v=-w8R4t09JVWGb7ErEP4KODJsesY6zCfz_qHUIgzipI_WVWAUuJWbfdPQJa7kKjPbYGQzl6Or02lMRyK3lwrW-ePvb1vqQROdCj_7wAeWgU3B0qjtuY8Fo06yOyfJt3_BL8o93A8K-u1rru-lbOON01_yb3zuYKlPk2xtjx6e0W4zyK0k4m5Fwjglyd-uXuXE&uniplatform=NZKPT&language=CHS" target="_blank" style="color: #333; vertical-align: middle;">
             Research on the Monitoring and Evaluation Method of Ballastless Track Service Condition Based on Iron Pad Dynamic Strain
-          </span>
+          </a>
           <span style="display: inline-block; vertical-align: middle; margin-left: 8px;">
             <span style="background-color: #e0f7fa; color: #006064; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #b2ebf2; margin-right: 3px;">Master's Thesis</span>
           </span>
@@ -620,8 +528,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span style="font-weight: bold; color: #A52A2A; margin-left: 3px;">2024</span>
         </div>
         <div style="font-size: 14px; color: #555;">
-          <span style="font-weight: bold; color: #333; margin-right: 5px;">Date:</span> 
-          <span style="font-family: Consolas, monospace; color: #666;">December 15, 2024</span>
+          <span style="font-weight: bold; color: #333; margin-right: 5px;">DOI:</span> 
+          <a class="hover-underline" href="https://kns.cnki.net/kcms2/article/abstract?v=-w8R4t09JVWGb7ErEP4KODJsesY6zCfz_qHUIgzipI_WVWAUuJWbfdPQJa7kKjPbYGQzl6Or02lMRyK3lwrW-ePvb1vqQROdCj_7wAeWgU3B0qjtuY8Fo06yOyfJt3_BL8o93A8K-u1rru-lbOON01_yb3zuYKlPk2xtjx6e0W4zyK0k4m5Fwjglyd-uXuXE&uniplatform=NZKPT&language=CHS" target="_blank" style="color: #666; font-family: Consolas, monospace;">
+            https://10.27801/d.cnki.gshyy.2024.000002
+          </a>
         </div>
       </div>
     </div>
@@ -729,71 +639,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
     </div>
-
   </div>
 </div>
-
-</div>
-	
-<!-- JavaScript to handle button clicks -->
-<script>
-  // Get the buttons and publications
-  const showSelectedBtn = document.getElementById('show-selected-btn');
-  const showAllBtn = document.getElementById('show-all-btn');
-  const publications = document.querySelectorAll('.pub');
-
-  // Add event listener to 'Show Selected Publication' button
-  showSelectedBtn.addEventListener('click', function() {
-    publications.forEach(pub => {
-      if (pub.getAttribute('data-selected') === 'true') {
-        pub.style.display = 'block';  // Show selected publication
-      } else {
-        pub.style.display = 'none';  // Hide other publications
-      }
-    });
-  });
-
-  // Add event listener to 'Show All' button
-  showAllBtn.addEventListener('click', function() {
-    publications.forEach(pub => {
-      pub.style.display = 'block';  // Show all publications
-    });
-  });
-</script>
-
-<script>
-  const repos = [
-    { owner: "alibaba-damo-academy", repo: "WorldVLA", starId: "star-count", forkId: "fork-count" },
-    { owner: "GAI4Manipulation", repo: "AwesomeGAIManipulation", starId: "star-count-2", forkId: "fork-count-2" },
-    { owner: "Jun-CEN", repo: "CMDFusion", starId: "star-count-3", forkId: "fork-count-3" },
-    { owner: "Jun-CEN", repo: "SegmentAnyRGBD", starId: "star-count-4", forkId: "fork-count-4" },
-    { owner: "Jun-CEN", repo: "PSL", starId: "star-count-5", forkId: "fork-count-5" },
-    { owner: "Jun-CEN", repo: "Unified-Open-Set-Recognition", starId: "star-count-6", forkId: "fork-count-6" },
-    { owner: "Jun-CEN", repo: "Open-world-3D-semantic-segmentation", starId: "star-count-7", forkId: "fork-count-7" },
-    { owner: "Jun-CEN", repo: "Open-World-Semantic-Segmentation", starId: "star-count-8", forkId: "fork-count-8" },
-    { owner: "Jingkang50", repo: "PSG4D", starId: "star-count-9", forkId: "fork-count-9" },
-    { owner: "youquanl", repo: "Segment-Any-Point-Cloud", starId: "star-count-10", forkId: "fork-count-10" }
-  ];
-
-  async function loadGitHubStats() {
-    for (const { owner, repo, starId, forkId } of repos) {
-      try {
-        const res = await fetch(`https://api.github.com/repos/${owner}/${repo}`);
-        if (!res.ok) throw new Error("GitHub API error");
-        const data = await res.json();
-        document.getElementById(starId).innerText = data.stargazers_count ?? "–";
-        document.getElementById(forkId).innerText = data.forks_count ?? "–";
-      } catch (e) {
-        console.error(`Failed to load stats for ${owner}/${repo}`, e);
-        document.getElementById(starId).innerText = "–";
-        document.getElementById(forkId).innerText = "–";
-      }
-    }
-  }
-
-  loadGitHubStats();
-</script>
-
 
 <div class="wrapper">
   <div id="codebase" class="bio anchor-offset">
@@ -891,101 +738,82 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </div>
 
-
 <div class="wrapper">
   <div id="honors" class="timeline-brief anchor-offset" style="width: 100%; margin-bottom: 40px; clear: both;">
-      
       <h1 class="md-heading text-left">
         <i class="fa fa-trophy" aria-hidden="true"></i>
         Honors & Awards
       </h1>
-      
       <ul style="list-style-type: disc; padding-left: 20px; margin-top: 15px; font-size: 16px; line-height: 1.6;">
-        
         <li style="margin-bottom: 12px;">
           <b>SEU Innovation Capability Enhancement Plan for Doctoral Students</b>
           <span style="float: right; color: #666; font-size: 14px;">2026</span>
           <br>
           <span style="color: #666; font-size: 14px;">Southeast University (Grant: CNY 48,000)</span>
         </li>
-
         <li style="margin-bottom: 12px;">
           <b>Third Prize, Traffic Infrastructure Structural Monitoring Technology Innovation Competition</b>
           <span style="float: right; color: #666; font-size: 14px;">2025</span>
           <br>
           <span style="color: #666; font-size: 14px;">China Highway and Transportation Society</span>
         </li>
-
         <li style="margin-bottom: 12px;">
           <b>Outstanding Graduate</b>
           <span style="float: right; color: #666; font-size: 14px;">2025</span>
           <br>
           <span style="color: #666; font-size: 14px;">Shanghai Institute of Technology</span>
         </li>
-
         <li style="margin-bottom: 12px;">
           <b>National Scholarship for Postgraduates</b>
           <span style="float: right; color: #666; font-size: 14px;">2024</span>
           <br>
           <span style="color: #666; font-size: 14px;">Ministry of Education of the P.R. China (Grant: CNY 20,000)</span>
         </li>
-
         <li style="margin-bottom: 12px;">
           <b>First-Class Academic Scholarship</b>
           <span style="float: right; color: #666; font-size: 14px;">2024</span>
           <br>
           <span style="color: #666; font-size: 14px;">Shanghai Institute of Technology (Grant: CNY 10,000)</span>
         </li>
-
         <li style="margin-bottom: 12px;">
           <b>Academic Scholarship</b>
           <span style="float: right; color: #666; font-size: 14px;">2023</span>
           <br>
           <span style="color: #666; font-size: 14px;">Shanghai Institute of Technology (Grant: CNY 6,000)</span>
         </li>
-
         <li style="margin-bottom: 12px;">
           <b>Academic Scholarship</b>
           <span style="float: right; color: #666; font-size: 14px;">2022</span>
           <br>
           <span style="color: #666; font-size: 14px;">Shanghai Institute of Technology (Grant: CNY 6,000)</span>
         </li>
-
       </ul>
     </div>
-  </div>
 </div>
 
 <div class="wrapper">
   <div id="service" class="timeline-brief anchor-offset" style="width: 100%; margin-bottom: 40px; clear: both;">
-    
     <h1 class="md-heading text-left">
       <i class="fa fa-users" aria-hidden="true"></i>
       Academic Services
     </h1>
-    
     <div style="width: 100%; margin-top: 20px; margin-bottom: 30px;">
       <h3 style="font-size: 18px; font-weight: bold; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; margin-bottom: 15px; color: #333;">
         <i class="fa fa-id-card-o" aria-hidden="true" style="margin-right: 8px; color: #555;"></i>Society Memberships
       </h3>
       <ul style="list-style-type: disc; padding-left: 20px; font-size: 16px; line-height: 1.8; color: #444;">
-        
         <li style="margin-bottom: 5px;">
           <b>Member</b>, American Society of Civil Engineers (ASCE)
         </li>
-        
         <li style="margin-bottom: 5px;">
           <b>Member</b>, American Concrete Institute (ACI)
         </li>
-
         <li style="margin-bottom: 5px;">
           <b>Member</b>, China Civil Engineering Society (CCES)
         </li>
-
         <li style="margin-bottom: 5px;">
           <b>Member</b>, Chinese Optical Society (COS)
         </li>
-
       </ul>
     </div>
 
@@ -994,42 +822,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <i class="fa fa-pencil-square-o" aria-hidden="true" style="margin-right: 8px; color: #555;"></i>Journal Reviewer
       </h3>
       <ul style="list-style-type: circle; padding-left: 20px; font-size: 16px; line-height: 1.8; color: #444;">
-        
         <li style="margin-bottom: 8px;">
           Reviewer for <b>Measurement</b>
-          <span style="background-color: #f0f0f0; color: #666; padding: 1px 6px; border-radius: 4px; font-size: 12px; margin-left: 5px;">2 reviews</span>
+          <span style="background-color: #f0f0f0; color: #666; padding: 1px 6px; border-radius: 4px; font-size: 12px; margin-left: 5px;">3 reviews</span>
         </li>
-
         <li style="margin-bottom: 8px;">
           Reviewer for <b>Journal of King Saud University - Engineering Sciences</b>
           <span style="background-color: #f0f0f0; color: #666; padding: 1px 6px; border-radius: 4px; font-size: 12px; margin-left: 5px;">1 review</span>
         </li>
-
         <li style="margin-bottom: 8px;">
           Reviewer for <b>Scientific Reports</b>
-          <span style="background-color: #f0f0f0; color: #666; padding: 1px 6px; border-radius: 4px; font-size: 12px; margin-left: 5px;">1 review</span>
+          <span style="background-color: #f0f0f0; color: #666; padding: 1px 6px; border-radius: 4px; font-size: 12px; margin-left: 5px;">2 review</span>
         </li>
-        
         <li style="list-style: none; margin-top: 10px; font-size: 14px; color: #777; font-style: italic;">
-          (Total: 4 verified reviews)
+          (Total: 6 verified reviews)
         </li>
-
       </ul>
     </div>
-
   </div>
 </div>
-  </div>
+
+</div>
 </div>
 
 <div class="wrapper">
-	<div id="visitor-map" style="width: 100%; margin-top: 40px; margin-bottom: 40px; clear: both;">
-	      
+	<div id="visitor-map" class="anchor-offset" style="width: 100%; margin-bottom: 40px; clear: both;">
 	      <h1 class="md-heading text-left">
 	        <i class="fa fa-globe" aria-hidden="true"></i>
 	        Visitor Analytics
 	      </h1>
-
 	      <div style="font-size: 16px; line-height: 1.8; color: #444; margin-top: 15px; margin-bottom: 20px;">
 	        <p>
 	          The visualization below illustrates the real-time global distribution of visitors to this academic homepage. 
@@ -1040,68 +861,65 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	          Data source: ClustrMaps. The 3D globe updates dynamically based on the latest IP locations of incoming visitors.
 	        </p>
 	      </div>
-
 	      <div style="display: flex; justify-content: center; align-items: center; margin-top: 30px;">
 	        <div style="max-width: 400px; width: 100%;">
 	          <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=oqHBa9cHN4CgBlnqeIR8TBaBh7BrDSJ8BXrY85YlTws"></script>
 	        </div>
 	      </div>
-
-	    </div>
+	</div>
 </div>
-
-
-
-
-
-
 
 <footer class="site-footer">
   <div class="wrapper">
     <div class="footer-col-wrapper">
-      <div class="footer-col  footer-col-1">
+      <div class="footer-col footer-col-1">
         <ul class="contact-list">
           <li>Personal Email:</li>
-          <li><a href="mailto:">my077063@163.com</a></li>
+          <li><a href="mailto:my077063@163.com">my077063@163.com</a></li>
         </ul>
       </div>
 
-      <div class="footer-col  footer-col-2">
-          <a href="https://scholar.google.com/citations?user=7SKAhBwAAAAJ&hl=en" target="_blank" class="icon-button github">
-          <i class="ai ai-google-scholar-square icon-github"></i>
-            <span></span>
-          </a>
+      <div class="footer-col footer-col-2">
+          <div class="my-social-box" style="margin-top: 0;">
+            
+            <a href="https://scholar.google.com/citations?user=hmu-ly4AAAAJ&hl=zh-CN" target="_blank" class="icon-btn" aria-label="Google Scholar">
+              <i class="ai ai-google-scholar-square"></i>
+            </a>
 
-          <a href="https://github.com/Jun-CEN" target="_blank" class="icon-button github">
-            <i class="fa fa-github icon-github"></i>
-            <span></span>
-          </a>
+            <a href="https://github.com/my077063" target="_blank" class="icon-btn" aria-label="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            
+            <a href="https://orcid.org/0009-0004-9724-5238" target="_blank" class="icon-btn" aria-label="ORCID">
+              <i class="ai ai-orcid"></i>
+            </a>
+            
+            <a href="https://www.researchgate.net/profile/Mingyu-Wang-33?ev=hdr_xprf" target="_blank" class="icon-btn" aria-label="ResearchGate">
+              <i class="ai ai-researchgate"></i>
+            </a>
+            
+            <a href="https://www.douyin.com/user/MS4wLjABAAAAWT0EEgepjPRq6Iz6xavShWKRQB7PJE5-vLUuqGQUTL8?from_tab_name=main" target="_blank" class="icon-btn" aria-label="TikTok">
+              <i class="fa-brands fa-tiktok"></i>
+            </a>
 
-          <a href="https://www.linkedin.com/in/jun-cen-45b995219/" target="_blank" class="icon-button linkedin">
-            <i class="fa fa-linkedin icon-linkedin"></i>
-            <span></span>
-          </a>
-         
-          <!-- <a href="work/Resume_Jun_CEN.pdf" target="_blank" class="icon-button github">
-            <i class="ai ai-cv icon-github"></i>
-            <span></span>
-          </a> -->
-          <a href="https://www.xiaohongshu.com/user/profile/616ae887000000000201f2fa" class="icon-button xiaohongshu" aria-label="小红书" target="_blank" rel="noopener noreferrer">
-            <i> <img src="https://cdn.simpleicons.org/xiaohongshu/FF2D55" alt="" width="45" height="45" style="vertical-align:middle;"> </i>
-            <span></span>
-          </a>
+            <a href="mailto:my077063@163.com" target="_blank" class="icon-btn" aria-label="Email">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+
+          </div>
       </div>
-	<div class="footer-col footer-col-3">
-    	<!--<a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fwillhua127.github.io&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a> -->
-	<!-- <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?user=Lxe71v4AAAAJ&hl=en&url=https%3A%2F%2Fscholar.google.com%2Fcitations&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a> -->
-		<p class="text">Last updated: Jan, 2026.</p>
-	</div>
+      
+      <div class="footer-col footer-col-3" style="text-align: right;">
+         <p class="text">
+            Last updated by <span style="color: #4A90E2;">Mingyu Wang</span><br>
+            Jan, 2026.
+         </p>
+      </div>
+    </div>
   </div>
-  </div>
-
 </footer>
-    <div class="back-to-top">Top</div>
 
+<div class="back-to-top">Top</div>
 
 <script type="text/javascript">
 jQuery(document).ready(function() {
@@ -1120,21 +938,23 @@ jQuery(document).ready(function() {
         jQuery('html, body').animate({scrollTop: 0}, duration);
         return false;
     })
+    
+    // 只保留：修复点击跳转的偏移 + 平滑滚动
+    $('.site-nav .page-link').on('click', function(e) {
+        if (this.hash !== "") {
+            e.preventDefault();
+            var hash = this.hash;
+            var $target = $(hash);
+            if($target.length){
+                $('html, body').animate({
+                    // 这里的 -75 是为了留出导航栏的空间
+                    scrollTop: $target.offset().top - 75 
+                }, 500);
+            }
+        }
+    });
 });
 </script>
-  </body>
 
-<!--
-  <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-60071442-1', 'auto');
-  ga('send', 'pageview');
-</script>
--->
-
-<!--<script src="custom-pub.js"></script>-->
+</body>
 </html>
