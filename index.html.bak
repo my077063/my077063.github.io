@@ -160,6 +160,14 @@
           <i class="fa-brands fa-github"></i>
         </a>
         
+        <a href="https://orcid.org/0009-0004-9724-5238" target="_blank" class="icon-btn" aria-label="ORCID">
+     			<i class="ai ai-orcid"></i>
+   			</a>
+        
+        <a href="https://www.researchgate.net/profile/Mingyu-Wang-33?ev=hdr_xprf" target="_blank" class="icon-btn" aria-label="ResearchGate">
+    			<i class="ai ai-researchgate"></i>
+  			</a>
+        
         <a href="https://www.douyin.com/user/MS4wLjABAAAAWT0EEgepjPRq6Iz6xavShWKRQB7PJE5-vLUuqGQUTL8?from_tab_name=main" target="_blank" class="icon-btn" aria-label="TikTok">
           <i class="fa-brands fa-tiktok"></i>
         </a>
@@ -788,7 +796,7 @@
       <ul style="list-style-type: circle; padding-left: 20px; font-size: 16px; line-height: 1.8; color: #444;">
         <li style="margin-bottom: 8px;">
           Reviewer for <b>Measurement</b>
-          <span style="background-color: #f0f0f0; color: #666; padding: 1px 6px; border-radius: 4px; font-size: 12px; margin-left: 5px;">2 reviews</span>
+          <span style="background-color: #f0f0f0; color: #666; padding: 1px 6px; border-radius: 4px; font-size: 12px; margin-left: 5px;">3 reviews</span>
         </li>
         <li style="margin-bottom: 8px;">
           Reviewer for <b>Journal of King Saud University - Engineering Sciences</b>
@@ -796,10 +804,10 @@
         </li>
         <li style="margin-bottom: 8px;">
           Reviewer for <b>Scientific Reports</b>
-          <span style="background-color: #f0f0f0; color: #666; padding: 1px 6px; border-radius: 4px; font-size: 12px; margin-left: 5px;">1 review</span>
+          <span style="background-color: #f0f0f0; color: #666; padding: 1px 6px; border-radius: 4px; font-size: 12px; margin-left: 5px;">2 review</span>
         </li>
         <li style="list-style: none; margin-top: 10px; font-size: 14px; color: #777; font-style: italic;">
-          (Total: 4 verified reviews)
+          (Total: 6 verified reviews)
         </li>
       </ul>
     </div>
