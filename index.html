@@ -18,6 +18,9 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
   <script src="js/jquery-2.1.3.min.js"> </script>
 
@@ -193,7 +196,7 @@
       <div style="font-size: 26px; font-weight: 700; line-height: 1.5; color: #333; font-family: 'Roboto', sans-serif;">
         Hi! I'm Mingyu Wang. <br>
         I'm a 
-        <span style="color: #4A90E2; border-bottom: 3px solid #DBE9F9;">Researcher</span>, 
+        <span style="color: #4A90E2; background: linear-gradient(180deg, rgba(255,255,255,0) 50%, #DBE9F9 50%);">Researcher</span>, 
         <span style="color: #41B883; border-bottom: 3px solid #D6F3E6;">Civil Engineer</span>, 
         and 
         <span style="color: #9013FE; border-bottom: 3px solid #EBD0FF;">AI Enthusiast</span>
@@ -588,31 +591,6 @@
     </div>
   </div>
 </div>
-
-<script>
-  // Get the buttons and publications (如果需要筛选功能可保留，不需要也可删除)
-  const showSelectedBtn = document.getElementById('show-selected-btn');
-  const showAllBtn = document.getElementById('show-all-btn');
-  const publications = document.querySelectorAll('.pub');
-
-  if(showSelectedBtn && showAllBtn) {
-    showSelectedBtn.addEventListener('click', function() {
-      publications.forEach(pub => {
-        if (pub.getAttribute('data-selected') === 'true') {
-          pub.style.display = 'block'; 
-        } else {
-          pub.style.display = 'none'; 
-        }
-      });
-    });
-
-    showAllBtn.addEventListener('click', function() {
-      publications.forEach(pub => {
-        pub.style.display = 'block';
-      });
-    });
-  }
-</script>
 
 <div class="wrapper">
   <div id="codebase" class="bio anchor-offset">
