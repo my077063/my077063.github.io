@@ -1144,52 +1144,13 @@
       
       <div class="footer-col footer-col-3" style="text-align: right;">
          <p class="text">
-            Last updated by <span style="color: #4A90E2; font-weight: bold;">Mingyu Wang</span><br>
+            Last updated by <span style="color: #4A90E2;">Mingyu Wang</span><br>
             Jan, 2026.
          </p>
       </div>
     </div>
   </div>
 </footer>
-
-<div class="back-to-top">Top</div>
-
-<script type="text/javascript">
-jQuery(document).ready(function() {
-    var offset = 220;
-    var duration = 500;
-    
-    // Back to top button logic
-    jQuery(window).scroll(function() {
-        if (jQuery(this).scrollTop() > offset) {
-            jQuery('.back-to-top').fadeIn(duration);
-        } else {
-            jQuery('.back-to-top').fadeOut(duration);
-        }
-    });
-    
-    jQuery('.back-to-top').click(function(event) {
-        event.preventDefault();
-        jQuery('html, body').animate({scrollTop: 0}, duration);
-        return false;
-    });
-    
-    // Smooth scroll for nav links & fix offset
-    // 移除不必要的特判，只保留基本跳转
-    $('.site-nav .page-link, .mobile-scroll-nav a').on('click', function(e) {
-        if (this.hash !== "") {
-            e.preventDefault();
-            var hash = this.hash;
-            var $target = $(hash);
-            if($target.length){
-                $('html, body').animate({
-                    scrollTop: $target.offset().top - 60 
-                }, 500);
-            }
-        }
-    });
-});
-</script>
 
 </body>
 </html>
