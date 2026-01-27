@@ -522,7 +522,7 @@
           <b>Neural Operators</b>
           <span style="color: #8B0000; font-weight: bold; margin-left: 8px; font-size: 15px;">“Technique”</span>
           <br>
-          <span class="text-meta">Mastering operator learning architectures (FNO/DeepONet) to bypass iterative solvers, accelerating simulations from hours to milliseconds.</span>
+          <span class="text-meta">Mastering operator learning architectures (DeepONet/FNO) to bypass iterative solvers, accelerating simulations from hours to milliseconds.</span>
         </li>
 
         <li>
