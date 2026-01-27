@@ -164,11 +164,7 @@
 
     #profile-namecard {
         background-color: rgba(255, 255, 255, 0.77) !important;
-
-        /* 增加一点毛玻璃模糊效果 */
         backdrop-filter: blur(5px);
-        
-        /* 确保它是圆角 */
         border-radius: 15px;
     }
     
@@ -509,19 +505,12 @@
       </h1>
       <ul class="std-list">
         <li>
-          <b>Structural Health Monitoring (SHM)</b>
-          <span style="color: #8B0000; font-weight: bold; margin-left: 8px; font-size: 15px;">“Application”</span>
+          <b>Finite Element Method (FEM)</b>
+          <span style="color: #8B0000; font-weight: bold; margin-left: 8px; font-size: 15px;">“Foundation”</span>
           <br>
-          <span class="text-meta">Deploying smart algorithms on high-speed railways to translate massive sensor data into real-time actionable health diagnostics.</span>
+          <span class="text-meta">Generating the rigorous ground truth rooted in classical mechanics, serving as the essential reliable baseline for model training and validation.</span>
         </li>
-        
-        <li>
-          <b>Neural Operators</b>
-          <span style="color: #8B0000; font-weight: bold; margin-left: 8px; font-size: 15px;">“Technique”</span>
-          <br>
-          <span class="text-meta">Mastering operator learning architectures (FNO/DeepONet) to bypass iterative solvers, accelerating simulations from hours to milliseconds.</span>
-        </li>
-        
+
         <li>
           <b>Physics-Informed AI</b>
           <span style="color: #8B0000; font-weight: bold; margin-left: 8px; font-size: 15px;">“Strategy”</span>
@@ -530,11 +519,18 @@
         </li>
 
         <li>
-          <b>Finite Element Method (FEM)</b>
-          <span style="color: #8B0000; font-weight: bold; margin-left: 8px; font-size: 15px;">“Foundation”</span>
+          <b>Neural Operators</b>
+          <span style="color: #8B0000; font-weight: bold; margin-left: 8px; font-size: 15px;">“Technique”</span>
           <br>
-          <span class="text-meta">Generating the rigorous ground truth rooted in classical mechanics, serving as the essential reliable baseline for model training and validation.</span>
+          <span class="text-meta">Mastering operator learning architectures (FNO/DeepONet) to bypass iterative solvers, accelerating simulations from hours to milliseconds.</span>
         </li>
+
+        <li>
+          <b>Structural Health Monitoring (SHM)</b>
+          <span style="color: #8B0000; font-weight: bold; margin-left: 8px; font-size: 15px;">“Application”</span>
+          <br>
+          <span class="text-meta">Deploying smart algorithms on railway/ocean structures to translate massive sensor data into real-time actionable health diagnostics.</span>
+        </li>          
       </ul>
     </div>
 
@@ -556,7 +552,7 @@
           </div>
           <div class="timeline-desc">
             Major in Civil and Hydraulic Engineering.<br>
-            <b>Supervisor:</b> Prof. Yi Zhang
+            <b>Supervisor:</b> <a href="https://scholar.google.com/citations?user=ZObQdFcAAAAJ&hl=zh-CN&oi=sra" target="_blank">Prof. Yi Zhang</a>
           </div>
         </div>
 
