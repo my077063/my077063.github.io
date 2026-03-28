@@ -672,8 +672,7 @@
             <span>
               <span class="badge-item" style="background-color: #e0f7fa; color: #006064; border: 1px solid #b2ebf2;">Research Article</span>
               <span class="badge-item" style="background-color: #e7f6df; color: #2e7d32; border: 1px solid #c8e6c9;">JCR Q1</span>
-              <span class="badge-item" style="background-color: #fff3e0; color: #ef6c00; border: 1px solid #ffe0b2;">IF: 5.7</span>
-              <span class="badge-item" style="background-color: #f3e5f5; color: #7b1fa2; border: 1px solid #e1bee7;">First Author</span>
+              <span class="badge-item" style="background-color: #fff3e0; color: #ef6c00; border: 1px solid #ffe0b2;">IF: 8.9</span>
             </span>
           </div>
 
@@ -684,14 +683,14 @@
               Weishi Gu, Meng Hu, Ning Feng
           </div>
           <div style="margin-bottom: 8px; font-size: 14px; color: #000;">
-            <a class="hover-underline" href="https://www.sciencedirect.com/journal/engineering-failure-analysis" target="_blank" style="font-weight: bold; font-style: italic; color: #000;">Engineering Failure Analysis</a>, 
+            <a class="hover-underline" href="https://www.sciencedirect.com/journal/engineering-failure-analysis" target="_blank" style="font-weight: bold; font-style: italic; color: #000;">Mechanical Systems and Signal Processing</a>, 
             <span style="font-weight: bold; color: #A52A2A; margin-left: 3px;">2026</span>, 
-            Vol. 185, Article 110417
+            Vol. 248, Article 114052
           </div>
           <div style="font-size: 14px; color: #555;">
             <span style="font-weight: bold; color: #333; margin-right: 5px;">DOI:</span> 
             <span style="color: #666; font-family: Consolas, monospace;">
-              10.1016/j.engfailanal.2025.110417
+              10.1016/j.ymssp.2026.114052
             </span>
           </div>
         </div>
